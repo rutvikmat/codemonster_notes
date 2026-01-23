@@ -1,241 +1,203 @@
-GitHub README.md (Final Version)
-# 🎯 Automation Assessment Projects
+# 🎥 AI Explainer Video Generator — Flask Web App
 
-This repository contains two end-to-end automation projects designed to demonstrate practical skills in workflow automation, data processing, and multimedia generation using Python and no-code workflow logic.
+A full-stack automation system that converts structured text input into professional explainer videos using Python, MoviePy, and Flask.
 
-## 📌 Assessments Included
-
-### ✅ Assessment 1 — IT Support Ticket Automation
-Automates processing of IT support tickets using validation, deduplication, routing, SLA calculation, and reporting.
-
-### ✅ Assessment 2 — Automated Explainer Video Generator
-Automatically generates short explainer videos from structured text input with narration, subtitles, animations, and background music.
+Users submit event details through a web interface, and the backend automatically generates narrated videos with subtitles, animations, background music, and downloadable output.
 
 ---
 
-# 🟦 Assessment 1 — IT Support Ticket Automation
+## 🚀 Features
 
-## 📘 Problem Statement
+* 🌐 Web-based user interface (no CLI needed)
+* 📝 Form-based input for event details
+* 🎨 Multiple visual templates (Dark / Light themes)
+* 🖼 Auto slide generation per content block
+* 🔊 Text-to-speech narration (gTTS)
+* 🟡 Word-by-word karaoke subtitles
+* 🎬 Fade-in animated transitions
+* 🎵 Background music mixing
+* 👀 Video preview before download
+* ⬇ One-click MP4 download
+* ⚙ Fully automated rendering pipeline
 
-University IT support receives large volumes of tickets with inconsistent and duplicate data, causing delays and manual workload.  
-This automation processes tickets end-to-end with business rules and reporting.
+---
 
-## ⚙️ Features
+## 🏗 Architecture Overview
 
-- CSV-based input processing
-- Email format validation
-- Priority validation (Low / Medium / High)
-- Text normalization
-- Deduplication (same email + issue within 24 hours)
-- Automatic ticket ID generation
-- Issue-based routing to IT teams
-- SLA deadline calculation
-- Error handling and rejection logging
-- Summary report generation
+```
+Browser UI
+   ↓
+Flask Web Server
+   ↓
+Input Parsing
+   ↓
+Slide Image Generation (Pillow)
+   ↓
+Audio Generation (gTTS)
+   ↓
+Subtitle Timing Engine
+   ↓
+MoviePy Video Composition
+   ↓
+Preview + Download
+```
 
-## 🧩 Workflow Logic
+All video creation is handled server-side without manual editing.
 
+---
 
+## 📁 Project Structure
 
-CSV Input
-↓
-Normalize Fields
-↓
-Validate Email & Priority
-↓
-Validate Issue Type
-↓
-Deduplicate Check (24 hrs)
-↓
-Generate Ticket ID
-↓
-Route to IT Team
-↓
-Calculate SLA Deadline
-↓
-Store Processed Ticket
-↓
-Update Summary Report
-
-
-Rejected records are stored separately with error reasons.
-
-## 📂 Folder Structure
-
-
-
-Assessment1/
+```
+Assessment2_WebApp/
 │
-├── input/
-│ └── tickets_input.csv
+├── app.py
+├── requirements.txt
 │
-├── output/
-│ ├── processed_tickets.csv
-│ ├── rejected_tickets.csv
-│ └── summary_report.csv
-│
-└── ticket_processor.py
-
-
-## ▶ How to Run
-
-```bash
-cd Assessment1
-python3 ticket_processor.py
-
-
-Outputs will be generated inside the output/ folder.
-
-🟩 Assessment 2 — Automated Explainer Video Generator
-📘 Problem Statement
-
-University departments require frequent short explainer videos for workshops and announcements.
-Manual video creation is time-consuming. This automation generates videos automatically from structured text input.
-
-⚙️ Features
-
-Structured text input parsing
-
-Auto slide generation for each bullet point
-
-Text-to-speech narration (gTTS)
-
-Word-by-word karaoke subtitles
-
-Animated text overlays
-
-Background image templates
-
-Background music mixing
-
-Configurable slide duration and resolution
-
-Fully automated MP4 generation
-
-🎥 Automation Pipeline
-Text Input
-   ↓
-Parse Content
-   ↓
-Generate Slide Images
-   ↓
-Generate Narration Audio
-   ↓
-Create Karaoke Subtitles
-   ↓
-Add Background Music
-   ↓
-Apply Transitions & Animations
-   ↓
-Export Final MP4 Video
-
-📂 Folder Structure
-Assessment2/
-│
-├── input.txt
+├── templates/
+│   ├── index.html        # Input form UI
+│   └── preview.html     # Video preview & download
 │
 ├── backgrounds/
-│   └── bg1.jpg, bg2.jpg, ...
+│   ├── dark/
+│   │   ├── bg1.jpg
+│   │   └── bg2.jpg
+│   └── light/
+│       ├── bg1.jpg
+│       └── bg2.jpg
 │
 ├── music/
 │   └── bg_music.mp3
 │
-├── output/
-│   └── final_video.mp4
-│
-└── video_generator.py
+└── output/
+    └── final_video.mp4
+```
 
-🛠 Dependencies
+---
 
-Python 3.x
+## ⚙ Installation
 
-MoviePy (v2.x)
+### 1. Create Virtual Environment (Recommended)
 
-Pillow
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-gTTS
+### 2. Install Dependencies
 
-FFmpeg
+```bash
+pip install -r requirements.txt
+```
 
-Install Requirements
-pip install moviepy pillow gTTS imageio imageio-ffmpeg
-brew install ffmpeg   # macOS
+### 3. Install FFmpeg (macOS)
 
-▶ How to Run
-cd Assessment2
-python3 video_generator.py
+```bash
+brew install ffmpeg
+```
+
+Verify:
+
+```bash
+ffmpeg -version
+```
+
+---
+
+## ▶ Running the Application
+
+From the project directory:
+
+```bash
+python app.py
+```
+
+Open in browser:
+
+```
+http://127.0.0.1:5000
+```
+
+### User Flow
+
+1. Enter title, date, duration, and bullet points
+2. Select visual theme
+3. Click **Generate Video**
+4. Loader displays during rendering
+5. Preview page shows generated video
+6. Download MP4 with one click
+
+---
+
+## 🎯 Automation Logic
+
+### Slide Timing
+
+Each slide duration is calculated from narration audio length:
 
 
-Final video will be saved as:
+slide_duration = audio_clip.duration
 
-output/final_video.mp4
 
-🧠 Design Highlights
-Assessment 1
+Ensures perfect sync between visuals and voice.
 
-Simulates real-world ETL pipelines
+### Subtitle Timing
 
-Enforces business rules for SLA and routing
+Karaoke subtitles are generated word-by-word based on:
 
-Separates operational data from error logs
 
-Provides audit and reporting capability
+per_word_time = audio_duration / total_words
 
-Assessment 2
 
-Converts structured text to multimedia automatically
+### Audio Mixing
 
-Dynamic slide and subtitle generation
+Final audio track is composed as:
 
-Template-based visual design
+final_audio = narration + background_music
 
-Fully script-driven video production without editors
 
-🚀 Possible Enhancements
+With music volume scaled for clarity.
 
-Database integration for ticket storage
+---
 
-Real-time dashboards for IT analytics
+## 🧠 Technical Highlights
 
-Batch video generation from CSV
+* Dynamic multimedia timelines
+* Template-based visual theming
+* Programmatic animation effects
+* Server-side rendering
+* No manual video editing
+* Fully repeatable pipeline
 
-Multilingual narration support
+---
 
-Branded templates and intros
+## 🧪 Tested On
 
-👤 Author
+* macOS
+* Python 3.10+
+* MoviePy 2.x
+* Flask 2.x
 
-Rutvik Mathapati
+---
+
+## 🔮 Possible Enhancements
+
+* CSV upload for batch video generation
+* User authentication and history dashboard
+* Logo watermark and branding options
+* Progress bar using AJAX / WebSockets
+* Cloud deployment (Render, Railway, AWS)
+
+---
+
+## 👤 Author
+
+**Rutvik Mathapati**
 MCA Graduate | Python 
-Skills: Python, Django, Flask, SQL, Automation, Machine Learning, Video Processing
-
-📜 License
-
-This project is for academic and learning purposes.
-
+Skills required for this project : Python, Flask, Django, SQL, Machine Learning, Automation, Multimedia Processing
 
 ---
 
-# ✅ What This README Does Well
+## 📜 License
 
-✔ Explains problem clearly  
-✔ Shows automation mindset  
-✔ Includes workflows  
-✔ Shows technical depth  
-✔ Recruiter-friendly  
-✔ Assessment-friendly  
-
-This is **exactly what evaluators and interviewers like to see**.
-
----
-
-# 🎯 Final Step Recommendation
-
-To fully complete your submission, I can now help you with:
-
-### ✅ Final PDF report structure (what to submit)
-### ✅ Viva / interview questions & answers
-### ✅ PowerPoint for project presentation
-### ✅ Flow diagrams (draw.io format)
-
-Tell me what you want next and I will guide you through the final polish.
+This project is intended for educational and academic demonstration purposes.
