@@ -1,0 +1,371 @@
+'''
+patter-8
+
+* * * * *
+  * * * *
+    * * *
+      * *
+        *
+rows=5
+col =5
+space= 0,1,2,3,4  --> row iteration
+star = 5,4,3,2,1  -->(i,n)
+'''
+
+eg;
+----
+n=5
+for i in range(n):#row
+	for j in range(i):#col
+		print(' ',end=' ') #space
+	
+	for j in range(i,n):#star
+		print('*',end=' ')
+	print()
+
+
+
+
+'''
+patter-9
+          * 
+        * * 
+      * * * 
+    * * * * 
+  * * * * * 
+ 
+rows=5
+col =5
+space= 4,3,2,1,0 -->(i,n-1) 
+star = 1,2,3,4,5  -->(i+1)
+'''
+
+eg;
+n=5
+for i in range(n):#row
+	for j in range(i,n-1):#col
+		print(' ',end=' ') #space
+	
+	for j in range(i+1):#star
+		print('*',end=' ')
+	print()
+
+
+
+
+'''
+patter-10
+        * 
+      * * * 
+    * * * * * 
+  * * * * * * * 
+* * * * * * * * * 
+ 
+rows=5
+col =5
+space= 4,3,2,1,0  -->(i,n-1) 
+left handed triangle = 0,1,2,3,4 -->(i)
+right handed triangle = 1,2,3,4,5 -->(i+1)
+'''
+
+eg;
+n=5
+for i in range(n):#row
+	for j in range(i,n-1):#col
+		print(' ',end=' ') #space
+	
+	for j in range(i):#star
+		print('*',end=' ')
+
+	for j in range(i+1):#star
+		print('*',end=' ')
+	print()
+
+
+
+
+'''
+patter-11
+----------
+* * * * * * * * * 
+  * * * * * * * 
+    * * * * * 
+      * * * 
+        *  
+rows=5
+col =5
+space= 0,1,2,3,4  -->(i) 
+left handed triangle = 4,3,2,1,0 -->(i,n-1)
+right handed triangle = 5,4,3,2,1 -->(i,n)
+'''
+
+n=5
+for i in range(n):#row
+	for j in range(i):#col
+		print(' ',end=' ') #space
+	
+	for j in range(i,n-1):#star
+		print('*',end=' ')
+
+	for j in range(i,n):#star
+		print('*',end=' ')
+	print()
+
+
+pattern-12
+-----------
+
+        * 
+      * * * 
+    * * * * * 
+  * * * * * * * 
+* * * * * * * * * 
+  * * * * * * * 
+    * * * * * 
+      * * * 
+        *  
+
+ref prev two programs
+
+eg;
+n=5
+for i in range(n-1):#row
+	for j in range(i,n):#col
+		print(' ',end=' ') #space
+	
+	for j in range(i):#star
+		print('*',end=' ')
+
+	for j in range(i+1):#star
+		print('*',end=' ')
+	print()
+
+for i in range(n):#row
+	for j in range(i+1):#col
+		print(' ',end=' ') #space
+	
+	for j in range(i,n-1):#star
+		print('*',end=' ')
+
+	for j in range(i,n):#star
+		print('*',end=' ')
+	print()
+
+
+flow control continued.....!
+
+3.Transfer stmts;
+------------------
+1.break;
+---------
+we can use break stmt inside the loop to break the loop execution based on some condition.
+
+eg;
+----
+for i in range(1,11):
+	if i==5:
+		print('processing is enough plz break it')
+		break
+	print(i)
+
+
+eg;
+---
+cart=[10,20,600,60,70]
+for item in cart:
+	if item>500:
+		print('insufficient balance')
+		break
+		print(item)
+
+
+2.continue;
+-----------
+we can use continue to skio the current iteration and continue with the
+next iteration
+
+eg;
+for i in range(1,11):
+	if i%2==0:
+		continue
+	print(i)
+
+
+eg;
+----
+cart=[10,20,600,60,70]
+for item in cart:
+	if item>500:
+		print('insufficient balance')
+		continue
+	print(item)
+
+
+eg;
+---
+lst=[10,20,35,45,75,80,90]
+for i in lst:
+	if i%2==0:
+		print('these are even numbers')
+		continue
+	print(i)
+	
+
+#loops with the else part
+----------------------------
+cart=[10,20,600,60,70]
+for item in cart:
+	if item>500:
+		print('insufficient balance to buy',item)
+		continue
+	else:
+		print('These product can be packed',item)
+	
+		
+
+3.pass statement;
+--------------------
+pass is a keyword in python
+
+in our programming if bloack is required which we wont do anythingthen
+we can define it as pass
+
+pass
+1.it is an empty stmt
+2.null stmt
+3.it wont do anything
+
+
+eg;
+lst=[10,20,30]
+for i in lst:
+	if i%2==0:
+		pass  
+
+def fun():
+	pass
+	
+
+fun()
+
+eg;
+----
+class demo:
+	pass
+
+
+demo()
+
+
+del statement;
+----------------
+del is keyword in python
+
+eg;
+----
+x=10
+print(x)
+del x
+print(x)
+
+None stmt;
+------------
+
+eg;
+----
+x = 10
+print(x)
+x = 20 
+print(x)
+x=None
+print(x)
+
+
+'''
+to delete or to remove any object from the memory 
+we have two ways
+1.del keyword: it will delete the object\
+2.None keyword : It will destroy the address of the object
+
+note:detaild explanation will be done in garbage collection concept
+
+'''
+Input and Output statements in python
+-----------------------------------------
+
+In python 2 and python 3 these are the fuctions used to take input from the user
+
+1. Python2 : raw_input()
+2. python3 : input()
+
+Python2 will support both raw_input() and input() funcyion
+where as python 3 supports only input function
+
+input() function;
+------------------
+input() function is built-in function and it used to accept the inputs from the user
+
+eg;
+a=10
+print(a)
+
+#a value is directly given
+
+a=input('enter the value for a')
+print(a)
+
+eg;
+a=input('enter the value for a ')
+print(a)
+print(type(a))
+
+enter the value for a 10
+10
+<class 'str'>
+
+Note: by default any input given to the input function is treated as str datatype
+to convert into required datatype we need to do data typecasting
+
+eg;
+a=input('enter the value for a ')
+a=int(a)
+print(a)
+print(type(a))
+
+a=int(input('enter the value for a '))
+print(a)
+print(type(a))
+
+
+eg;
+#wap to read two number from the keyboard and print the sum of them
+num1=int(input('enter the num1 '))
+num2=int(input('enter the num2 '))
+print(num1,num2)
+print('the sum of num1+num2 is ',num1+num2)
+
+
+OP
+enter the num1 12
+enter the num2 13
+12 13
+the sum of num1+num2 is  25
+
+eg;
+print('the sum : ',int(input('enter the num1'))+int(input('enter the num1')))
+
+
+eg;
+#How to read multiple values from the keyboard in a single line
+a,b=[int(i) for i in input('enter two numbers : ').split()]
+print('product is :',a*b)
+
+op 
+enter two numbers : 10 20
+product is : 200
+
+*split() will be discussed.....!
+
+#task take 3 float numbers from the input function in a single line 
+and print the sum of it.
+

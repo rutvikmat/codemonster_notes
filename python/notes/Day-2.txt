@@ -1,0 +1,482 @@
+Computer Memory Management — Overview
+=========================================
+**Memory management** is the process by which a computer system controls and coordinates memory usage among programs and processes.
+It ensures **efficient allocation, storage, retrieval, and release** of data in both **primary** and **secondary memory**.
+
+
+1. Processor (CPU) and Memory Interaction
+==============================================
+* The **CPU (Central Processing Unit)** executes instructions and processes data.
+* It cannot access the **hard disk** directly — data must first be loaded into **RAM**.
+* The CPU has small, fast storage areas called **registers** and **cache** to store temporary data.
+
+Levels of Memory in Relation to CPU:
+
+| Memory Type                       | Speed     | Size       | Function                                 |
+| --------------------------------- | --------- | ---------- | ---------------------------------------- |
+| **Registers**                     | Fastest   | Very small | Store immediate values used by CPU       |
+| **Cache**                         | Very fast | Small      | Stores frequently accessed data          |
+| **RAM (Main Memory)**             | Fast      | Moderate   | Holds data and programs currently in use |
+| **Hard Disk (Secondary Storage)** | Slow      | Large      | Stores data and programs permanently     |
+
+---
+
+2. RAM (Random Access Memory)
+================================
+* **Volatile memory** — contents lost when power is off.
+* Used to **store data and instructions** temporarily while a program is running.
+* Divided into:
+
+  * **Static RAM (SRAM):** Faster, used for cache.
+  * **Dynamic RAM (DRAM):** Slower, used for main memory.
+
+Functions:
+===========
+* Holds **OS, applications, and data** currently in use.
+* Enables **faster access** than hard disk.
+* Helps **CPU work efficiently** by reducing read/write delays.
+
+
+3. Hard Disk (Secondary Memory)
+==================================
+* **Non-volatile storage** — retains data even when powered off.
+* Used to store:
+
+  * Operating System (OS)
+  * Applications
+  * User files and data
+* Much **slower** than RAM but has **larger capacity**.
+
+Functions:
+===========
+* Long-term storage of data.
+* Supplies data to RAM when needed.
+* Stores **swap files** or **virtual memory** when RAM is full.
+
+
+4. Saving and Loading Data
+=============================
+Saving:
+=========
+* When you **save** a file, data from RAM is written permanently to the **hard disk**.
+* The OS assigns a **file name and location** on disk.
+* The **File Allocation Table (FAT)** or file system index keeps track of the file.
+
+Loading:
+=========
+* When you **open or load** a program/file:
+
+  1. The OS copies the required data from **hard disk → RAM**.
+  2. CPU accesses and executes instructions from **RAM**.
+  3. Frequently used data may be moved into **cache** or **registers** for speed.
+
+
+Python Memory Management Notes
+==================================
+PRE — Python Runtime Environment
+===================================
+Definition:
+===========
+The **Python Runtime Environment (PRE)** is the software environment that supports the execution of Python programs.
+
+Main Components:
+=====================
+1. **Python Interpreter**
+
+   * Reads and executes the code line by line.
+   * Converts source code (`.py`) into bytecode (`.pyc`).
+
+2. **Python Virtual Machine (PVM)**
+
+   * Executes the **bytecode instructions**.
+   * Handles memory allocation, garbage collection, and exceptions.
+
+3. **Memory Manager**
+
+   * Allocates memory for Python objects dynamically.
+   * Uses **private heap memory**.
+
+4. **Standard Libraries**
+
+   * Provide built-in modules and functions that the program can use at runtime.
+
+
+2. PVM — Python Virtual Machine
+=================================
+Definition:
+============
+The **Python Virtual Machine (PVM)** is the **core engine** that executes the compiled **bytecode** instructions.
+
+Process:
+========
+1. The Python **compiler** converts `.py` source code → **Bytecode (`.pyc`)**.
+2. The **PVM** reads this bytecode instruction-by-instruction.
+3. The **PVM executes** them by:
+
+   * Managing **data types**, **objects**, and **references**.
+   * Performing **memory allocation** and **garbage collection**.
+   * Interacting with the **Operating System**.
+
+## 💾 **3. Memory Management in a Python Program**
+
+Python uses an **automatic memory management system**, handled by:
+
+* The **Python Memory Manager**, and
+* The **Garbage Collector (GC)**.
+
+
+Memory Areas in a Python Program
+===================================
+
+| Memory Segment             | Description                                                                                     | Example                                 |
+| -------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------- |
+| **Code Segment**           | Stores compiled bytecode or machine instructions.                                               | Function definitions, class definitions |
+| **Stack Segment**          | Used for **function calls, local variables**, and **control flow**. Managed by the interpreter. | Local variables inside a function       |
+| **Heap Segment**           | Used for **objects and data** created dynamically (lists, dicts, objects, etc.).                | `x = [1,2,3]`                           |
+| **Static / Global Memory** | Stores global variables and static data.                                                        | Module-level variables, constants       |
+
+
+
+
+Command Line Arguments in Python
+=================================
+1. What Are Command Line Arguments?
+Command Line Arguments** are **values passed to a Python program when it is executed from the command prompt (or terminal).
+They allow you to **send input data to your Python script directly from the command line**, without modifying the code.
+
+Example:
+==========
+If you have a Python file named `add.py`:
+
+```python
+import sys
+
+a = int(sys.argv[1])
+b = int(sys.argv[2])
+print("Sum =", a + b)
+```
+
+2. How It Works
+===============
+Python stores command line arguments in a special list called **`sys.argv`** (from the `sys` module).
+
+Structure of `sys.argv`:
+==============================
+| Index         | Description               | Example (python add.py 5 10) |
+| ------------- | ------------------------- | ---------------------------- |
+| `sys.argv[0]` | Name of the Python script | `'add.py'`                   |
+| `sys.argv[1]` | First argument            | `'5'`                        |
+| `sys.argv[2]` | Second argument           | `'10'`                       |
+
+> All command line arguments are **strings by default**, so you must convert them (e.g., using `int()` or `float()`).
+
+
+3. Why Command Line Arguments Are Required
+=============================================
+| Reason                             | Explanation                                                                                  |
+| ---------------------------------- | -------------------------------------------------------------------------------------------- |
+| **1. To make programs dynamic**    | You can pass different input values each time you run the program, without editing the code. |
+| **2. To automate tasks**           | Useful for scripts that run in automation, batch files, or shell scripts.                    |
+| **3. To improve usability**        | Allows users to specify files, directories, or options directly from the command line.       |
+| **4. For flexible input handling** | Avoids hardcoding input values in the script.                                                |
+
+
+
+Language Fundamental
+----------------------
+Identifiers
+-------------
+A name in python program is called as identifer
+It can be a variable name or class name or function name or method name
+
+eg:
+a=10  #-->a is a identifer/name
+class Demo  #--> class name Demo is a identifer
+def func1	# func1 is a function name and it is a identifer
+
+Rules to define the identifiers in python
+-------------------------------------------
+1. only alphabets must be used 
+		both upper case and lower case
+
+2. we can use the digits (0-9)
+
+3. we can use underscore symbol (_)
+
+Note : apart from these combination if we are using any other things we will get
+syntax error
+
+eg;
+sagar=10 #valid
+$agar=10  #invalid
+print($agar)
+
+* Identifiers should not start with the digits
+eg;
+sachin =10  #valid
+sachin10 = 100  #valid
+sac10hin=98   #valid
+10tendulker  #invalid
+print(10tendulker)
+
+
+* in python identifiers are case sensitive 
+eg;
+sachin=10
+SACHIN=20
+Sachin=30
+--> in the above example all the 3 names are taken as indivual identifiers
+
+
+Note:
+sachinTendulker =10 #--> camel case convention in JAVA
+sachin_tendulker =10 #--> snake case convention in Python
+
+* There is no length limit for the identifers
+but it is suggested that to use max of 15 characters
+
+eg;
+abcdefghijklmnopqrstuvwxyz=10			#valid
+print(abcdefghijklmnopqrstuvwxyz)
+
+number_value=10				#valid
+print(number_value)
+
+* we can not use the reserved keywords as identifers
+eg;
+name='sagar' #valid
+for = 10  #invalid
+if =20    #invalid
+def = 30   #invalid
+class =90   #invalid
+try =50   #invalid
+
+task 
+------
+1sachin10tendulker -->invalid
+_abc_def    -->valid
+ca$h = 100 		-->invalid
+Integer = 10		-->valid  
+int= 10  	-->valid
+ 
+
+Reserved Keywords
+-------------------
+In python some words are reserved to represent some meaning or functionality
+Such type of words are called as Reserved keywords
+
+*There are 35 keywords are there in python
+
+eg;
+import keyword
+keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 
+'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 
+'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 
+'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+Note:
+-------
+1. all the keywords are alphabets [lower case]
+ except
+ -->False None True
+
+eg;
+a= True
+#a= TRUE  #invalid
+a= 'TRUE'
+#a= true
+a= 'true'
+print(a)
+
+
+eg;
+#True =10   #invalid
+TRUE =10   #valid
+'TRUE' =10 #invalid
+
+print('TRUE')
+
+
+
+Data Types
+-------------
+Data type represents the type of the data
+In python we are not required to specify the datatype explicitly like java
+Based on the value provided to the variable datatype will be decided automativally
+Hence python is called as "Dynamically typed language"
+
+eg;
+a=10  --> valid in python
+int a=10 --> valid in java
+
+
+Python contains 14 datatypes
+Python contains the fallowing datatypes
+#Fundamental datatypes
+-----------------------
+1.int
+2.float
+3.complex
+4.bool
+5.str
+
+#intermediate datatypes
+------------------------
+6.bytes
+7. bytearray
+8. range
+
+Advanced datatypes
+-------------------
+9. list
+10. tuple
+11. set
+12. frozenset
+13. dict
+
+extra
+-------
+14. None
+
+Note : there are few basic and importent built in functions 
+are there in python such as :
+
+eg;
+a=10
+print(a)	#10
+#to display any data on the screen we need print function
+
+a=10
+print(type(a)) #<class 'int'>
+#to check the datatype of the data we use type function
+
+a=10
+print(id(a))
+#to check the memory address of the data or object 
+we will use id function
+
+
+Fundamental datatypes;
+-----------------------
+1. int data type;
+-------------------
+eg;
+a=10
+print(a) #10
+print(type(a)) # int
+
+note : in python2 we have long datatype where as in python 3 we dont have long 
+datatype we just only int datatype.
+
+similar to int there are other types like float,complex,bool,str
+*string will discuss in depth going forward
+
+6.bytes data type:
+-------------------
+bytes data type represent a group of byte numbers just like an array.
+
+eg;
+#bytes data type
+a=10,20,30,40
+b=bytes(a)
+print(b)         #adrress of the byte function
+print(type(b))
+print(b[0])
+print(b[-2])
+for i in b:
+	print(i)
+
+
+
+eg;
+#bytes data type
+a=10,20,30,40
+b=bytes(a)
+print(b)
+print(b[1])
+b[1]=25 #TypeError: 'bytes' object does not support item assignment
+print(b[1])
+
+#bytes are immutable in nature
+
+
+
+7.bytearray data type ;
+------------------------
+bytearray is exactly same as bytes datatype except that the elements here can be
+mutable.
+eg;
+#bytearray data type
+a=10,20,30,40
+b=bytearray(a)
+print(b)
+print(b[1])
+b[1]=25 
+print(b[1])
+
+#bytearray is mutable in nature
+
+eg;
+#bytearray data type
+a=10,20,30,40
+b=bytearray(a)
+print(b)
+print(b[1])
+b[1]=258  #ValueError: byte must be in range(0, 256) 
+print(b[1])
+
+#bytearray is mutable in nature
+
+
+
+8.list data type;
+------------------
+If we want to represent a group of elements as a single entity then we use list.
+some of the features of the list are:
+
+1.insertion order is maintained
+2.it can store both homogenous and heterogenous elements
+3.duplicates are allowed.
+4.growable in nature
+5.elements are always enclosed with [] square brackets.
+6.list is mutable in nature
+
+eg;
+#list datatype eg-1
+lst=[]
+lst=list()
+
+lst=[10]
+lst=[10,20,30] #homogenous elements
+lst=[10,2.5,3+5j,True,'sagar'] #heterogenous elements
+
+lst=[10,20,30,10,30] #duplicates are allowed
+
+lst.append('India') #it is growable in nature
+
+print(lst)
+print(type(lst))
+
+eg-2
+lst=[10,20,30,40]
+print(lst)
+
+#print(lst[2])
+#print(lst[-2])
+
+#for i in lst:
+	#print(i)
+lst[2]='sagar'
+print(lst)
+
+#list is mutable in nature
+
+
+
+
+
+
+
+
+

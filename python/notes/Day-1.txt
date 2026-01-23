@@ -1,0 +1,70 @@
+Day-1
+------
+Full-Stack Web Development course
+-----------------------------------------
+Ref the diagram
+
+What is a software ?
+Collection of programs which we used to achive a task.
+
+what is a program?
+Set of instructions given to the computer.
+
+what is a MLL?
+MLL stands for Machine level language or binary language [o's and 1's] which
+computer can able to understand
+
+What is ALL?
+ALL stands for assembly level language.
+
+What is Assembler?
+Assembler is a system software which is used to convert ALL to MLL.
+
+What is HLL?
+HLL stands for high level language it is human understanable language.
+
+what is Compiler ?
+Compiler is a system software which is used to convert HLL to MLL.
+
+
+Ref the diagram
+
+what are the types of the softwares?
+There are two types of softwares
+1. System software : These are the s/w which is used to interact with hardware components 
+of the computer 
+example : operating system,compiler,interpreter etc
+
+2.Application software : These are the s/w used to achive specific task.
+example : Facebook,zomoto,amazon,notepad etc..!
+
+
+Every application s/w will consist of 3 layers in it.They are:
+1. Web logic : User interface or frontend part of the software
+[web logic is created by using the languages like HTML,CSS,javascript etc]
+
+2.App logic : Business logic of the application
+[App logic is created by using the languages like Python,java,c,c++  etc]
+
+3.DB logic : Datbase or data storage of the application
+[Db logic is handled by using the softwares such as Mysql,Oracle,sqlite3 etc]
+
+
+Note : combination of all the 3 layers is what we call it as Full-stack and the person who
+know these technologies we call me as Full-Stack developers
+
+Program execution of different languages
+-------------------------------------------
+C program execution [ref the dia]
+Java program execution [ref the dia and program]
+Python program execution [ref the dia and program]
+
+Execute Hello world program in cmd in both java and python language.
+
+
+
+
+
+
+
+

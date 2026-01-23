@@ -1,0 +1,724 @@
+Day-7
+======
+
+Strings in python 
+-------------------
+The most commonly used object in any programming language is string datatype.
+
+What is a string?
+------------------
+Any sequence of character with single/double/triple qoutes is called as strings.
+
+eg;
+s='sagar'
+s="India"
+s='''Banglore'''
+
+Note:unlike other languages python doesnt have char datatype 
+its only consist of str datatype
+
+eg;
+ch='a'
+print(type(ch))
+
+op
+<class 'str'>
+
+eg;
+# single line comment 
+''' multi-line comment'''
+
+#multiline string
+s=''' im
+attending python 
+session of 
+sagar sir'''
+print(s)
+
+
+
+eg;
+----
+s='This is 'single' quoted line'
+s="This is 'single' quoted line"
+
+s='This is "double" quoted line'
+
+s='This is "double" 'quoted' line'
+s='''This is "double" is 'quoted' line'''
+
+s='This is \'single\' quoted line'
+s='This is \"double\" quoted line'
+
+print(s)
+
+
+eg;
+---
+#creation of the strings
+--------------------------
+s=''	#empty string
+s=str() #empty string
+
+s="a"   #single char
+s="sachin"
+
+s='''
+sachin 
+is a 
+cricketer'''
+
+s='10'
+#any datatype can be taken in the form str by enclosing 
+#within single/double/triple quote
+
+
+print(s)
+print(type(s))
+
+
+String object in python 
+-------------------------
+ref the dia 1 and 2
+eg;
+a='hello'
+b='world'
+'''
+print(a)
+print(id(a))
+print(b)
+print(id(b))
+'''
+
+'''
+print(a[1]) #e
+print(id(a[1]))
+print(b[2]) #r
+print(id(b[2]))
+'''
+
+'''
+print(a[2]) #l
+print(id(a[2]))
+print(b[3]) #l
+print(id(b[3]))
+'''
+
+How to access the string elements
+-----------------------------------
+We can acess the string elements in two ways
+1. using the index number
+2. using the slicing operator
+
+
+1. using the index number
+---------------------------
+Python supports two types of index number 
++ve index which means from (left to right) forward direction
+-ve index which means from (right to left) backward direction
+
+eg;
+----
+s='SaiPallavi'
+print(s)
+print(s[2])
+print(s[-2])
+
+for i in s:
+	print(i)
+
+
+note:
+eg;
+s='SaiPallavi'
+print(s)
+print(s[2])
+print(s[-2])
+print(s[10])
+
+op
+  print(s[10])
+IndexError: string index out of range
+
+
+#wap to accept some str from the keyboard and display its char by index wise
+[both +ve and -ve]
+
+eg;
+s=input('enter some name ')
+
+x=0
+for i in s:
+	print('The char present in +ve index {} and -ve index {} is {}'.format(x,x-len(s),i))
+	x=x+1
+
+'''
+i --> char
+x --> +ve index
+x-len(s) --> -ve index
+print(len(s))  0-5 = -5
+			   1-5 = -4
+'''
+enter some name sagar
+The char present in +ve index 0 and -ve index -5 is s
+The char present in +ve index 1 and -ve index -4 is a
+The char present in +ve index 2 and -ve index -3 is g
+The char present in +ve index 3 and -ve index -2 is a
+The char present in +ve index 4 and -ve index -1 is r
+
+
+2. using the slicing operator
+------------------------------
+slicing means cutting the portion of the string with the help of index number
+
+eg;
+---
+#slicling operator on strings
+-------------------------------
+s='India is our nation'
+print(s)
+#string ref variable [startingpoint : endingpoint : stepsize]
+
+'''
+starting point : is inclusive
+ending point : is exclusive (n-1)
+step size : by default is +1
+'''
+
+print(s[6:12])
+print(s[:])
+print(s[::2])
+print(s[::-1])	#reversing the string
+
+print(s[-3:-6]) #empty data
+print(s[-3:-6:-1])
+print(s[-6:-3])
+
+#Mathematical operator wrt strings
+------------------------------------
+1. + operator [string concatination]
+2. * operator [string multiplication]
+
+#print('sagar'+10)	#invalid
+print('sagar'+'ram') #valid
+
+#print('sagar'*5) #valid
+print('sagar'*'ram') #invalid
+
+
+#built in function on strings
+-------------------------------
+len() function : will return the number of elements in the str
+
+eg;
+s='powerstarpuneethrajkumar'
+print(s)
+print(len(s))
+
+
+eg;
+----
+'''wap to access each char of the str in forward and backward 
+direaction using the while loop'''
+s=input('enter some sentence\n')
+n=len(s)
+
+i=0
+print('forward direction')
+while i<n:
+	print(s[i],end=' ')
+	i+=1
+print()
+
+print('backward direction')
+i=-1
+while i>=-n:
+	print(s[i],end=' ')
+	i=i-1
+'''
+-2>=-8
+
+'''
+Rajkumar
+
+alternative names
+--------------------
+'''wap to access each char of the str in forward and backward 
+direaction using the while loop'''
+s=input('enter some sentence\n')
+
+print('forward direction')
+for i in s[::]:
+	print(i,end=' ')
+
+print('backward direction')
+for i in s[::-1]:
+	print(i,end=' ')
+
+
+Membership check;
+-------------------
+we can check whether the char is prsent in  the given string or not
+using the membership operator
+
+1. in operator
+2. not in operator
+
+eg;
+s1=input('enter some name ')
+print(s1)
+s2=input('enter the another name ')
+print(s2)
+
+if s2 in s1:
+	print(s2,'is found in main name ',s1)
+else:
+	print(s2,'is not found in main name')
+
+op
+enter some name AlluArjun
+AlluArjun
+enter the another name Arjun
+Arjun
+Arjun is found in main name  AlluArjun
+
+
+eg;
+---
+s='ravi teja'
+print(s)
+print('z' in s)
+print('i' in s)
+
+print('z' not in s)
+print('i' not in s)
+
+Comparision of strings
+-----------------------
+we can use relational operators (>,>=,<,<=) and comparision operator (==,!=) for strings comparision
+in python str comparision will be performed based on the ASCII Value of the characters
+
+note: A-->65  ASCII VALUES
+a -->97
+
+eg;
+---
+#string comparision
+s1=input('enter the first string ')
+s2=input('enter the second string ')
+if s1 == s2:
+	print('strings are equal')
+elif s1<s2:
+	print('s1 is lesser than s2')
+else:
+	print('s1 is greater than s2')
+
+'''
+op
+enter the first string sagar
+enter the second string sagar
+strings are equal
+
+enter the first string SAGAR
+enter the second string sagar
+s1 is lesser than s2
+
+note: A-->65  ASCII VALUES
+a -->97
+
+enter the first string sagar
+enter the second string sagarr
+s1 is lesser than s2
+
+enter the first string abhilash
+enter the second string abhi
+s1 is greater than s2
+
+enter the first string abhi
+enter the second string Abhilash
+s1 is greater than s2
+'''
+
+#Removing extra spaces from the strings
+-----------------------------------------
+1.rstrip() --> to remove the space at right hand side
+2.lstrip() --> to remove the space at left hand side
+3.strip() --> to remove the space at both hand side 
+
+eg;
+----
+city = input('enter ur ipl team name ')
+scity=city.strip()
+if scity =='RCB':
+	print('welcome RCBians..!')
+elif scity =='CSK':
+	print('welcome CSKians..!')
+elif scity =='MI':
+	print('welcome MIians..!')
+elif scity =='SRH':
+	print('welcome SRHians..!')
+else:
+	print('plz check the team name once..!')
+
+'''
+OP
+enter ur ipl team name RCB
+welcome RCBians..!
+
+enter ur ipl team name                    RCB          
+plz check the team name once..!
+
+enter ur ipl team name                  RCB         
+welcome RCBians..!
+
+
+note: strip() method it will not remove the space b/w in the string
+'''
+
+Finding the substrings;
+-------------------------
+we can use the fallowing 4 methods to identify the substrings of the given strings
+
+for foward direction checking
+--------------------------------
+1.find()
+2.index()
+
+for backward direction checking
+--------------------------------
+1.rfind()
+2.rindex()
+
+1.find();
+----------
+s.find(substring)
+
+return index of first occurence of the given substring.
+if not it will return -1
+
+eg;
+---
+s='Learning python is very easy'
+print(s.find('ning')) #4
+print(s.find('e')) #1
+print(s.find('z')) #-1
+print(s.find(' ')) #8
+
+Note: By default find() method can search for the total string. we can also specify the boundaries to the search.
+
+eg;
+s.find(substring,begin,end)
+it will search from begining to ending index (-1)
+
+eg;
+---
+s='Learning python is very easy'
+print(s.find('a'))#2
+print(s.find('a',9,19))#-1
+print(s.find('a',9,27))#25
+print(s.find('a',9,-1))#25
+
+print(s.find('is',0,14))#-1
+
+2.index() method:
+------------------
+index() method is exactly same as find() method except that if the specified substring 
+is not available then we will get value error
+
+
+eg;
+---
+s=input('enter the name ')
+ss=input('enter the name ')
+if s.index(ss):
+	print('substring found')
+else:
+	print('substring not found')
+
+'''
+OP
+enter the name sachintendulker
+enter the name tendulker
+substring found
+
+enter the name sachintendulker
+enter the name sharma
+if s.index(ss):
+ValueError: substring not found
+
+'''
+valueError is a exception in python and it should be handled
+--------------------------------------------------------------
+eg;
+---
+s=input('enter the name ')
+ss=input('enter the name ')
+try:
+	n=s.index(ss)
+except ValueError:
+	print('substring notfound')
+else:
+	print('substring  found')
+
+'''
+OP
+enter the name vijaymallya
+enter the name alia
+substring notfound
+'''
+
+
+Counting substring in the given string
+-----------------------------------------
+1. s.count(substring) --> it will search trough out the string
+2.s.count(substring,begin,end) -->it will search in the respective index number
+
+eg;
+----
+s='Learning python is very easy'
+print(s.count('e'))#3
+print(s.count('a'))#2
+print(s.count('e',4,-1))#2
+print(s.count('e',4,14))#0
+
+Replacing a string with another string
+----------------------------------------
+syntax
+-------
+s.replace(oldstr,newstr)
+
+this method will repalce the old string with the new string
+
+eg;
+---
+s='Learning the programming language is difficult'
+s1=s.replace('difficult','easy')
+print(s)
+print(s1)
+
+note: string in python is mutable or immutable ?
+
+Q. String objects are immutable then how we can change the content by using replace() method.
+
+Once we creates string object, we cannot change the content.This non changeable behaviour is
+nothing but immutability. If we are trying to change the content by using any method, then with
+those changes a new object will be created and changes won't be happend in existing object.
+Hence with replace() method also a new object got created but existing object won't be changed.
+
+eg;
+----
+s='ababba'
+s1=s.replace('b','c')
+print(s)
+print(s1)
+print(id(s))
+print(id(s1))
+
+op
+address of s and s1 is different hence we can say strings are immutable in python.
+
+
+
+
+Spliting of the strings
+-------------------------
+We can split the given string according to the specified seperator by using split() method
+
+syntax
+--------
+s.split(separator)
+
+eg;
+----
+s='India is our country'
+print(s)
+data=s.split()  #space is separator
+for i in data:
+	print(i)
+
+
+note: by default space is considered as the separator in the split method
+
+eg;
+---
+s='Learning python, is very easy, but revising the concepts, is important'
+print(s)
+data=s.split(',')  #space is separator
+for i in data:
+	print(i)
+
+eg;
+----
+s="19-08-2022"
+print(s)
+data=s.split('-')  
+for i in data:
+	print(i)
+
+
+
+Joining of the strings
+--------------------------
+We can join the strings wrt the given seperator
+
+syntax
+-------
+s=seperator.join(group of str)
+
+eg;
+----
+lst=['amar','akber','antony']
+s='-'.join(lst)
+print(lst)
+print(s)
+
+eg;
+----
+lst=['amar','akber','antony']
+s=':'.join(lst)
+print(lst)
+print(s)
+
+
+note: joining of two strings can be done using + operator ie: str concatenation
+
+eg;
+---
+s1='krishna'
+s2='balram'
+print(s1)
+print(s2)
+s3=s1+s2
+print(s3)
+
+
+Changing the case of the strings
+----------------------------------
+We can change case of a string by using the following 4 methods.
+1. upper()===>To convert all characters to upper case
+2. lower() ===>To convert all characters to lower case
+3. swapcase()===>converts all lower case characters to upper case and all upper case characters to lower case
+4. title() ===>To convert all character to title case. i.e first character in every word should be 
+			uppercase and all remaining characters should be in lower case.
+5. capitalize() ==>Only first character will be converted to upper case and all remaining characters
+can be converted to lower case
+
+eg;
+----
+s='radha and krishna love is eternal'
+print(s)
+print(s.upper())
+print(s.lower())
+print(s.swapcase())
+print(s.title())
+print(s.capitalize())
+
+
+checking the strings about its starting and endings 
+------------------------------------------------------
+
+1.  s.startswith(substr)
+2.  s.endswith(substr)
+
+eg;
+---
+s='radha and krishna love is eternal'
+print(s)
+print(s.startswith('radha'))
+print(s.startswith('ra'))
+
+
+print(s.endswith('nal'))
+print(s.endswith('eternal'))
+
+
+To check the type of char prsent in the string
+-----------------------------------------------
+Python contains the following methods for this purpose.
+1) isalnum(): Returns True if all characters are alphanumeric( a to z , A to Z ,0 to9 )
+2) isalpha(): Returns True if all characters are only alphabet symbols(a to z,A to Z)
+3) isdigit(): Returns True if all characters are digits only( 0 to 9)
+4) islower(): Returns True if all characters are lower case alphabet symbols
+5) isupper(): Returns True if all characters are upper case aplhabet symbols
+6) istitle(): Returns True if string is in title case
+7) isspace(): Returns True if string contains only spaces
+
+eg;
+---
+print('sagarram9144'.isalnum())
+print('sagarram9144'.isalpha())
+print('sagarram9144'.isdigit())
+print('sagarram9144'.islower())
+print('sagarram9144'.isupper())
+print('sagarram9144'.istitle())
+print('sagarram9144'.isspace())
+
+
+eg;
+---
+type-1
+-------
+s=input('enter the str ')
+if s.isalnum():
+	print('alphanumeric data')
+	if s.isalpha():
+		print('alphabets data')
+		if s.islower():
+			print('lowercase data')
+		else:
+			print('uppercase data')
+	elif s.isdigit():
+		print('only digit data')
+	else:
+		print('digit data')
+
+elif s.isspace():
+	print('space char')
+else:
+	print('no space special char')
+
+'''
+op
+enter the str @
+no space special char
+
+enter the str sagar9144
+alphanumeric data
+digit data
+
+'''
+'''
+type-2
+-------
+s=input('enter the str ')
+if s.isalnum():
+	print('alphanumeric data')
+elif s.isalpha():
+	print('alpha data')
+	if s.islower():
+		print('lowercase data')
+	else:
+		print('uppercase data')
+elif s.isdigit():
+	print('digit data')
+elif s.isspace():
+	print('space data')
+else:
+	print('spl char ')
+'''
+
+Formatting the strings 
+------------------------
+we can format the str with the variable by using replacement operator {} and format method.
+
+eg;
+---
+name='sachin'
+job='cricketer'
+age=45
+print(name,job,age)
+print('name is ',name,'job is ',job,'age is',age)
+print('name is {} job is {} age is {}'.format(name,job,age))
+print('name is {2} job is {0} age is {1}'.format(job,age,name))
+print('name is {n} job is {j} age is {a}'.format(j=job,a=age,n=name))
+print(f'name is {name} job is {job},age is {age}')

@@ -1,0 +1,450 @@
+Day-3
+======
+Program i have typed and discussed in class
+=============================================
+'''
+#tuple datatype ()
+#it is ordered collection of sequential data which is immutable in nature.
+a=()
+a=tuple()
+a=(10)#singleton tuple
+a=(10,)
+a=(10,20,30)#homogenous elements
+a=40,50,60 #() is optional
+a=(10,10.5,10+2j,False,'abcd')#heterogenous elements
+a=(10,20,10,30,20)#duplicate elements are allowed
+#order of insertion is preserved
+print(a)
+print(a[0])# supports indexing both +ve and -ve
+print(a[-1])
+#a.append(50)#tuple is non-growable in nature
+#a[0]=444 #tuple is immuatble in nature
+print(a)
+print(type(a))
+'''
+'''
+#set is unordered collection of data and mutable in nature.
+#set  datatype {}
+s={} #dict datatype is generated
+s=set() #set is created
+
+s={10}#single element
+#multiple element is possible
+#order of insertion is not preserved
+#it is non-indexing in nature
+#homogenous elements
+s={10,20,30,40}
+#hetrogenous elements
+s={10,10.5,2+3j,True,'lmnop'}
+#no duplicate elements
+s={10,20,10,30,20}
+#growable in nature
+#s.append(50)
+s.add(50)
+#modify the existing element
+#s[0]=300 #set is muatble in nature
+print(s)
+print(type(s))
+'''
+'''
+#frozenset
+#fonzenset is a immuatble version of set
+s={10,20,30,40}
+print(s)
+print(type(s))
+s.add(50)
+print(s)
+fs=frozenset(s)
+print(fs)
+fs.add(60)
+print(fs)
+print(type(fs))
+'''
+'''
+#dict datatype {}
+dict is a unordered collection of data which is muatble in nature.
+a=10
+lst=[10,20]
+d={1:10}#key:value pair
+
+#empty dict
+d={}
+d=dict()
+
+d={1:10}#single element
+#homogenous elements
+d={1:10,2:20,3:30}#multiple elements
+#heterogenous elements
+d={1:10,2:2.5,3:2+3j,4:True,5:'python'}
+#order of intertion is not preseved however for visibilty it is ordered.
+#duplicate elements [values can be duplicated but keys must be unique]
+d={1:10,2:10}
+d={1:10,1:20}
+d={1:10}
+d[2]=20  #dict is growable in nature
+#mutbality [key and value]
+#key can not be modified
+#value can be modified
+d[1]=100
+print(d)
+print(type(d))
+'''
+#All the fundamentals datatypes can be used as values and keys
+#values
+'''
+d={1:10}
+d={1:10.5}
+d={1:10+2j}
+d={1:True}
+d={1:'abcd'}
+'''
+'''
+#keys
+d={10:1}
+d={10.5:1}
+d={10+2j:1}
+d={'abcd':1}
+print(d)
+'''
+'''
+d={1:[10,20,30]}
+#d={[10,20,30]:1}
+
+d={1:(10,20,30)}
+d={(10,20,30):1}
+
+d={1:{10,20,30}}
+#d={{10,20,30}:1}
+
+d={1:{1:10}}
+#d={{1:10}:1}
+print(d)
+'''
+
+'''keys must be immuatble objects only
+whereas values can be both mutable and immitable onbjects'''
+
+'''
+a=10
+print(a)
+print(type(a))
+print(id(a))
+a=20
+print(a)
+print(type(a))
+print(id(a))
+'''
+'''
+s='p'
+s=''
+s='python'
+print(s)
+print(s[0])
+print(s[-1])
+s[0]='j'
+print(s) #str is immuatble in nature.
+print(type(s))
+print(id(s))
+
+'''
+'''
+s1='sachin'
+s2='tendulker'
+s3=s1+s2
+print(s3)
+print(id(s1))
+print(id(s2))
+print(id(s3))
+'''
+'''
+mutablity of objects
+=====================
+int -> immuatble
+float -> immuatble
+complex -> immuatble
+bool -> immuatble
+str -> immuatble
+
+bytes -> immuatble
+bytearray-> muatble
+
+list -> muatble
+tuple -> immuatble
+set -> muatble
+frozenset -> immuatble
+dict -> muatble
+
+range -> NA
+None -> NA
+'''
+'''
+#range datatype
+r=range(10)
+r=range(5,50)
+r=range(2,20,2)
+'''
+'''
+range(start,end,stepsize)
+start -> inclusive
+end-> exclusive [n-1]
+stepsize -> +1
+
+print(r)
+print(type(r))
+'''
+
+#for i in range(10):
+#    print(i)
+
+'''
+lst=list(range(10))
+print(lst)
+'''
+'''
+def fun():
+    a=10
+    return 
+
+print(fun())
+'''
+'''#garbage collector
+a=10
+a=None
+'''
+
+Notes
+===========================
+9.tuple datatype;
+------------------
+If we want to represent a group of elements as a single entity then we use tuple.
+some of the features of the tuples are:
+
+1.insertion order is maintained
+2.it can store both homogenous and heterogenous elements
+3.duplicates are allowed.
+4.not growable in nature
+5.elements are always enclosed with () simple brackets.
+6.tuple is immutable in nature
+
+
+eg;
+t=()
+t=tuple()
+
+t=(10)
+t=(10,)
+t=20,
+
+t=10,20,30,40
+t=(10,2.5,'sagar')
+print(t)
+print(type(t))
+
+
+eg;
+t=(10,20,30,40)
+print(t)
+print(t[1])
+print(t[-1])
+for i in t:
+	print(i)
+
+t[2]='India' #TypeError: 'tuple' object does not support item assignment
+print(t)
+
+#tuples are immutable in nature
+
+10.set datatype;
+-------------------
+If we want to represent a group of elements as a single entity then we use set.
+some of the features of the set are:
+
+1.insertion order is not maintained or set is unordered.
+2.it can store both homogenous and heterogenous elements
+3.duplicates are not allowed.
+4.growable in nature
+5.elements are always enclosed with {} curly brackets.
+6.set is mutable in nature
+
+
+eg;
+#set datatype
+s={} #dict datatype
+s=set() #set datatype
+
+s={10}
+s={10,20,30,40}
+s={10,2.5,4+6j,False,'sagar'}
+
+s={10,40,10,30,20,40}
+
+s.add('sagar')
+
+print(s)
+print(type(s))
+
+
+eg;
+---
+s={'sagar','banglore','karnataka','india'}
+print(s)
+
+#print(s[2])#TypeError: 'set' object is not subscriptable
+
+for i in s:
+	print(i)
+
+s.add('Asia')
+print(s)
+
+#set is mutable in nature
+
+
+11.frozenset data type;
+--------------------------
+frozenset is exactly similar to the set datatype where frozenset is immutable in nature.
+
+eg;
+s={10,20,30,40}
+s.add('india')
+print(s)
+
+fs=frozenset(s)
+print(fs)
+
+fs.add('aditi')
+#AttributeError: 'frozenset' object has no attribute 'add'
+
+
+12.dict datatype;
+-------------------
+If we want to represent a group of elements as a key:valve pair  then we use dict.
+some of the features of the dict are:
+
+1.insertion order is not maintained or dict is unordered.
+2.it can store both homogenous and heterogenous elements
+3.duplicates values are allowed but duplicate keys are not allowed.
+4.growable in nature
+5.elements are always enclosed with {} curly brackets.
+6.dict is mutable in nature
+
+eg;
+d={}
+d=dict()
+
+d={1:10}
+d={1:10,2:20,3:30}
+d={1:10,2:2.5,3:3+4j} #unordered
+
+d={1:10,2:10}
+d={1:10,1:10}
+
+d[5]=50
+
+print(d)
+print(type(d))
+
+
+eg;
+----
+d={1:10,2:20,3:30}
+print(d)
+
+#print(d[0]) #KeyError: 0
+print(d[1])
+
+for i in d:  #keys will be accessed
+	print(i)
+
+d[2]='sagar'
+print(d)
+
+d[6]='india'
+print(d)
+
+
+13.None datatype;
+------------------
+None means nothing or no value associated
+if the value is not available then to handle such type   None datatype is
+used.
+in java this is equalent to null value.
+
+eg;
+def fun():
+	a=10
+	
+
+print(fun())
+#None
+
+
+14.range datatype;
+--------------------
+Range datatype represents a sequence of numbers.The elements present in the 
+range datatype are not mutable.
+*range datatype is immutable.
+
+eg;
+#range datatype
+r=range(10)  
+r=range(10,21)
+r=range(10,21,2)
+
+for i in r:
+	print(i)
+
+
+#for i in range(40,50):
+	#print(i)
+
+
+'''
+starting point --> 0 inclusive ,optional
+ending point -- >n-1  exclusive , complusory
+step size --> +1 ,optional
+'''
+
+Mutabality and immutability of datatypes:
+---------------------------------------------
+Python contains 14 datatypes
+Python contains the fallowing datatypes
+#Fundamental datatypes
+-----------------------
+1.int		-->immutable
+2.float		-->immutable
+3.complex	-->immutable
+4.bool		-->immutable
+5.str		-->immutable
+
+#intermediate datatypes
+------------------------
+6.bytes			-->immutable
+7. bytearray		-->mutable
+8. range			-->immutable
+
+Advanced datatypes
+-------------------
+9. list		-->mutable
+10. tuple	-->immutable
+11. set		-->mutable
+12. frozenset	-->immutable
+13. dict		-->mutable
+
+extra
+-------
+14. None			-->NA
+
+
+
+
+
+
+
+
+
+
+
+
+
+

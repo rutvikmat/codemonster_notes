@@ -1,0 +1,315 @@
+Flow control statements in python;
+--------------------------------------
+There are 3 different types of flow control stmts in python such as;
+1.conditional stmt
+2.Iterative stmt
+3.Transfer stmt
+
+1.Conditional stmt;
+---------------------
+conditional statements consist of 3 variants such as:
+
+1. if
+------- 
+syntax;
+--------
+if condition : statement
+
+or 
+
+if condition :
+	statement1
+	statement2
+	statement3
+
+eg;
+#if condition
+----------------
+name=input('enter the name')
+if name=='sagar':
+	print('hello sagar how are you?')
+
+
+2. if-else
+-------------
+syntax;
+-------
+
+if condition:
+	action-1
+else:
+	action-2
+
+*if the condition is true then action1 will execute if the condition is false action2 will execute
+
+eg;
+---
+name=input('enter ur fav chocolate name')
+if name == 'dairymilk':
+	print('plz bring me the dairymilk chocolate..!')
+else:
+	print('plz bring me the ice-cream')
+	
+
+
+3.if-elif-else:
+----------------
+syntax;
+------
+if condition1:
+	action1
+elif condition2:
+	action2
+elif condition3:
+	action3
+else:
+	default action
+
+
+eg;
+---
+name=input('enter ur fav chocolate name')
+if name == 'dairymilk':
+	print('plz bring me the dairymilk chocolate..!')
+elif name=='kitkat':
+	print('plz bring me the kitkat chocolate..!')
+elif name=='milkybar':
+	print('plz bring me the milkybar chocolate..!')
+else:
+	print('plz bring me the ice-cream')
+
+
+	
+note: there is no switch case concept in python
+
+eg;
+---
+#write a program to find the biggest number of the given two numbers
+num1=int(input('enter the num1 '))
+num2=int(input('enter the num2 '))
+if num1>num2:
+	print('num1 is bigger than num2')
+else:
+	print('num2 is bigger than num1')
+
+eg;
+---
+#write a program to find the biggest number of the given three numbers
+num1=int(input('enter the num1 '))
+num2=int(input('enter the num2 '))
+num3=int(input('enter the num3 '))
+
+if num1>num2 and num1>num3:
+	print('num1 is bigger',num1)
+elif num2>num3:
+	print('num2 is bigger',num2)
+else:
+	print('num3 is bigger')
+
+
+
+task:
+-----
+1.findout the smallest number out of given 3 numbers
+2.wap to check whether the given number is even or odd
+3.wap to check whether number is b/w 1 to 100
+
+
+
+
+2. Iterative stmts 
+---------------------
+if we want to execute a group of stmts multiple time then we will use iterative stmts
+
+python supports two types:
+1. for loop
+2. while loop
+
+1. for loop
+-------------
+syntax:
+---------
+for i in sequence:
+	body 
+
+sequence can be anything such as str,list,tuple,range,etc....!
+
+eg:
+s='sachinTendulker'
+for i in s:
+	print(i)
+
+eg;
+wap to print the char and its +ve index number 
+-------------------------------------------------
+s='sagar'
+x=0
+for i in s:
+	print('the char present at',x,'index is',i)
+	x=x+1
+
+'''
+0 1 2 3 4
+s a g a r
+-5 -4 -3 -2 -1
+'''
+
+eg; task
+---
+wap to print the char and its +ve and -ve index number 
+-------------------------------------------------------
+
+
+
+eg;
+#wap to add the elements in the list and print the sum of it
+---------------------------------------------------------------
+lst=[10,20,30,40,50]
+print(lst)
+data=0
+for i in lst:
+	data=data+i
+print('the sum of the elements are',data)
+
+
+
+2. while loop
+---------------
+syntax;
+---------
+while condition:
+	body
+
+eg;
+x=1
+while x<=10:
+	print(x)
+	x=x+1
+
+for i in range(1,11):
+	print(i)
+
+Note:
+for loop: is used on the sequence when we know the number of iterations
+while loop : number of iterations is based on the condition
+
+do while loop is not there in python.
+
+
+pattern programming
+-----------------------
+pattern-1
+----------
+print('*')
+
+op
+---
+*
+
+
+pattern-2
+-----------
+n=5
+for i in range(n):
+	print('*')
+
+op
+---
+
+*
+*
+*
+*
+*
+
+#pattern-3
+----------
+* * * * * 
+
+n=5
+for i in range(n):
+	print('*',end=' ')
+
+pattern-4
+------------
+n=5
+for i in range(n):#rows
+	for j in range(n):#col
+		print('*',end=' ')
+		
+op
+---
+* * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+pattern-5
+-----------
+n=5
+for i in range(n):#rows
+	for j in range(n):#col
+		print('*',end=' ')
+	print()
+
+
+op
+---
+
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+
+
+pattern-6
+----------
+n=5
+for i in range(n): #rows
+	for j in range(i+1): #col
+		print('*',end=' ')
+	print()
+
+
+op
+---
+*
+* *
+* * *
+* * * *
+* * * * *
+rows=5
+col=5
+star=depend on rows
+
+patter-7
+-----------
+* * * * *
+* * * * 
+* * * 
+* * 
+* 
+
+row=5
+col=5
+star= reverse of rows
+
+
+
+task:
+------
+patter-8
+-----------
+    *
+   * * 
+  * * * 
+ * * * *
+* * * * *
+
+patter-9
+---------
+* * * * *    
+ * * * *
+  * * *
+   * *
+    *
+

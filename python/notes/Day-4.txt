@@ -1,0 +1,467 @@
+Operators
+-------------
+Operators is a symbol that performs certain operations
+python provides the fallowing set of operators
+
+1.Aritmetic operators
+2.Relational operators or comparision operators
+3.logical operators
+4.bitwise operators
+5.assignment opertors
+6.special operators
+
+
+#Arithmetic operators
+'''
++ --> addition
+- --> subtraction
+* --> multiplication
+/ -->division 
+% --> modulo 
+//  -->floor division
+** --> exponent or power 
+'''
+
+a=10
+b=2
+print('a+b',a+b)
+print('a-b',a-b)
+print('a*b',a*b)
+print('a/b',a/b)
+print('a%b',a%b)
+print('a//b',a//b)
+print('a**b',a**b)
+
+
+eg;
+a='sagar'
+#b=10
+b='10'
+print('a+b',a+b)
+
+a=5
+b='sagar'
+print('a*b',a*b)
+
+
+
+#2.Relational operator
+-------------------------
+#  >,>=,<,<=
+
+a=10
+b=2
+print('a>b',a>b)
+print('a>=b',a>=b)
+print('a<b',a<b)
+print('a<=b',a<=b)
+
+
+task: check out for strings and bool wrt to relational operators
+
+
+#chaining wrt to reational opertors
+print(10<20)
+print(10<20<30)
+print(10<20<30>40)
+
+print(10<20>30<40)
+
+
+Note:chaining of relational operator is possible where if all the results are true then end result
+will be true else it will be false
+
+
+
+
+#2.1 Equality operators
+----------------------
+# == !=
+
+a=10
+b=2
+print('a==b',a==b)
+print('a!=b',a!=b)
+
+print(10!=20)  #true
+
+
+#chaining of equality operator
+print(10==10!=20)
+
+
+
+
+3.Logical opertors
+--------------------
+The logical operators are :
+and or not
+
+For boolean valuves types:
+---------------------------
+and --> if both inputs are true then end result is true
+or -->  if atleast one input is true then the result is true
+not --> complement or reverse of the input
+
+eg;
+print(False and False)
+print(False and True)
+print(True and False)
+print(True and True)
+
+eg;
+print(False or False)
+print(False or True)
+print(True or False)
+print(True or True)
+
+eg;
+print(not False )
+print(not True)
+
+
+For non-boolean types :
+--------------------------
+0 means False
+non-zero means True
+empty string is always treated as False
+
+x and y 
+--------
+if x is evalutes to false return x otherwise return y
+
+eg;
+#if x is evalutes to false return x otherwise return y
+print(10 and 20)
+print(0 and 20)
+print('subbu' and 'anu')
+print("" and 'anu')
+
+x or y 
+--------
+if x is evalutes to true return x otherwise return y
+
+#print(10 or 20)
+#print(0 or 20)
+#print('subbu' or 'anu')
+print("" or "anu")
+
+
+not x;
+---------
+if x is false then result is true else result is false
+
+eg;
+#not 
+print(not 10)
+print(not 0)
+
+
+
+
+
+4.bitwise operators
+--------------------
+1 byte = 8 bits
+1 bit can store either 0 or 1
+
+we can apply the fallowing operators bitwise
+&   |  ^   ~  <<   >>
+
+& --> and operator
+| --> or operator
+^ --> xor operator
+~ --> not operator
+<< --> left shift operator
+>> --> right shift operator
+
+
+
+4.bitwise operators
+--------------------
+1 byte = 8 bits
+1 bit can store either 0 or 1
+
+we can apply the fallowing operators bitwise
+&   |  ^   ~  <<   >>
+
+& --> and operator
+'if both the bits are 1 then the result is 1 else result is 0'
+
+| --> or operator
+'if atleast one of the bit are 1 then the result is 1 else result is 0'
+
+^ --> xor operator
+'if the bits are different then result is 1 if the bits are same result is 0'
+
+~ --> not operator
+'the complement of the bit '
+
+
+<< --> left shift operator
+>> --> right shift operator
+
+
+eg;
+#bitwise operator
+#print(True & True)
+
+print(4 & 5)
+'''
+0000 0100
+0000 0101
+-----------
+0000 0100		--> 4
+------------
+'''
+
+
+eg;
+print(4 | 5)
+'''
+0000 0100
+0000 0101
+-----------
+0000 0101		--> 5
+------------
+'''
+
+eg;
+print(4 ^ 5)
+'''
+0000 0100
+0000 0101
+-----------
+0000 0001		--> 1
+------------
+'''
+
+
+eg;
+print(~20)
+
+~ 0001 0100
+  1110 1011		-->1's compliment
+  		 +1     -->2's compliment
+--------------
+  1110 1011		--> -21
+---------------
+
+
+Ref the dia;
+#left shift operator
+'After shifting the given bits the empty celss must be filled with zeros'
+print(10<<2) #40
+
+#right shift operator
+'After shifting the given bits we have to fill the sign bit (0 means +ve 1 means -ve)'
+print(10>>2) #2
+
+
+
+for boolean data:
+---------------------
+print(True << 2) #4
+
+print(True >> 2) #0
+
+5.Assignment Operator
+----------------------
+We can assign any data to the variable by using assignment operator
+eg;
+a = 10
+
+The assignment operator will be combined with arithemetic operator for the operations
+such as :
+
+a=10
+b=20
+a=a+b
+print(a)
+
+a=10
+a+=20
+a-=5
+print(a) 
+
+a='sachin'
+a+="tendulker"
+print(a)
+
+6.Ternary operator
+-------------------
+x = firstValue if condition is true else secondValue
+
+eg;
+a,b=10,20
+x=30 if a<b else 40
+print(a,b)
+print(x)
+
+eg;
+#read two numbers from the keyboard and print the min number
+a=int(input('enter the first number'))
+b=int(input('enter the second number'))
+
+mini = a if a<b else b
+print('mini number is',mini)
+
+eg;
+#read three numbers from the keyboard and print the min number
+a=int(input('enter the first number'))
+b=int(input('enter the second number'))
+c=int(input('enter the third number'))
+
+
+maxi = a if a>b and a>c else b if b>c else c
+print('max number is',maxi)
+
+
+7.Special operators
+---------------------
+Python 3 has two special operator such as :
+
+1. Identity operator
+2. Membership operator
+
+
+Identity operator
+------------------
+is --> is operator will check the address of the object and compares the addres 
+based on the if address are same it will return true else false
+
+is not --> same as is operator but gives the reversed result of it.
+
+'''
+a=10
+print(a)
+print(id(a))
+b=20
+print(b)
+print(id(b))
+'''
+
+a=10
+b=20
+print(a is b)
+print(a is not b)
+
+
+
+Membership operator
+--------------------
+in --> this operator will check the given the data return true if the element is present else returns false
+not in --> complement of in operator
+
+
+eg;
+s='today is very good day'
+print(s)
+print('z' in s)
+print('z' not in s)
+
+lst=[10,20,30]
+print(lst)
+print(10 in lst)
+print(20 not in lst)
+
+
+Oprator precedence 
+----------------------
+if multiple operators are present then which operator will be executed first is decided by
+pemdas rule.
+
+
+PEMDAS rule;
+P : parenthisis
+e : exponential
+m : multiplication
+d : division
+a : addtion 
+s : subtraction
+
+
+eg;
+print(3+10*2)
+print((3+10)*2)
+print(3+(10*2))
+
+a=30
+b=20
+c=10
+d=5
+
+print((a+b)*(c/d))
+print(a+(b*c)/d)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
