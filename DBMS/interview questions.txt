@@ -41,6 +41,11 @@ Returns all rows from both tables, matched or not.
 
 Not supported directly in MySQL (use UNION).
 
+
+
+
+
+
 🔹 INTERMEDIATE LEVEL
 8. Difference between INNER JOIN and LEFT JOIN?
 INNER JOIN	LEFT JOIN
@@ -127,6 +132,12 @@ RIGHT JOIN B ON A.id = B.id;
 
 APPLY executes right table per row of left table (advanced topic).
 
+
+
+
+
+
+
 🔹 SCENARIO QUESTIONS
 26. How to find customers without orders?
 
@@ -147,3 +158,4 @@ JOIN with subquery or window function.
 30. Can JOIN be used inside views and procedures?
 
 ✔ Yes, commonly used.
+
