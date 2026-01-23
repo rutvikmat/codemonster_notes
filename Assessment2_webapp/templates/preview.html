@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Preview</title>
+  <style>
+    body{background:#020617;color:white;font-family:Arial;text-align:center}
+    video{margin-top:20px;width:80%;max-width:800px;border-radius:12px}
+    a{display:inline-block;margin-top:15px;color:#6366f1}
+  </style>
+</head>
+<body>
+
+<h2>Your Video is Ready 🎉</h2>
+
+<video controls>
+  <source src="/video/{{ video_file }}" type="video/mp4">
+</video>
+
+<br>
+<a href="/video/{{ video_file }}" download>⬇ Download Video</a>
+
+</body>
+</html>

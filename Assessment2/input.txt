@@ -1,0 +1,7 @@
+Title: Python Workshop
+Points:
+- Introduction to Python
+- Hands-on coding
+- Certificate provided
+Date: 12 Oct 2025
+Duration: 45 minutes

@@ -1,0 +1,6 @@
+flask
+moviepy
+pillow
+gTTS
+imageio
+imageio-ffmpeg
