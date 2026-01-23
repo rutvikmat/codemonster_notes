@@ -1,0 +1,149 @@
+✅ SQL JOIN — Interview Questions & Answers
+🔹 BASIC LEVEL
+1. What is JOIN in SQL?
+
+JOIN is used to combine rows from two or more tables based on a related column.
+
+2. Why do we use JOIN?
+
+To retrieve data that is spread across multiple related tables.
+
+3. What are the types of JOINs?
+
+INNER JOIN
+
+LEFT JOIN (LEFT OUTER JOIN)
+
+RIGHT JOIN (RIGHT OUTER JOIN)
+
+FULL JOIN (FULL OUTER JOIN)
+
+SELF JOIN
+
+CROSS JOIN
+
+4. What is INNER JOIN?
+
+Returns only the rows that have matching values in both tables.
+
+5. What is LEFT JOIN?
+
+Returns all rows from left table and matching rows from right table.
+If no match → NULL.
+
+6. What is RIGHT JOIN?
+
+Returns all rows from right table and matching rows from left table.
+
+7. What is FULL JOIN?
+
+Returns all rows from both tables, matched or not.
+
+Not supported directly in MySQL (use UNION).
+
+🔹 INTERMEDIATE LEVEL
+8. Difference between INNER JOIN and LEFT JOIN?
+INNER JOIN	LEFT JOIN
+Only matching rows	All left rows
+No NULLs	NULLs allowed
+9. How to find unmatched records using JOIN?
+SELECT *
+FROM A
+LEFT JOIN B ON A.id = B.id
+WHERE B.id IS NULL;
+
+10. What is SELF JOIN?
+
+Joining a table with itself (used for manager–employee relationships).
+
+11. What is CROSS JOIN?
+
+Returns Cartesian product (every row of table A with every row of table B).
+
+12. JOIN vs Subquery — which is better?
+
+JOIN is generally faster and more readable, especially for large datasets.
+
+13. Can we join more than two tables?
+
+Yes, using multiple JOIN clauses.
+
+14. Can JOIN be used with UPDATE and DELETE?
+
+Yes.
+
+UPDATE t1 JOIN t2 ON ...
+DELETE t1 FROM t1 JOIN t2 ON ...
+
+15. Difference between JOIN and UNION?
+JOIN	UNION
+Combines columns	Combines rows
+Horizontal merge	Vertical merge
+🔹 ADVANCED LEVEL
+16. What is an equi-join?
+
+JOIN using = operator in ON condition.
+
+17. What is non-equi join?
+
+JOIN using operators like <, >, BETWEEN.
+
+18. What causes duplicate rows in JOIN?
+
+When there is a one-to-many relationship and multiple matches exist.
+
+19. How to remove duplicates in JOIN results?
+SELECT DISTINCT ...
+
+
+or proper GROUP BY.
+
+20. What is join order and why it matters?
+
+Database optimizer decides order to improve performance.
+
+21. Does JOIN require foreign key?
+
+❌ No, but FK ensures data consistency.
+
+22. What is NATURAL JOIN?
+
+Automatically joins tables using columns with same name.
+
+⚠ Not recommended — less control.
+
+23. When will FULL JOIN be used?
+
+When both matched and unmatched records from both tables are required.
+
+24. How to implement FULL JOIN in MySQL?
+SELECT * FROM A
+LEFT JOIN B ON A.id = B.id
+UNION
+SELECT * FROM A
+RIGHT JOIN B ON A.id = B.id;
+
+25. Difference between JOIN and APPLY (SQL Server)?
+
+APPLY executes right table per row of left table (advanced topic).
+
+🔹 SCENARIO QUESTIONS
+26. How to find customers without orders?
+
+LEFT JOIN + IS NULL
+
+27. How to find departments with no employees?
+
+LEFT JOIN from department to employees + WHERE employee IS NULL
+
+28. How to get highest salary department-wise?
+
+JOIN + GROUP BY + MAX()
+
+29. How to get employees earning more than department average?
+
+JOIN with subquery or window function.
+
+30. Can JOIN be used inside views and procedures?
+
+✔ Yes, commonly used.
