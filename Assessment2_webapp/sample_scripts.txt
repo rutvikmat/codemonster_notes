@@ -1,0 +1,120 @@
+==============================
+SCRIPT 1 — PYTHON WORKSHOP
+==============================
+
+Welcome to the Python for Beginners Workshop.
+In this session, you will learn the basics of Python programming.
+We will help you install Python and set up your development environment.
+You will understand variables, data types, and basic syntax.
+There will be a hands-on coding session for practice.
+Finally, we will have a question and answer discussion.
+Thank you for joining us.
+
+==============================
+SCRIPT 2 — AI CAREER SEMINAR
+==============================
+
+Welcome to the AI Career Guidance Seminar.
+Today we will discuss what artificial intelligence is and where it is used.
+We will explore different career paths in AI and data science.
+You will learn about the technical skills required for this field.
+We will also guide you about internships and certifications.
+Feel free to ask questions during the interaction session.
+We hope this seminar helps you plan your future career.
+
+==============================
+SCRIPT 3 — CYBERSECURITY TRAINING
+==============================
+
+Welcome to the Cybersecurity Awareness Training.
+Cyber threats are increasing in today’s digital world.
+You will learn about common cyber attacks and how they happen.
+We will discuss safe password practices and account security.
+You will learn how to identify phishing emails and fake messages.
+We will also explain how to report security incidents.
+Stay alert and help keep your organization safe.
+
+==============================
+SCRIPT 4 — PRODUCT LAUNCH
+==============================
+
+Welcome to the launch of the Smart Campus Application.
+This app is designed to simplify student and faculty services.
+We will show you the main features of the application.
+A live demonstration will explain how the system works.
+Your feedback will help us improve future updates.
+Please download the app and start using the services today.
+Thank you for being part of this launch event.
+
+==============================
+SCRIPT 5 — MENTAL HEALTH AWARENESS
+==============================
+
+Welcome to the Mental Health Awareness Session.
+Mental well-being is as important as physical health.
+We will discuss common causes of stress and anxiety.
+You will learn simple techniques to manage daily stress.
+We will explain when and how to seek professional support.
+Support systems are available on campus for students.
+Let us work together to create a healthy environment.
+
+==============================
+SCRIPT 6 — TECH FEST PROMOTION
+==============================
+
+Welcome to CodeFest Two Thousand Twenty Six.
+This technical festival brings together innovation and creativity.
+There will be coding competitions and hackathon events.
+Industry experts will deliver technical talks and sessions.
+Students can participate in startup idea pitching events.
+Workshops and hands-on labs will be conducted throughout the day.
+Exciting prizes and certificates will be awarded to participants.
+Do not miss this opportunity to learn and showcase your skills.
+
+==============================
+SCRIPT 7 — ONLINE COURSE PROMOTION
+==============================
+
+Welcome to our Full Stack Web Development Course.
+This course covers both frontend and backend technologies.
+You will learn HTML, CSS, JavaScript, and Python.
+We also cover databases and API development.
+Real-world projects are included for practical learning.
+Mentors will guide you throughout the course duration.
+Enroll today and start your development journey.
+
+==============================
+SCRIPT 8 — COLLEGE ORIENTATION
+==============================
+
+Welcome to the college orientation program.
+This session will help you understand campus facilities.
+We will introduce academic departments and faculty members.
+You will learn about student activities and clubs.
+Important academic rules and guidelines will be explained.
+Support services are available for student assistance.
+We wish you a successful academic year ahead.
+
+==============================
+SCRIPT 9 — COMPANY ONBOARDING
+==============================
+
+Welcome to the company onboarding program.
+Today you will learn about company culture and values.
+We will introduce different departments and teams.
+You will understand workplace policies and safety rules.
+Training schedules and project assignments will be discussed.
+We encourage collaboration and continuous learning.
+We are happy to have you as part of our organization.
+
+==============================
+SCRIPT 10 — EVENT INVITATION
+==============================
+
+You are invited to attend our special guest lecture.
+The session will be conducted by an industry professional.
+Important topics related to emerging technologies will be covered.
+Students will gain insights into real industry challenges.
+Certificates will be provided for participation.
+Please register early to reserve your seat.
+We look forward to your presence at the event.
