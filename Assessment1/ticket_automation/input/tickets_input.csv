@@ -1,0 +1,6 @@
+ticket_id,name,email,issue_type,priority,description,timestamp
+T1,Asha,asha@uni.edu,WiFi,High,Cannot connect,2026-01-23T09:00:00
+T1,Asha,asha@uni.edu,wifi,High,Still not working,2026-01-23T10:00:00
+,Meena,meena@uni.edu,software,Low,Need MS Office,2026-01-23T12:00:00
+T4,Rahul,rahuluni.edu,login,Medium,Login failed,2026-01-23T11:00:00
+T5,Kiran,kiran@uni.edu,printer,Low,Printer issue,2026-01-23T13:00:00

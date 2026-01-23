@@ -1,0 +1,3 @@
+ticket_id,name,email,issue_type,priority,description,assigned_team,created_at,sla_deadline
+T1,Asha,asha@uni.edu,wifi,high,Cannot connect,Network,2026-01-23T09:00:00,2026-01-23T13:00:00
+cb776de1-3c58-4277-963c-e922440d436d,Meena,meena@uni.edu,software,low,Need MS Office,Applications,2026-01-23T12:00:00,2026-01-26T12:00:00

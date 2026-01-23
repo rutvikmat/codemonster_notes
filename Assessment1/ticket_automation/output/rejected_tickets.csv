@@ -1,0 +1,4 @@
+ticket_id,name,email,issue_type,priority,description,timestamp,error_reason
+T1,Asha,asha@uni.edu,wifi,High,Still not working,2026-01-23T10:00:00,Duplicate ticket within 24 hours
+T4,Rahul,rahuluni.edu,login,Medium,Login failed,2026-01-23T11:00:00,Invalid email format
+T5,Kiran,kiran@uni.edu,printer,Low,Printer issue,2026-01-23T13:00:00,Unknown issue type
