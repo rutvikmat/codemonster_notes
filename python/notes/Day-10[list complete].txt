@@ -1,0 +1,650 @@
+
+										LIST DATATYPE
+									--------------------------
+list
+-----
+1.insertion order is preserved
+2.duplicates are allowed
+3.Both homogenous and heterogenous elements are allowed
+4.growable in nature
+5.generally we will use [] brackets
+6.list are mutable in nature
+
+*list elements will be accessed using index number 
+list support both +ve index and -ve index
+
+
+
+#creation of the empty list 
+-----------------------------
+lst=[] 
+lst=list()  
+
+#creation of list with dynamic input
+lst=list(eval(input('enter the elements for the list')))
+
+#using the list function
+lst=list(range(1,11))
+
+#using the strings 
+s='sachin'
+lst=list(s)
+
+#using the split() method
+s='Learning python is very easy'
+lst=s.split()
+print(lst)
+print(type(lst))
+
+
+
+#Acessing the list elements
+----------------------------
+list elements can be accesses by using index and slicing operator
+
+#using index number
+--------------------
+lst=[10,20,30]
+print(lst)
+print(lst[1])	# +ve index
+print(lst[-2])	# -ve index
+'''
+
+'''
+by using slicing operator
+---------------------------
+
+syntax;
+lst=lst[start:stop:step] '''
+
+lst=[10,20,30,40,50,60,70,80,90,100]
+print(lst)
+print(lst[::])
+print(lst[::-1])
+print(lst[::2])
+print(lst[1::2])
+print(lst[4:8:])
+print(lst[-4:-8:-1])
+print(lst[-8:-4:])
+
+#traversing the list elements
+------------------------------
+lst=[10,25,30,45,50,65,70,85,90,105]
+print(lst)
+for i in lst:
+	if i%2==0:
+		print(i)
+	else:
+		print('*')
+
+
+#using the while loop
+----------------------
+lst=[10,25,30,45,50,65,70,85,90,105]
+print(lst)
+n=0
+while n<len(lst):
+	print(lst[n])
+	n=n+1
+
+
+#list mutability
+-----------------
+lst=[10,20,30,40]
+print(lst)
+print(id(lst))
+
+lst.append(50)		#growable in nature
+print(lst)
+print(id(lst))
+
+lst[2]='sagar'
+print(lst)
+print(id(lst))
+
+op
+10, 20, 30, 40]
+2045637677760
+[10, 20, 30, 40, 50]
+2045637677760
+[10, 20, 'sagar', 40, 50]
+2045637677760
+
+
+#wap to display the list elements with its index number
+---------------------------------------------------------
+lst=['aditi','pavan','kavya','nikil','radika','manoj']
+print(lst)
+
+n=len(lst)
+for i in range(n):
+	print(lst[i],'is available at +ve index: ',i,'and -ve index at ',i-n)
+
+
+	op
+['aditi', 'pavan', 'kavya', 'nikil', 'radika', 'manoj']
+aditi is available at +ve index:  0 and -ve index at  -6
+pavan is available at +ve index:  1 and -ve index at  -5
+kavya is available at +ve index:  2 and -ve index at  -4
+nikil is available at +ve index:  3 and -ve index at  -3
+radika is available at +ve index:  4 and -ve index at  -2
+manoj is available at +ve index:  5 and -ve index at  -1
+
+
+Important functions of list
+------------------------------
+1.len()
+return the numbers of elements in the list
+
+lst=['aditi','pavan','kavya','nikil','radika','manoj']
+print(lst)
+n=len(lst)
+print(n)   -->6
+
+2.count()
+return the number of occurences of the spcified element
+
+eg;
+----
+lst=[1,2,3,1,3,2,1,4,5,2,1,5,6,2,3]
+print(lst)
+print(lst.count(1))
+
+
+
+3.index()
+return the index of the first occurence
+
+eg;
+---
+lst=[1,2,3,1,3,2,1,4,5,2,1,5,6,2,3]
+print(lst)
+print(lst.index(3))
+
+
+note: suppose the element is not available for the index fn it return valueerror
+
+eg;
+----
+lst=[1,2,3,1,3,2,1,4,5,2,1,5,6,2,3]
+print(lst)
+print(lst.index(7))
+
+ValueError: 7 is not in list
+
+
+Manipulating the list elements
+--------------------------------
+* adding the new elements to the list
+
+1.append() function
+---------------------
+
+to add a new element to the end of the list append function is used
+
+eg;
+---
+lst=[1,2,3,]
+print(lst)
+lst.append('sagar')
+print(lst)
+
+#lst.append(5,6)
+#TypeError: list.append() takes exactly one argument (2 given)
+
+lst.append([5,6])
+print(lst)
+
+
+2.insert()  function
+-----------------------
+this will insert the elements into the list based on the index number
+
+eg;
+---
+lst=[10,20,30]
+print(lst)
+lst.insert(2,25)
+print(lst)
+
+lst.insert(0,5)
+print(lst)
+
+lst.insert(-4,'sagar')
+print(lst)
+
+lst.insert(3,'aa','bb')
+#TypeError: insert expected 2 arguments, got 3
+print(lst)
+
+
+diff b/w append and insert function
+-------------------------------------
+append()
+*adding the element to the end of the list
+*can be added only one element at a time
+*it accepts only one argument eg:    lst.append(element)
+
+insert()
+*adding the element to any random position in the list
+*can be added only one element at a time
+*it accepts only two argument eg:    lst.insert(index,element)
+
+
+3.extend() function
+-------------------------
+it will accept only one argument but can be added multiple elements by using it
+
+
+lst=[10,20,30]
+print(lst)
+lst.append(40)
+print(lst)
+#lst.extend(50,60)#error
+lst.extend([50,60,70])
+print(lst)
+
+
+lst1=['abc','lmn']
+print(lst1)
+lst2=['pqr','xyz']
+lst1.extend(lst2)
+print(lst1)
+print(lst2)
+
+
+
+continution of the list..........!
+
+Deleting or removing the elements fron the list
+-------------------------------------------------
+4.remove() function
+---------------------
+We can use remove function to remove any element from the list.
+where remove fn will accept only one argument at a time and it should be the element utself.
+*suppose the element is not present in the list then remove fn will return
+valueError.
+
+eg;
+lst=[10,20,30,40,50]
+print(lst)
+lst.remove(30) #element itself is the input
+print(lst)
+
+eg;
+lst=[10,20,30,40,50]
+print(lst)
+lst.remove(80)
+print(lst)
+'''
+   lst.remove(80)
+ValueError: list.remove(x): x not in list '''
+
+
+eg;
+---
+lst=[10,20,30,40,50]
+print(lst)
+lst.remove(20,30)
+print(lst)
+TypeError: list.remove() takes exactly one argument (2 given)
+
+eg;
+---
+lst=[10,20,30,10,50]
+print(lst)
+lst.remove(10)
+print(lst)
+
+5.pop() function
+-------------------
+*It will delete the last element of the list if we dont give any argument
+*It will accept the +ve and -ve index number and delete the corresponding element from the list
+*pop will accept only one argument at a time and it should be a index number
+*suppose we if give the index number which is not available then it will return 'indexerror'.
+eg;
+---
+lst=[10,20,30,10,50]
+print(lst)
+lst.pop()#last element will be deleted
+print(lst)
+lst.pop(2)#using the +ve index number element can be deleted
+print(lst)
+lst.pop(-2)#using the -ve index number element can be deleted
+print(lst)
+
+eg;
+---
+lst=[10,20,30,10,50]
+print(lst)
+lst.pop(2,3)#last element will be deleted
+print(lst)
+TypeError: pop expected at most 1 argument, got 2
+
+eg;
+---
+lst=[10,20,30,10,50]
+print(lst)
+lst.pop(6)#last element will be deleted
+print(lst)
+IndexError: pop index out of range
+
+
+
+diff b/w remove and pop function;
+----------------------------------
+remove()
+*using the element as the argument we can remove the element from the list
+*suppose the element is not available in the list we will get 'value error'
+*minimum one argument must given to the remove fn
+
+pop()
+*using the index number(+ve and -ve) as the argument we can remove the element from the list
+*suppose the index number is not available in the list we will get 'index error'
+*with zero argument pop fn will delete the last element in the list
+
+del keyword
+------------
+del keyword will accept the index number as the input and deletes the corresponding elements 
+from the list
+*del keyword can aslo be applied on slicing operator to delete the portion of the list.
+
+eg;
+----
+lst=[10,20,30,10,50,60,70,80,90]
+print(lst)
+del lst[2]
+print(lst)
+
+del lst[2:5]
+print(lst)
+
+Ordering the elements in the list
+-----------------------------------
+1.reverse()
+------------
+we can reverse the elements of the list
+
+eg;
+---
+lst=[10,20,30,10,50,60,70,80,90]
+print(lst)
+lst.reverse()
+print(lst)
+
+2.sort()
+---------
+In the list by default insertion order is preserved.
+If we want to sort the elements then by default it will sort in ascending order.
+
+eg;
+lst=[10,20,30,10,50,60,70,80,90]
+print(lst)
+lst.sort()#ascending order
+print(lst)
+
+note:
+for the string it will sort in the alphabetical order
+
+eg;
+----
+s=['INDIA','PAKISTAN','SRILANKA','Australia']
+print(s)
+s.sort()
+print(s)
+
+
+eg:
+---
+lst=[10,'vyshnavi',20,'aditi',30,'Akshay']
+print(lst)
+lst.sort()
+print(lst)
+#TypeError: '<' not supported between instances of 'str' and 'int'
+
+'''
+lst=['10','vyshnavi','20','aditi','30','Akshay']
+
+['10', 'vyshnavi', '20', 'aditi', '30', 'Akshay']
+['10', '20', '30', 'Akshay', 'aditi', 'vyshnavi']
+''
+
+
+sorting in the reversed order
+-------------------------------
+eg;
+----
+lst=[10,20,30,40,50]
+lst
+print(lst)
+lst.sort()
+print(lst)
+lst.sort(reverse=True)
+print(lst)
+
+============================================================================
+=============================================================================
+
+list comprehension 
+--------------------
+
+eg;1
+----
+#wap to print the even numbers with the help of list
+#using for loop
+#without using list comprehension
+
+lst1=[1,2,3,4,5,6,7,8,9,10]
+print(lst1)
+lst2=[]
+for i in lst1:
+	if i%2==0:
+		lst2.append(i)
+
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2, 4, 6, 8, 10]
+
+
+#with using list comprehension
+-------------------------------
+lst1=[1,2,3,4,5,6,7,8,9,10]
+print(lst1)
+
+syntax;
+#lst2=[what i want from where i want based on what]
+#list_variable=[expression looping stmt condition stmt]
+
+lst2=[i for i in lst1 if i%2==0]
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2, 4, 6, 8, 10]
+
+eg;2
+----
+#wap to print the square numbers with the help of list
+#using for loop
+#without using list comprehension
+
+lst1=[10,2.5,'abc',20,2+3j,True,30]
+print(lst1)
+lst2=[]
+for i in lst1:
+	if type(i)==int:
+		lst2.append(i**2)
+
+print(lst2)
+
+op
+[10, 2.5, 'abc', 20, (2+3j), True, 30]
+[100, 400, 900]
+
+#with using list comprehension
+---------------------------------
+lst1=[10,2.5,'abc',20,2+3j,True,30]
+print(lst1)
+lst2=[i**2 for i in lst1 if type(i)==int]
+print(lst2)
+
+op
+[10, 2.5, 'abc', 20, (2+3j), True, 30]
+[100, 400, 900]
+
+
+eg;3
+-----
+#wap to print the even numbers which is greater than 4
+#using for loop
+#without using list comprehension
+
+lst1=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(lst1)
+lst2=[]
+for i in lst1:
+	if i>4:
+		if i%2==0:
+			lst2.append(i)
+
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[6, 8, 10]
+
+#with using list comprehension
+-------------------------------
+lst1=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(lst1)
+lst2=[i for i in lst1 if i>4 if i%2==0]
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[6, 8, 10]
+
+eg;4
+-----
+#wap to print the even numbers else print * for odd numbers
+#using for loop
+#without using list comprehension
+
+lst1=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(lst1)
+lst2=[]
+for i in lst1:
+	if i%2==0:
+		lst2.append(i)
+	else:
+		lst2.append('*')
+
+print(lst2)
+
+op
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+['*', 2, '*', 4, '*', 6, '*', 8, '*', 10]
+
+#with using list comprehension
+-------------------------------
+lst1=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(lst1)
+#lst2=[i for i in lst1 if i%2==0 else '*'] error
+lst2=[i  if i%2==0 else '*' for i in lst1] 
+
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+['*', 2, '*', 4, '*', 6, '*', 8, '*', 10]
+
+Mathematical operators on the list:
+-------------------------------------
+we use + and * operator
+
+1.concatination (+) operator
+-----------------------------
+we can concatinate two list into single list with the help of + operator
+
+eg;
+----
+lst1=[10,20,30]
+lst2=[40,50]
+lst3=lst1+lst2
+print(lst3)
+
+op
+[10, 20, 30, 40, 50]
+
+eg;
+----
+lst1=[10,20,30]
+s='abcd'
+tup=(10,20)
+#lst3=lst1+s
+lst3=lst1+tup
+print(lst3)
+
+
+2.Repetation operator (*)
+---------------------------
+we  can muliply the lst into number of specifed times
+
+eg;
+---
+lst1=[10,20,30]
+lst2=lst1*2
+print(lst2)
+
+Comparing the list elements
+-------------------------------
+
+lst1=[10,20,30]
+lst2=[10,20,30,40]
+
+lst1=['Apple','samsung','oppo']
+lst2=['apple','Samsung','Oppo']
+print(lst1==lst2)
+print(lst1>lst2)
+print(lst1<lst2)
+
+Membership check w.r.t list
+-------------------------------
+task [complete the programs]
+
+
+
+clear() function
+------------------
+remove all the elements from the list and leaves the empty list
+
+eg;
+---
+lst1=[10,20,30]
+print(lst1)
+lst1.clear()
+print(lst1)
+
+
+nested list
+-------------
+A list with a list is called as nested list
+
+eg;
+----
+lst=[[10,20],[30,40]]
+print(lst)
+print(lst[0][1])
+print(lst[-2][-1])
+
+task:
+------
+input--> lst=[[10,20,30],[40,50,60],[70,80,90]]
+
+op
+10,20,30
+40,50,60
+70,80,90

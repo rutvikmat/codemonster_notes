@@ -1,0 +1,813 @@
+Day-11
+========
+
+Tuple datatype
+---------------
+*Insertion order is maintained
+*Both homogenous and hetrogenous elements can be stored
+*duplicate elements are allowed
+*not growable in nature
+*generally we enclose with simple () brackets
+*it is immutable in nature
+*elements stored in index format and it supports both +ve and -ve index
+
+
+Creation of the tuple
+-----------------------
+#empty tuple
+t=()
+t=tuple()
+
+tuple with the elements
+-----------------------
+t=(10)
+t=(10,)   #singleton tuple
+
+t=(10,20,30)
+t=10,20
+
+t=(10,10,5,'monday')
+
+t=([10],(20),{30},{4:40})
+print(t)
+print(type(t))
+
+#accessing the tuple element
+-----------------------------
+#using the index number
+t=(10,20,30,40,50)
+print(t)
+print(t[2])
+print(t[-2])
+
+#using slicing operator
+print(t[1:5])
+print(t[::-1])
+print(t[-2:-5:-1])
+print(t[-5:-2:])
+
+
+#traversing of the tuple elements
+#using for loop
+t=(10,20,30,40,50)
+print(t)
+for i in t:
+  print(i)
+
+
+#using the while loop:
+task
+
+
+tuple mutability
+------------------
+t=([10],(20),{30},{4:40})
+print(t)
+print(t[0])
+#t[0]='abc'
+#print(t)
+lst=t[0]
+lst.append('abcd')
+print(lst)
+print(t)
+
+note: if in case the tuple element is mutable in nature then it can be modified seperately 
+whereas directly we cannot modify the tuple element
+
+#Mathematical operator
+# + operator
+-------------
+t1=(1,2,3,4)
+print(t1)
+print(id(t1))
+t2=(5,6,7,8)
+print(t2)
+print(id(t2))
+t1=t1+t2
+print(t1)
+print(id(t1))
+
+# * operator
+-------------
+t1=(1,2,3,4)
+print(t1)
+t2=(5,6,7,8)
+print(t2)
+#t3=t1*t2  error
+t3=t1*2  
+print(t3)
+
+
+#some of the imp functions for tuple
+#1.len()
+#return number of items
+t=(10,20)
+print(t)
+print(len(t)) 
+
+#2.count()
+#no of occurences
+print(t.count(10))
+
+#3.index()
+#index of 1st occurence
+print(t.index(20))
+
+
+#4.sorted()
+#arrange in ascending order by default
+print(sorted(t))  #return type is list
+
+#5.max() and min()
+#return the maximum value and minimum value return
+print(max(t))
+print(min(t))
+
+#cmp()
+t1=(10,20,30)
+t2=(20,30,40)
+print(cmp(t1,t2))
+#NameError: name 'cmp' is not defined
+#cmp() is applicable only for python 2 and not for python 3
+
+#Tuple packing and unpacking
+a=10 #valid
+a,b=10,20 #valid
+
+a=10
+b=20
+c=30
+data=a,b,c  #valid
+#here a,b,c is packed into tuple
+print(data)
+
+#unpacking
+t=(10,20,30,40)
+#a,b,c=t
+#ValueError: too many values to unpack (expected 3)
+#a,b,c,d=t
+a,_,c,_=t
+
+print(a,c)
+print(b,d)
+
+
+#with using tuple comprehension
+--------------------------------
+t1=(1,2,3,4,5,6,7,8,9,10)
+print(t1)
+t2=(i for i in t1 if i%2==0)
+print(t2)
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+<generator object <genexpr> at 0x000001BA945D03C0>
+
+In python there is nothing called as tuple comprehension
+
+
+
+deleting the tuple
+-------------------
+t=(10,20,30)
+print(t)
+#t.clear()
+#t.remove(20)
+#t.pop()
+#del t[1]
+del t    #valid
+print(t)
+
+task
+-----
+write the difference b/w list and tuple
+
+
+Set datatype
+--------------
+* If we want to represent a group of elements as a single entity where
+*Insertion order is not preserved / unordered
+*duplicates are not allowed
+*indexing and slicing is not possible
+*growable in nature
+*homogenous and heterogenous elements can be stored
+*where only immutable objects can be stored
+*elements are represented with {} curly brackets
+*we can also perform the set operations
+*it is mutable in nature
+
+#creation of the set
+--------------------
+#empty set 
+s={}    #dict
+s=set() #using the set function
+
+s={12,27,82,64,75}  #homogenous elements
+s={10,2.5,3+4j,True,'nikil'}#heterogenous elements
+#s={[10,20]} TypeError: unhashable type: 'list'
+s={(10,20)} #valid
+#s={{10,20}} TypeError: unhashable type: 'set'
+#s={{1:10}}  TypeError: unhashable type: 'dict'
+
+s={10,20,10,30,20,10} #no duplicate elements
+print(s)
+print(type(s))
+
+
+
+#Important functions wrt to set
+--------------------------------
+#add()
+-------
+s={10,20,30}
+print(s)
+#s.append(40)
+#s.insert(40)
+s.add(40)
+#s.add(50,60)
+#typeError: set.add() takes exactly one argument (2 given)
+s.add((50,60))#valid but not suggested
+print(s)
+
+
+#update()
+----------
+to add multiple elements to the set we use update function
+
+s={10,20,30}
+print(s)
+#s.update(40,50,60)#error
+s.update([40,50,60])
+print(s)
+
+What is the diff b/w add() and update() in set
+add()
+*it will add only one element to the set at a time
+*this will take one argumenet at a time
+
+update()
+*will add multiple elements to the set at a time
+*this will take one argument at a time and that argument must be list
+
+eg;
+---
+s={10,20,30}
+print(s)
+lst=[40,50,60,70]
+s.update(lst,range(5))
+print(s)
+
+#copy()
+'''return copy of the set.It is a cloned object'''
+
+s={10,20,30}
+print(s)
+s1=s.copy()
+print(s1)
+print(s is s1)
+
+
+for deleting the elements from the set
+---------------------------------------
+#remove and pop() wrt set
+--------------------------
+s={60,70,10,20,30,40,50}
+print(s)
+s.remove(40)  #element is the input
+#s.pop()   #any random element from the set
+#s.pop(1)  TypeError: set.pop() takes no arguments (1 given)
+#s.pop(-2)  TypeError: set.pop() takes no arguments (1 giv
+print(s)
+
+
+#discard()
+s={10,20,30}
+print(s)
+#s.discard(20)
+
+#s.remove(40)  KeyError: 40
+s.discard(40) #no error
+
+print(s)
+
+What is the diff b/w remove() and discard() in set
+*If a element is not available in the set then the remove method will retunr the key error
+where as discard method will not return any error
+
+
+#clear()
+s={10,20,30,40}
+print(s)
+s.clear()
+print(s)
+
+*clear method will delete all the elements from the set and leave the empty set.
+
+Mathematical operation on the set
+----------------------------------
+#1.union()
+-----------
+x.union(y)--> we can use this function 
+to return all the elements from both the sets
+or
+x|y
+s1={10,20,30,40}
+print(s1)
+s2={50,60,70,80}
+print(s2)
+#print(s1.union(s2))
+s3=s1.union(s2)
+s3=s1|s2
+print(s3) 
+
+2.intersection()
+-----------------
+This method will return the common elements from the both the sets
+x.intersection(y)  or   x&y
+
+s1={10,20,30,40}
+print(s1)
+s2={50,30,70,10}
+print(s2)
+#s3=s1.intersection(s2)
+s3=s1&s2
+print(s3) 
+
+
+3.difference()
+---------------
+x.diffrence(y)-->returns the elements in x but not in y
+x.diffrence(y)  or y.diffrence(x)
+x-y   or y-x    
+
+
+s1={10,20,30,40}
+print(s1)
+s2={50,30,70,10}
+print(s2)
+s3=s1.difference(s2)
+s3=s1-s2
+s3=s2.difference(s1)
+s3=s2-s1
+print(s3)   
+
+
+4.Symmetric_diffrence()
+------------------------
+return elements present in either x or y but not in both
+x.Symmetric_diffrence(y)  x^y
+
+s1={10,20,30,40}
+print(s1)
+s2={50,30,70,10}
+print(s2)
+s3=s1.symmetric_difference(s2)
+s3=s1^s2
+print(s3)   
+
+
+eg;
+----
+s1={10,20,30}
+print(s1)
+s2={40,50}
+print(s2)
+#s3=s1+s2 TypeError: unsupported operand type(s) for +: 'set' and 'set'
+#s1*3   TypeError: unsupported operand type(s) for *: 'set' and 'int'
+print(s3)
+
+
+
+
+#membership check wrt set
+---------------------------
+s={'sachin tendulker','n','g','d'}
+print(s)
+print('n' in s)
+print('z' in s)
+
+
+task
+-----
+convert all the programs of list comprehension into set comprehension
+
+
+
+Performance analysis of the list,tuple,set
+-------------------------------------------
+#creation
+'''
+import timeit
+print(timeit.timeit(stmt="lst=[1,2,3,4,5]",number=10000000))
+print(timeit.timeit(stmt="t=(1,2,3,4,5)",number=10000000))
+print(timeit.timeit(stmt="s={1,2,3,4,5}",number=10000000))
+#tuple > list > set'''
+
+#insertion
+'''
+import timeit
+print(timeit.timeit(stmt='lst.append(6)',setup="lst=[]",number=100000000))
+print(timeit.timeit(stmt='s.add(6)',setup="s=set()",number=100000000))
+#set> list'''
+
+#search
+import timeit
+print(timeit.timeit(stmt='4 in lst',setup="lst=[1,2,3,4,5]",number=10000000))
+print(timeit.timeit(stmt='4 in t',setup="t=(1,2,3,4,5)",number=10000000))
+print(timeit.timeit(stmt='4 in s',setup="s={1,2,3,4,5}",number=10000000))
+set>tuple>list
+
+
+Internal implementation of the set elements
+----------------------------------------------
+A set in python internally make use of set hashing process for storing the elements.
+In hashing process there are always two components;
+1.Mathematical hash function
+2.A hash table
+
+1.hash function : based on the calculation of this function the elements will be stored in the hash table
+2.hash key : the end result of the hash function is hash key
+3.hash table : it is an internal table where based on hash key the elements will be stored
+
+nots: if in case if there are same hash key generated then it is called as "collision" and it will be resolved with
+the help of open adderssing algorithm
+
+
+Dictionary in python
+----------------------
+Dictionary is datatype in python where ;
+*elements will be stored in the key:value pair
+*insertion order is preserved but still it is unordered in nature
+*make use of hashing process to store the elements
+*suports both homogenous and heterogenous elements
+*duplicate values are allowed but duplicates keys are not allowed
+*it is growable in nature
+*dict keys must be always immuatble objects and values can be anything
+*dict is mutable in nature
+
+
+
+#creation of dict
+#empty dict
+d={}
+d=dict()
+
+various datatypes for the place of key
+---------------------------------------
+d={1:'sagar'}
+d={2.5:'sagar'}
+d={3+4j:'sagar'}
+d={True:'sagar'}
+d={'name':'sagar'}
+
+#d={[10,20]:'sagar'} typeError: unhashable type: 'list'
+d={(10,20):'sagar'}   #valid
+#d={{10,20}:'sagar'} TypeError: unhashable type: 'set'
+#d={{10:20}:'sagar'} TypeError: unhashable type: 'dict'
+
+print(d)
+print(type(d))
+
+
+various datatypes for the place of key
+---------------------------------------
+d={1:10}
+d={1:2.5}
+d={1:3+4j}
+d={1:True}
+d={1:'sagar'}
+
+d={1:[10,20]} 
+d={1:(10,20)}  
+d={1:{10,20}} 
+d={1:{10:20}} 
+print(d)
+print(type(d))
+
+Note:In dict value can be any datatype but key must be always immutable object.
+
+
+heterogenous elements
+-----------------------
+d={1:10,2.5:True,3+4j:"abcd",(10,):[25,35]}
+print(d)
+
+
+
+Adding the elements to the dict
+---------------------------------
+using two ways we can add the elements to the given dict
+1. using the idexOf operator
+2. using the builtin method called as update()
+
+eg;
+----
+d={1:10,2:20,3:30}
+print(d)
+d[2]='abcd'  #if we consider the existing key then it will modify the value of that key
+print(d)
+d[4]=40
+print(d)
+
+eg;
+----
+d={1:10,2:20,3:30}
+print(d)
+
+d.update({4:40})
+print(d)
+
+d.update({5:50,6:60})
+print(d)
+
+d.update([(7,70)])
+print(d)
+
+d.update(one='sachin',two='tendulker')
+print(d)
+
+
+Accessing the elements from the given dict
+-------------------------------------------
+d={1:10,2:20,3:30,4:[1,2,3,4]}
+print(d)
+
+print(d[2])
+
+lst=d[4]
+print(lst)
+lst.append(5)
+print(d)
+
+eg;
+----
+d={1:10,2:20,3:30,4:40}
+print(d)
+
+print(d[2])
+
+#print(d[5])   #KeyError: 5
+
+#get()
+print(d.get(3))
+print(d.get(5))
+
+Note: the diff b/w indexof operator and the get method is that ,
+if the key is not present then indexof operator will return key error where
+get method will return the None value
+
+
+#accessing the dict element with looping
+------------------------------------------
+d={1:10,2:20,3:30,4:40}
+print(d)
+for i in d:
+  print(i)
+print()
+
+for i in d.keys():
+  print(i)
+print()
+
+for i in d.values():
+  print(i)
+print()
+
+for i in d.items():
+  print(i)
+print()
+
+
+points to remember;
+-----------------------
+by default when we apply the for loop on the dict sequence the keys will be rturned
+keys() : this will return the keys from the dicts
+values() : this will return the values from the dicts
+items() : this will return the key and value from the dicts in the type of tuple
+
+
+
+#accessing the dict elemenrt with looping
+d={1:10,2:20,3:30,4:40}
+print(d)
+print(d.keys())
+lst=d.keys()
+print(list(lst))
+
+'''
+{1: 10, 2: 20, 3: 30, 4: 40}
+dict_keys([1, 2, 3, 4])
+[1, 2, 3, 4] '''
+
+print(d.values())
+lst=d.values()
+print(list(lst))
+
+'''
+dict_values([10, 20, 30, 40])
+[10, 20, 30, 40]'''
+
+
+print(d.items())
+lst=d.items()
+print(list(lst))
+
+dict_items([(1, 10), (2, 20), (3, 30), (4, 40)])
+[(1, 10), (2, 20), (3, 30), (4, 40)]
+
+
+
+task;
+-----
+access the dict elements using the while loop
+
+
+removing the elements from the dict
+--------------------------------------
+There are 4 ways to delete the elements from the dict
+1. using the pop()
+2. using the popitem()
+3. using the clear()
+4. using the del keyword
+
+eg;
+---
+d={1:10,2:20,3:30,4:40,5:50,6:60,7:70}
+print(d)
+#d.pop()  TypeError: pop expected at least 1 argument, got 0
+#d.pop(3)   #valid where key act as index number so key is the input
+#d.pop(40)   KeyError: 40 --> value can not be the input
+
+#d.popitem()   #last element from the dict is deleted
+
+#d.clear() #deletes all the elements and leaves the empty dict
+
+#del d[5]  deletes the key value at the given place
+
+del d  deletes the entire dict
+
+print(d)
+
+
+#merging a dict with another dict
+d1={1:10,2:20,3:30}
+print(d1)
+d2={4:40,5:50}
+print(d2)
+
+#d3=d1+d2
+#TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
+#d3=d1*2
+#TypeError: unsupported operand type(s) for *: 'dict' and 'int'
+'''
+d1.update(d2)
+print(d1)
+d2.update(d1)
+print(d2)'''
+
+
+
+#merging a dict with multiple dict
+------------------------------------
+d1={1:10,2:20,3:30}
+print(d1)
+d2={4:40,5:50}
+print(d2)
+d3={6:60,7:70}
+print(d3)
+
+#d1.update(d2,d3)
+#d1.update([d2,d3])# valid but not expected 
+
+d4={**d1,**d2,**d3}
+print(d4)
+
+#membership check wrt dict
+----------------------------
+d={1:10,2:20,3:30,4:40,5:50,6:60,7:70}
+print(d)
+#print(2 in d) #checking for key
+#print(20 in d) #checking for value
+
+#print(5 in d.keys()) #checking for key
+#print(9 in d)
+#print(9 in d.keys()) 
+
+#print(20 in d.values()) 
+
+print((6,60) in d.items()) 
+
+
+Dict comprehension
+-------------------
+#dict comprehension example-1
+#program without comprehension
+lst=[1,2,3,4,5]
+print(lst)
+d={}
+for i in lst:
+  d[i]=i**2
+
+print(d)
+
+op
+[1, 2, 3, 4, 5]
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+#dict comprehension example-1
+#program with comprehension
+lst=[1,2,3,4,5]
+print(lst)
+d={i:i**2 for i in lst}
+print(d)
+
+op
+[1, 2, 3, 4, 5]
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+
+
+
+
+
+#dict comprehension example-2
+#program without comprehension
+lst=[1,2,3,4,5,6,7,8,9,10]
+print(lst)
+d={}
+for i in lst:
+  if i%2==0:
+    d[i]=i**2
+
+print(d)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
+
+#dict comprehension example-2
+#program with comprehension
+lst=[1,2,3,4,5,6,7,8,9,10]
+print(lst)
+d={i:i**2 for i in lst if i%2==0}
+print(d)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
+
+#dict comprehension example-3
+#program without comprehension
+lst=[1,2,3,4,5,6,7,8,9,10]
+print(lst)
+d={}
+for i in lst:
+  if i%2==0:
+    d[i]=i**2
+  else:
+    d[i]=i**3
+
+print(d)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+{1: 1, 2: 4, 3: 27, 4: 16, 5: 125, 6: 36, 7: 343, 8: 64, 9: 729, 10: 100}
+
+#dict comprehension example-3
+#program with comprehension
+lst=[1,2,3,4,5,6,7,8,9,10]
+print(lst)
+d={i:(i**2 if i%2==0 else i**3) for i in lst}
+print(d)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+{1: 1, 2: 4, 3: 27, 4: 16, 5: 125, 6: 36, 7: 343, 8: 64, 9: 729, 10: 100}
+
+#dict comprehension example-4
+#program without comprehension
+lst=[1,2,3,4,5,6,7,8,9,10]
+print(lst)
+d={}
+for i in lst:
+  if i%2==0:
+    d[i**2]='square'
+  else:
+    d[i**3]='cube'
+
+print(d)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+{1: 'cube', 4: 'square', 27: 'cube', 16: 'square', 125: 'cube', 36: 'square', 343: 'cube', 64: 'square', 729: 'cube', 100: 'square'}
+
+
+#dict comprehension example-4
+#program with comprehension
+lst=[1,2,3,4,5,6,7,8,9,10]
+print(lst)
+d={(i**2 if i%2==0 else i**3):('square' if i%2==0 else 'cube') for i in lst}
+print(d)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+{1: 'cube', 4: 'square', 27: 'cube', 16: 'square', 125: 'cube', 36: 'square', 343: 'cube', 64: 'square', 729: 'cube', 100: 'square'}
+

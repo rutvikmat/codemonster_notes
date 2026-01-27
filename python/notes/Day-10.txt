@@ -1,0 +1,607 @@
+Deleting or removing the elements fron the list
+-------------------------------------------------
+4.remove() function
+---------------------
+We can use remove function to remove any element from the list.
+where remove fn will accept only one argument at a time and it should be the element utself.
+*suppose the element is not present in the list then remove fn will return
+valueError.
+
+eg;
+lst=[10,20,30,40,50]
+print(lst)
+lst.remove(30) #element itself is the input
+print(lst)
+
+eg;
+lst=[10,20,30,40,50]
+print(lst)
+lst.remove(80)
+print(lst)
+'''
+   lst.remove(80)
+ValueError: list.remove(x): x not in list '''
+
+
+eg;
+---
+lst=[10,20,30,40,50]
+print(lst)
+lst.remove(20,30)
+print(lst)
+TypeError: list.remove() takes exactly one argument (2 given)
+
+eg;
+---
+lst=[10,20,30,10,50]
+print(lst)
+lst.remove(10)
+print(lst)
+
+5.pop() function
+-------------------
+*It will delete the last element of the list if we dont give any argument
+*It will accept the +ve and -ve index number and delete the corresponding element from the list
+*pop will accept only one argument at a time and it should be a index number
+*suppose we if give the index number which is not available then it will return 'indexerror'.
+eg;
+---
+lst=[10,20,30,10,50]
+print(lst)
+lst.pop()#last element will be deleted
+print(lst)
+lst.pop(2)#using the +ve index number element can be deleted
+print(lst)
+lst.pop(-2)#using the -ve index number element can be deleted
+print(lst)
+
+eg;
+---
+lst=[10,20,30,10,50]
+print(lst)
+lst.pop(2,3)#last element will be deleted
+print(lst)
+TypeError: pop expected at most 1 argument, got 2
+
+eg;
+---
+lst=[10,20,30,10,50]
+print(lst)
+lst.pop(6)#last element will be deleted
+print(lst)
+IndexError: pop index out of range
+
+
+
+diff b/w remove and pop function;
+----------------------------------
+remove()
+*using the element as the argument we can remove the element from the list
+*suppose the element is not available in the list we will get 'value error'
+*minimum one argument must given to the remove fn
+
+pop()
+*using the index number(+ve and -ve) as the argument we can remove the element from the list
+*suppose the index number is not available in the list we will get 'index error'
+*with zero argument pop fn will delete the last element in the list
+
+del keyword
+------------
+del keyword will accept the index number as the input and deletes the corresponding elements 
+from the list
+*del keyword can aslo be applied on slicing operator to delete the portion of the list.
+
+eg;
+----
+lst=[10,20,30,10,50,60,70,80,90]
+print(lst)
+del lst[2]
+print(lst)
+
+del lst[2:5]
+print(lst)
+
+Ordering the elements in the list
+-----------------------------------
+1.reverse()
+------------
+we can reverse the elements of the list
+
+eg;
+---
+lst=[10,20,30,10,50,60,70,80,90]
+print(lst)
+lst.reverse()
+print(lst)
+
+2.sort()
+---------
+In the list by default insertion order is preserved.
+If we want to sort the elements then by default it will sort in ascending order.
+
+eg;
+lst=[10,20,30,10,50,60,70,80,90]
+print(lst)
+lst.sort()#ascending order
+print(lst)
+
+note:
+for the string it will sort in the alphabetical order
+
+eg;
+----
+s=['INDIA','PAKISTAN','SRILANKA','Australia']
+print(s)
+s.sort()
+print(s)
+
+
+eg:
+---
+lst=[10,'vyshnavi',20,'aditi',30,'Akshay']
+print(lst)
+lst.sort()
+print(lst)
+#TypeError: '<' not supported between instances of 'str' and 'int'
+
+'''
+lst=['10','vyshnavi','20','aditi','30','Akshay']
+
+['10', 'vyshnavi', '20', 'aditi', '30', 'Akshay']
+['10', '20', '30', 'Akshay', 'aditi', 'vyshnavi']
+''
+
+
+sorting in the reversed order
+-------------------------------
+eg;
+----
+lst=[10,20,30,40,50]
+lst
+print(lst)
+lst.sort()
+print(lst)
+lst.sort(reverse=True)
+print(lst)
+
+eg;
+----
+lst1=[1,2,3,4,5]
+print(lst1)
+print()
+
+lst2=lst1
+print(lst2)
+print()
+
+lst2[0]=0
+print(lst1)
+print(lst2)
+
+list comprehension 
+--------------------
+
+eg;1
+----
+#wap to print the even numbers with the help of list
+#using for loop
+#without using list comprehension
+
+lst1=[1,2,3,4,5,6,7,8,9,10]
+print(lst1)
+lst2=[]
+for i in lst1:
+	if i%2==0:
+		lst2.append(i)
+
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2, 4, 6, 8, 10]
+
+
+#with using list comprehension
+-------------------------------
+lst1=[1,2,3,4,5,6,7,8,9,10]
+print(lst1)
+
+syntax;
+#lst2=[what i want from where i want based on what]
+#list_variable=[expression looping stmt condition stmt]
+
+lst2=[i for i in lst1 if i%2==0]
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2, 4, 6, 8, 10]
+
+eg;2
+----
+#wap to print the square numbers with the help of list
+#using for loop
+#without using list comprehension
+
+lst1=[10,2.5,'abc',20,2+3j,True,30]
+print(lst1)
+lst2=[]
+for i in lst1:
+	if type(i)==int:
+		lst2.append(i**2)
+
+print(lst2)
+
+op
+[10, 2.5, 'abc', 20, (2+3j), True, 30]
+[100, 400, 900]
+
+#with using list comprehension
+---------------------------------
+lst1=[10,2.5,'abc',20,2+3j,True,30]
+print(lst1)
+lst2=[i**2 for i in lst1 if type(i)==int]
+print(lst2)
+
+op
+[10, 2.5, 'abc', 20, (2+3j), True, 30]
+[100, 400, 900]
+
+
+eg;3
+-----
+#wap to print the even numbers which is greater than 4
+#using for loop
+#without using list comprehension
+
+lst1=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(lst1)
+lst2=[]
+for i in lst1:
+	if i>4:
+		if i%2==0:
+			lst2.append(i)
+
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[6, 8, 10]
+
+#with using list comprehension
+-------------------------------
+lst1=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(lst1)
+lst2=[i for i in lst1 if i>4 if i%2==0]
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[6, 8, 10]
+
+eg;4
+-----
+#wap to print the even numbers else print * for odd numbers
+#using for loop
+#without using list comprehension
+
+lst1=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(lst1)
+lst2=[]
+for i in lst1:
+	if i%2==0:
+		lst2.append(i)
+	else:
+		lst2.append('*')
+
+print(lst2)
+
+op
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+['*', 2, '*', 4, '*', 6, '*', 8, '*', 10]
+
+#with using list comprehension
+-------------------------------
+lst1=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(lst1)
+#lst2=[i for i in lst1 if i%2==0 else '*'] error
+lst2=[i  if i%2==0 else '*' for i in lst1] 
+
+print(lst2)
+
+op
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+['*', 2, '*', 4, '*', 6, '*', 8, '*', 10]
+
+Mathematical operators on the list:
+-------------------------------------
+we use + and * operator
+
+1.concatination (+) operator
+-----------------------------
+we can concatinate two list into single list with the help of + operator
+
+eg;
+----
+lst1=[10,20,30]
+lst2=[40,50]
+lst3=lst1+lst2
+print(lst3)
+
+op
+[10, 20, 30, 40, 50]
+
+eg;
+----
+lst1=[10,20,30]
+s='abcd'
+tup=(10,20)
+#lst3=lst1+s
+lst3=lst1+tup
+print(lst3)
+
+
+2.Repetation operator (*)
+---------------------------
+we  can muliply the lst into number of specifed times
+
+eg;
+---
+lst1=[10,20,30]
+lst2=lst1*2
+print(lst2)
+
+Comparing the list elements
+-------------------------------
+
+lst1=[10,20,30]
+lst2=[10,20,30,40]
+
+lst1=['Apple','samsung','oppo']
+lst2=['apple','Samsung','Oppo']
+print(lst1==lst2)
+print(lst1>lst2)
+print(lst1<lst2)
+
+Membership check w.r.t list
+-------------------------------
+task [complete the programs]
+
+
+
+clear() function
+------------------
+remove all the elements from the list and leaves the empty list
+
+eg;
+---
+lst1=[10,20,30]
+print(lst1)
+lst1.clear()
+print(lst1)
+
+
+nested list
+-------------
+A list with a list is called as nested list
+
+eg;
+----
+lst=[[10,20],[30,40]]
+print(lst)
+print(lst[0][1])
+print(lst[-2][-1])
+
+task:
+------
+input--> lst=[[10,20,30],[40,50,60],[70,80,90]]
+
+op
+10,20,30
+40,50,60
+70,80,90
+
+list practices question
+-------------------------
+1.WAP to find the largest odd number in a given list using list comprehension.
+-------------------------------------------------------------------------------
+input--> [0,9,2,4,5,6]
+output-->  9
+
+eg;
+---
+lst=[0,9,2,4,5,6]
+print('original list ',lst)
+odd_num=[i for i in lst if i%2!=0]
+print('largest odd num is ',max(odd_num))
+
+op
+original list  [0, 9, 2, 4, 5, 6]
+largest odd num is  9
+
+2.WAP to add all element to the list of integers except the number at the index.
+---------------------------------------------------------------------------------
+input--> [1,2,3]
+explanation  --> [1+2+3-1, 1+2+3-2, 1+2+3-3]
+output-->[5,4,3]
+
+eg; with comprehension
+------------------------
+lst1=[1,2,3]
+print('given list is ',lst1)
+lst2=[sum(lst1)-i for i in lst1]
+print('final res is ',lst2)
+
+op
+given list is  [1, 2, 3]
+final res is  [5, 4, 3]
+
+eg; without comprehension
+------------------------
+lst=[1,2,3]
+sum=0
+for i in lst:
+	sum+=i
+lst2 = []
+for i in lst:
+	lst2.append(sum-i)
+print(lst2)
+
+3.WAP to get the cumulative sum of the given elements in the list
+-------------------------------------------------------------------
+input -->[1,2,3,4]
+explanation -->[1, 1+2 ,3+3, 6+4]
+output-->[1,3,6,10]
+
+way-1
+-------
+ip=[1,2,3,4]
+print(ip)
+op=[]
+sum=0
+for i in ip:
+  sum=sum+i
+  op.append(sum)
+print(op)
+
+way-2
+------
+lst1=[1,2,3,4]
+print("The Given list is ",lst1)
+lst2=[sum(lst1[0:i]) for i in lst1]
+print("The Result is",lst2)
+
+way-3
+-----
+from itertools import accumulate
+lst=[1,2,3,4]
+print('given list ',lst)
+res=list(accumulate(lst))
+print('final res ',res)
+
+
+4.WAP  to generate the fibonacci sequence up to nth term
+---------------------------------------------------------
+input --> 7
+output --> [0,1,1,2,3,5,8,13]
+logic -->{prevnumber+curnumber=nextnumber}
+
+way-1
+-------
+n=int(input('enter the number '))
+sequence=[0,1]
+if n<=0:
+  print('enter some +ve number')
+while len(sequence)<=n:
+  next_val=sequence[len(sequence)-1]+sequence[len(sequence)-2]
+  sequence.append(next_val)
+
+print('first ',n,'fibo numbers are ',sequence)
+
+op
+enter the number 7
+first  7 fibo numbers are  [0, 1, 1, 2, 3, 5, 8, 13]
+
+way-2
+-------
+num=7
+prev,cur =0,1
+print("Fibonacci series:",prev,cur,end=" ")
+for i in range(1,num):
+    next_val=prev+cur
+    prev=cur
+    cur=next_val
+    print(next_val,end=" ")
+print()
+'''
+op
+Fibonacci series: 0 1 1 2 3 5 8 13 
+'''
+
+
+5.WAP to calculate the sum of the lowest -ve number in the given list
+-----------------------------------------------------------------------
+input--> [-14,15,-10,-11,-12,-13,16,17,18,20]
+logic [(-14)+(-13)=-27]
+output --> -27
+
+eg;
+---
+lst=[-14,15,-10,-11,-12,-13,16,17,18,20]
+print('given list is ',lst)
+data=sorted([i for i in lst if i<0])
+res=data[0]+data[1]
+print('the sum of two lowest -ve numbers are ',res)
+
+op
+given list is  [-14, 15, -10, -11, -12, -13, 16, 17, 18, 20]
+the sum of two lowest -ve numbers are  -27
+
+
+
+6.Write a Python program to sum the first number with the second and divide it by 2, 
+then sum the second with the third and divide by 2, and so on.
+--------------------------------------------------------------
+Original list:
+[1, 2, 3, 4, 5, 6, 7]
+Sum the said list of numbers:
+[1.5, 2.5, 3.5, 4.5, 5.5, 6.5]
+
+
+ref  zip() function
+-----------------------
+lst=[1, 2, 3, 4, 5, 6, 7]
+print(lst)
+for i,j in zip(lst[:-1],lst[1:]):
+    print(i,j)
+
+way-1
+-------
+lst=[1, 2, 3, 4, 5, 6, 7]
+print('given list is',lst)
+data=[(x+y)/2 for(x,y) in zip(lst[:-1],lst[1:])]
+res=list(data)
+print('final res is ',res)
+
+given list is [1, 2, 3, 4, 5, 6, 7]
+final res is  [1.5, 2.5, 3.5, 4.5, 5.5, 6.5]
+
+way-2
+------
+lst=[1,2,3,4,5,6,7]
+lst2=[]
+num=0;
+for i in range(0,len(lst)-1):
+ num= ((lst[i]+lst[i+1])/2)
+ #num=str(num)
+ lst2.append(num)
+print(lst2)
+
+
+
+7.Write a Python program to pair up the consecutive elements of a given list.
+------------------------------------------------------------------------------
+Original lists:
+[1, 2, 3, 4, 5, 6]
+Pair up the consecutive elements of the said list:
+[[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]'''
+
+8.Write a Python program to compute the sum of digits of each number of a given list.
+-------------------------------------------------------------------------------------
+Original tuple:
+[10, 2, 56]
+Sum of digits of each number of the said list of integers:
+14
+
+
+9.wap to print the duplicated elements
+----------------------------------------
+Input : list = [10, 20, 30, 20, 20, 30, 40, 50, -20, 60, 60, -20, -20]
+Output : output_list = [20, 30, -20, 60]'''
+
+
+10.Given a list of numbers, write a Python program to count positive and negative numbers in a List.
+-----------------------------------------------------------------------------------------------------
+Input: list1 = [2, -7, 5, -64, -14]
+Output: pos = 2, neg = 3'''

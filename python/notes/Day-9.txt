@@ -1,0 +1,604 @@
+programming qs on strings
+----------------------------
+1.#wap to reverse the string
+-----------------------------
+s='sachin'
+print(s)
+print(s[::-1]) #1st way
+print(''.join(reversed(s))) #2nd way
+
+#3rd way
+n=len(s)-1
+data=''
+while n>=0:
+	data=data+s[n]
+	n=n-1
+
+print(data)
+
+
+	
+programming qs on str [task]
+-----------------------------
+Q2. Program to reverse order of words.
+input: Learning Python is very Easy
+output: Easy Very is Python Learning
+
+
+ref;
+------
+lst=[10,20,30]
+print(lst)
+lst.append(40)
+print(lst)
+
+
+eg;
+----
+s=input('enter the string ')
+print(s)
+lst=s.split()
+print(lst)
+lst1=[]
+n=len(lst)-1
+while n>=0:
+    lst1.append(lst[n])
+    n=n-1
+
+res=' '.join(lst1)
+print(res)
+
+op
+enter the string Learning Python is very Easy
+Learning Python is very Easy
+['Learning', 'Python', 'is', 'very', 'Easy']
+Easy very is Python Learning
+
+
+
+
+
+
+
+
+
+
+
+Q3. Program to reverse internal content of each word.
+input: knowledge is power
+output:egdelwonk si rewop
+
+eg;
+----
+s=input('enter the string ')
+lst=s.split()
+lst1=[]
+
+n=0
+while n<len(lst):
+    lst1.append(lst[n][::-1])
+    n=n+1
+
+res=' '.join(lst1)
+print(res)
+
+op
+enter the string knowledge is power
+egdelwonk si rewop
+
+Q4. Write a program to print characters at odd position and even position for the given String?
+
+eg;
+---
+s=input('enter the string ')
+print('char at even position are: ',s[::2])#even
+print('char at even position are: ',s[1::2])#odd
+
+
+op
+enter the string Learning Python is very Easy
+char at even position are:  Lann yhni eyEs
+char at even position are:  erigPto svr ay
+
+another way eg;
+---------------
+s=input('enter the string ')
+n=0
+print('char at even position')
+while n<len(s):
+    print(s[n],end=',')
+    n=n+2
+print()
+
+n=1
+print('char at odd position')
+while n<len(s):
+    print(s[n],end=',')
+    n=n+2
+
+op
+enter the string Learning Python is very Easy
+char at even position
+L,a,n,n, ,y,h,n,i, ,e,y,E,s,
+char at odd position
+e,r,i,g,P,t,o, ,s,v,r, ,a,y,
+
+
+Q5. Program to merge characters of 2 strings into a single string by taking characters
+alternatively.
+s1="ravi"
+s2="teja"
+output: rtaevjia
+
+eg;
+---
+s1=input('enter the s1 ')
+s2=input('enter the s2 ')
+res=''
+i,j=0,0
+while i<len(s1) or j<len(s2):
+    if i<len(s1):
+        res=res+s1[i]
+        i+=1
+    if j<len(s2):
+        res=res+s2[j]
+        j+=1
+
+print(res)
+
+op 
+enter the s1 ravi
+enter the s2 teja
+rtaevjia  
+
+Q6. Write a program to sort the characters of the string and first alphabet symbols
+followed by numeric values
+input: B4A1D3
+Output: ABD134
+
+eg;
+---
+s=input('enter some string ')
+s1=s2=res=''
+for i in s:
+    if i.isalpha():
+        s1=s1+i
+    else:
+        s2=s2+i
+for i in sorted(s1):
+    res=res+i
+for i in sorted(s2):
+    res=res+i
+print(res)
+
+OP
+enter some string B4A1D3
+ABD134
+
+
+Q7. Write a program for the following requirement
+input: a4b3c2
+output: aaaabbbcc
+
+eg;
+----
+s=input('enter some string ')
+res=''
+for i in s:
+    if i.isalpha():
+        res=res+i
+        data=i
+    else:
+        res=res+data*(int(i)-1)
+
+print(res)
+
+op
+enter some string a4b3c2
+aaaabbbcc
+
+another way
+-------------
+s=input('enter the str')
+l=[]
+res=""
+for i in s:
+    l.append(i)
+for i in range(0,len(s),2):
+    res+=(l[i]*int(l[i+1]))
+print(res)
+
+Q8. Write a program to remove duplicate characters from the given input string?
+note: do not use set datatype
+input: ABCDABBCDABBBCCCDDEEEF
+output: ABCDEF
+
+eg;
+---
+#vani
+str=input("enter the string")
+p=set(str)
+l=[]
+for i in p:
+    l.append(i)
+print(*(sorted(l)))
+
+eg;
+----
+#pujitha
+s=input('enter the str')
+l=list(s)
+s1=""
+for i in range(len(s)):
+    if l.count(l[i])>=1:
+        if l[i] not in s1:
+            s1+=l[i]
+print(s1)
+
+
+eg;
+---
+#nikil
+s="AABNHKHUIEBBDHVHJDKLHHG"
+res =""
+for i in s:
+    if i not in res:
+        res=res+i
+print(res)
+
+eg;
+---
+#sagar
+s=input('enter the str ')
+lst=[]
+for i in s:
+	if i not in lst:
+		lst.append(i)
+
+res=''.join(lst)
+print(res)
+
+
+Q9. Write a program to find the number of occurrences of each character present in the
+given String?
+input: ABCABCABBCDE
+output: A-3,B-4,C-3,D-1,E-1
+
+
+Q10. wap to get the fallowing result
+input : a4k3b2
+output: aeknbd
+
+
+Q9. Write a program to find the number of occurrences of each character present in the
+given String?
+input: ABCABCABBCDE
+output: A-3,B-4,C-3,D-1,E-1
+
+eg;
+---
+s=input('enter the string ')
+d={}
+# this is store the data in the dict
+for i in s:
+	if i in d:
+		d[i]=d[i]+1
+	else:
+		d[i]=1
+
+#accessing elements from the dict
+print(d)
+for i,j in d.items():
+	print('{} - {} times'.format(i,j))
+
+
+
+Q10. wap to get the fallowing result
+input : a4k3b2
+output: aeknbd
+
+eg;
+----
+s=input('enter the string ')
+res=''
+for i in s:
+	if i.isalpha():
+		res=res+i
+		data=i
+	else:
+		res=res+chr(ord(data)+int(i))
+
+print(res)
+
+
+'''
+chr(unicode)==> the corresponding char
+ord(char) ==> the corresponding unicode value 
+
+ord(a)--> unicode of a [97+4=101]
+chr(101)--> e
+'''
+
+
+other formatting types of the string
+--------------------------------------
+formatting numbers
+
+'''
+d--> decimal integer
+print('the integer number is {}'.format(123))
+print('the integer number is {:d}'.format(123))
+print('the integer number is {:05d}'.format(123))'''
+
+'''
+f--> fixed points or floating point numbers
+print('the float number is {}'.format(12.456))
+print('the integer number is {:f}'.format(12.456))
+print('the integer number is {:.2f}'.format(12.4567))
+Note : the default precision is 6
+'''
+
+'''
+b--> binary
+o-->octal
+x--> hexadecimal
+print('binary form: {0:b}'.format(153))
+print('binary form: {0:o}'.format(153))
+print('binary form: {0:x}'.format(154))
+'''
+
+strings concept in python is completed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+										LIST DATATYPE
+									--------------------------
+list
+-----
+1.insertion order is preserved
+2.duplicates are allowed
+3.Both homogenous and heterogenous elements are allowed
+4.growable in nature
+5.generally we will use [] brackets
+6.list are mutable in nature
+
+*list elements will be accessed using index number 
+list support both +ve index and -ve index
+
+
+
+#creation of the empty list 
+-----------------------------
+lst=[] 
+lst=list()  
+
+#creation of list with dynamic input
+lst=list(eval(input('enter the elements for the list')))
+
+#using the list function
+lst=list(range(1,11))
+
+#using the strings 
+s='sachin'
+lst=list(s)
+
+#using the split() method
+s='Learning python is very easy'
+lst=s.split()
+print(lst)
+print(type(lst))
+
+
+
+#Acessing the list elements
+----------------------------
+list elements can be accesses by using index and slicing operator
+
+#using index number
+--------------------
+lst=[10,20,30]
+print(lst)
+print(lst[1])	# +ve index
+print(lst[-2])	# -ve index
+'''
+
+'''
+by using slicing operator
+---------------------------
+
+syntax;
+lst=lst[start:stop:step] '''
+
+lst=[10,20,30,40,50,60,70,80,90,100]
+print(lst)
+print(lst[::])
+print(lst[::-1])
+print(lst[::2])
+print(lst[1::2])
+print(lst[4:8:])
+print(lst[-4:-8:-1])
+print(lst[-8:-4:])
+
+#traversing the list elements
+------------------------------
+lst=[10,25,30,45,50,65,70,85,90,105]
+print(lst)
+for i in lst:
+	if i%2==0:
+		print(i)
+	else:
+		print('*')
+
+
+#using the while loop
+----------------------
+lst=[10,25,30,45,50,65,70,85,90,105]
+print(lst)
+n=0
+while n<len(lst):
+	print(lst[n])
+	n=n+1
+
+
+#list mutability
+-----------------
+lst=[10,20,30,40]
+print(lst)
+print(id(lst))
+
+lst.append(50)		#growable in nature
+print(lst)
+print(id(lst))
+
+lst[2]='sagar'
+print(lst)
+print(id(lst))
+
+op
+10, 20, 30, 40]
+2045637677760
+[10, 20, 30, 40, 50]
+2045637677760
+[10, 20, 'sagar', 40, 50]
+2045637677760
+
+
+#wap to display the list elements with its index number
+---------------------------------------------------------
+lst=['aditi','pavan','kavya','nikil','radika','manoj']
+print(lst)
+
+n=len(lst)
+for i in range(n):
+	print(lst[i],'is available at +ve index: ',i,'and -ve index at ',i-n)
+
+
+	op
+['aditi', 'pavan', 'kavya', 'nikil', 'radika', 'manoj']
+aditi is available at +ve index:  0 and -ve index at  -6
+pavan is available at +ve index:  1 and -ve index at  -5
+kavya is available at +ve index:  2 and -ve index at  -4
+nikil is available at +ve index:  3 and -ve index at  -3
+radika is available at +ve index:  4 and -ve index at  -2
+manoj is available at +ve index:  5 and -ve index at  -1
+
+
+Important functions of list
+------------------------------
+1.len()
+return the numbers of elements in the list
+
+lst=['aditi','pavan','kavya','nikil','radika','manoj']
+print(lst)
+n=len(lst)
+print(n)   -->6
+
+2.count()
+return the number of occurences of the spcified element
+
+eg;
+----
+lst=[1,2,3,1,3,2,1,4,5,2,1,5,6,2,3]
+print(lst)
+print(lst.count(1))
+
+
+
+3.index()
+return the index of the first occurence
+
+eg;
+---
+lst=[1,2,3,1,3,2,1,4,5,2,1,5,6,2,3]
+print(lst)
+print(lst.index(3))
+
+
+note: suppose the element is not available for the index fn it return valueerror
+
+eg;
+----
+lst=[1,2,3,1,3,2,1,4,5,2,1,5,6,2,3]
+print(lst)
+print(lst.index(7))
+
+ValueError: 7 is not in list
+
+
+Manipulating the list elements
+--------------------------------
+* adding the new elements to the list
+
+1.append() function
+---------------------
+
+to add a new element to the end of the list append function is used
+
+eg;
+---
+lst=[1,2,3,]
+print(lst)
+lst.append('sagar')
+print(lst)
+
+#lst.append(5,6)
+#TypeError: list.append() takes exactly one argument (2 given)
+
+lst.append([5,6])
+print(lst)
+
+
+2.insert()  function
+-----------------------
+this will insert the elements into the list based on the index number
+
+eg;
+---
+lst=[10,20,30]
+print(lst)
+lst.insert(2,25)
+print(lst)
+
+lst.insert(0,5)
+print(lst)
+
+lst.insert(-4,'sagar')
+print(lst)
+
+lst.insert(3,'aa','bb')
+#TypeError: insert expected 2 arguments, got 3
+print(lst)
+
+
+diff b/w append and insert function
+-------------------------------------
+append()
+*adding the element to the end of the list
+*can be added only one element at a time
+*it accepts only one argument eg:    lst.append(element)
+
+insert()
+*adding the element to any random position in the list
+*can be added only one element at a time
+*it accepts only two argument eg:    lst.insert(index,element)
+
+
+3.extend() function
+-------------------------
+it will accept only one argument but can be added multiple elements by using it
+
+
+lst=[10,20,30]
+print(lst)
+lst.append(40)
+print(lst)
+#lst.extend(50,60)#error
+lst.extend([50,60,70])
+print(lst)
+
+
+lst1=['abc','lmn']
+print(lst1)
+lst2=['pqr','xyz']
+lst1.extend(lst2)
+print(lst1)
+print(lst2)
