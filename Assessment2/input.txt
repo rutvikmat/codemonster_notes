@@ -1,7 +1,9 @@
-Title: Python Workshop
+Title: JAVA WORKSHOP
 Points:
-- Introduction to Python
+- Introduction to Java
 - Hands-on coding
 - Certificate provided
-Date: 12 Oct 2025
+- Error handling 
+- JDBC Connectivity 
+Date: 26 jan 2026
 Duration: 45 minutes
