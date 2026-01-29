@@ -1,0 +1,22 @@
+<!DOCTYPE html>>
+<html>
+<head>
+    <title>Accept Values in JavaScript</title>
+</head>
+<body>
+    <h1>Accept Values in JavaScript</h1>
+    <form id="valueForm">
+        <label for="inputValue">Enter a value:</label>
+        <input type="text" id="inputValue" name="inputValue" required>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="output"></p>
+    <script>
+        document.getElementById('valueForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            var inputValue = document.getElementById('inputValue').value; // Get the input value
+            document.getElementById('output').innerText = 'You entered: ' + inputValue; // Display the value
+        });
+    </script>
+</body>
+</html>

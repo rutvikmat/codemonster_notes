@@ -1,0 +1,585 @@
+Functions in Python
+--------------------------
+If a group of statments is repeatedly required then it is not recommended to write these stmt
+everytime seperately.
+We have to define these stmts as single unit and we can call them any number of time
+based on our requirement.
+
+The main advantage of using the function is :
+1.Built in functions
+2.Code reusability
+
+The types of functions are :
+------------------------------
+1.Built in functions
+2.User defiend functions
+
+1.Built in functions
+------------------------
+The functions which are already developed by some other developers and
+it is readly available for the usage.
+eg:
+print()
+input()
+eval()
+len()
+max()
+min()
+sum()
+
+list()
+int()
+str()
+
+2.User defined functions
+-------------------------
+The functions which are developed by the programmers explicilty for the business purpose
+requirements is called as user difined function
+
+Syntax for the function is :
+------------------------------
+ref the dia
+
+def name(parameter):
+	body of the fun
+	return stmt
+
+calling the function (arguments)
+
+def --> def is a resereved keyword which resembles the user defined function
+paramter --> the filders who will collect the inputs from the fun calling
+arguments -->inputs passed while calling the functions
+
+Main() function in python
+--------------------------
+eg;
+print('hello everyone..!')      #main function
+
+def disp():
+    print('good evening')       #disp function
+
+if __name__ == '__main__':
+    print('hello world')    #main function
+    
+ref the dia
+
+Note: All the piece of code that id written will be either present in the user defiend function
+or it will be present in the main function
+to ensure that wheter the code is present in main function or not we will check the condition as
+if __name__ == '__main__':
+
+
+Types of user defiend functions
+---------------------------------
+1.User defined functions using def keyword
+2.lambda functions
+3.nested functions
+4.recursive functions
+
+There are 4 types of user difiend functions based on the parameter and return statments
+----------------------------------------------------------------------------------------
+1.No parameter no return stmt function
+2.with parameter and no return stmt function
+3.No paramter and return stmt of function
+4.paramter and return stmt function
+
+
+1.No parameter no return stmt function
+-------------------------------
+def add():
+	a=10
+	b=20
+	c=a+b
+	print('res is',c)
+
+if __name__ == '__main__':
+	print('This is no ip and no op function')
+	add()
+
+also refer the memory map dia
+	
+#op
+This is no ip and no op function
+res is 30
+
+
+2.with parameter and no return stmt function
+---------------------------
+def add(x,y):		#x,y is parameter
+	c=x+y
+	print('res',c)
+
+
+if __name__ == '__main__':
+	print('This is input and no output function')
+	a=12
+	b=12
+	add(a,b)	#a,b is arguments/inputs
+
+
+3.No paramter and return stmt of function
+------------------------------
+def add():
+	a=15
+	b=13
+	c=a+b
+	return c
+
+
+if __name__ == '__main__':
+	print('This is no ip but return op function')
+	res=add()
+	print('res',res)
+
+
+4.paramter and return stmt function
+----------------------------
+def add(x,y):
+	c=x+y
+	return c
+
+
+if __name__ == '__main__':
+	print('This is ip and op function')
+	res=add(24,26)
+	print('res ',res)
+
+
+
+#WAp to print even and odd number 
+---------------------------------
+def even_odd(num):
+	print('in user def function')
+	if num%2==0:
+		print(num,'is even number')
+	else:
+		print(num,'is odd number')
+
+if __name__ == '__main__':
+	print('in main function')
+	n=int(input('Enter the number '))
+	even_odd(n)
+	
+
+#WAP using functions to find the factorial of given number
+------------------------------------------------------------
+def fact(num):
+	print('in fact function')
+	res=1
+	while num>=1:
+		res=res*num
+		num=num-1
+	return res
+
+if __name__ == '__main__':
+	print('in main function')
+	n=int(input('enter the number '))
+	data=fact(n)
+	print(f'fact of {n} is {data}')
+
+task --> kindly write all the pattern prog with the help of functions
+
+#Return the multiple op using the python
+-------------------------------------------
+def calc(x,y):
+	a=x+y
+	b=x-y
+	c=x*y
+	d=x/y
+	return a,b,c,d	
+
+res1,res2,res3,res4=calc(10,20)
+#print(res1)
+print(res1,res2,res3,res4)
+
+
+eg;2
+----
+def even_odd(num):
+	print('in user def function')
+	if num%2==0:
+		return num*2
+	else:
+		return num*3
+
+if __name__ == '__main__':
+	print('in main function')
+	n=int(input('Enter the number '))
+	res=even_odd(n)
+	print('res',res)
+
+
+
+
+#We can not use multiple return stmt in the functions
+------------------------------------------------------
+def calc(x,y):
+	a=x+y
+	b=x-y
+	c=x*y
+	d=x/y
+	return a,b	
+	return c,d
+
+
+res1,res2=calc(10,20)
+res3,res4=calc(10,15)
+print(res1)
+print(res3)
+print(res1,res2,res3,res4)
+
+
+30
+25
+30 -10 25 -5
+
+
+#Recursive function
+---------------------
+The function calls itself again and again is referrred as recursive function
+Note : Recursion will happen based on the ceratin logic/condition where 
+if it exceeds it will leads to stackoverflow error
+
+
+#wap to show the recursive function using the factorial program
+----------------------------------------------------------------
+
+def fact(n):
+	if n==1:
+		return 1
+	else:
+		return n*fact(n-1)
+
+if __name__ == '__main__':
+	num=int(input('enter the number'))
+	res=fact(num)
+	print(f'fact of {num} is {res}')
+
+enter the number3
+fact of 3 is 6
+
+
+#Documentation in python
+-------------------------
+def calc(x,y):
+	'''This function performs add,sub,mul,div operations'''
+	a=x+y
+	b=x-y
+	c=x*y
+	d=x/y
+	return a,b,c,d
+	
+if __name__ == '__main__':
+	res1,res2,res3,res4=calc(10,20)
+	print(res1,res2,res3,res4)
+	
+	#help(calc)
+	print(calc.__doc__)
+
+Generally documentation will be done using the 3 single quotes in python
+To call the documentation of a function in python we need to use :
+1.help function() --> This is a built in function will return the documentation of the function
+2.using __doc__   --> __doc__ is a magical method in python whihc will retunrn the documentation of the function
+
+
+
+
+Types of arguments :
+-----------------------
+There are totally 5 types of arguments as shown below:
+1.Positional arguments
+2.keyword arguments
+3.default/optional argument
+4.variable length argument
+5.variable length keyword argument
+
+
+1.Positional arguments
+----------------------
+These are the inputs or data provided to the function and while passing these arguments compulosrly we
+should remember the position of the parameter, and any changes in the order will not give the expected result.
+
+def power_of(num,power):
+	return num**power
+
+
+if __name__ == '__main__':
+	print(power_of(2,5))
+	print(power_of(5,2))
+
+	
+	
+#2.keyword arguments
+---------------------
+In order to overcome the drawback of the positional arguments we can use the keyword argument
+keyword ie paramter name itself will be used to pass the arguments
+
+def power_of(num,power):
+	return num**power
+
+if __name__ == '__main__':
+	print(power_of(num=2,power=5))
+	print(power_of(power=5,num=2))
+	
+
+
+
+
+#3.default/optional argument
+------------------------------
+In any case if we want to fix the default value for the parameter then we can use 
+default arguments
+but,
+if any non-default argument present after the default argument the it will give error
+
+eg
+---
+def power_of(num,power=2):
+	return num**power
+
+if __name__ == '__main__':
+	print(power_of(num=5))
+	print(power_of(num=10))
+	
+
+eg;
+----
+#3.default/optional argument
+def power_of(power=2,num):
+	return num**power
+
+if __name__ == '__main__':
+	print(power_of(num=5))
+	print(power_of(num=10))
+	
+SyntaxError: non-default argument follows default argument
+
+
+
+4.variable length argument
+-----------------------------
+def pizza_toppings(toppings):
+	print(toppings)
+
+if __name__ == '__main__':
+	pizza_toppings('corn','mushroom','tomoto','onion','cheese','paneer','chicken')
+
+TypeError: pizza_toppings() takes 1 positional argument but 7 were given	
+
+
+#4.variable length argument
+----------------------------
+def pizza_toppings(*toppings):
+	print(toppings)
+
+if __name__ == '__main__':
+	pizza_toppings('corn','mushroom','tomoto','onion','cheese','paneer','chicken')
+
+Note: one parameter can hold or collect only one argument at a time 
+suppose if we want to provide mutiple arguments to a single parameter the we must use
+variable length argument by prefixing the parameter with * symbol
+
+
+#5.variable length keyword argument
+-------------------------------------
+This argument generally used in dict format where we will passing the inputs in the form 
+of key value pair
+Hence we prefix the parameter with ** to collect the key-value pair
+
+eg;
+---
+def details(**data):
+	print(data)
+
+if __name__ == '__main__':
+	details(name ='sachin',job='crickter')
+
+
+
+Modules in python :
+---------------------
+ref the dia
+
+A module is a python progam and it is a collection of functions and declaration.
+Module : It is a python progarm where we store the fuction but wont call them
+Script : It is a python program which will execute to get the required op
+
+Note : Module is a collection of functions and collections modules is called as Library
+
+Any function is requried for the usage purpose then 
+we must import the module then we can use them.
+
+
+Calc.py 				-->file name is only module name
+---------
+def add(x,y):
+	'''This function perform addition'''
+	return x+y
+
+def sub(x,y):
+	'''This function perform subtraction'''
+	return x-y
+
+def mul(x,y):
+	'''This function perform multiplication'''
+	return x*y
+
+def div(x,y):
+	'''This function perform division'''
+	return x/y
+
+
+Demo.py
+--------
+if __name__ == '__main__':
+	import Calc
+	print(dir(Calc))
+	#print(Calc.add.__doc__)
+
+	print(Calc.add(10,12))
+	print(Calc.sub(10,6))
+	print(Calc.mul(10,6))
+	print(Calc.div(10,2))
+	
+	
+Importing the module as alias
+------------------------------
+#Module name aliasing
+-------------------------
+Aliasing will be done using the 'as' keyword and it is a altenative name for the module.
+
+if __name__ == '__main__':
+	import Calc as c
+	
+	print(c.add(10,12))
+	print(c.sub(10,6))
+	print(c.mul(10,6))
+	print(c.div(10,2))
+Importing the module as alias
+------------------------------
+#Module name aliasing
+-------------------------
+Aliasing will be done using the 'as' keyword and it is a altenative name for the module.
+
+if __name__ == '__main__':
+	import Calc as c
+	
+	print(c.add(10,12))
+	print(c.sub(10,6))
+	print(c.mul(10,6))
+	print(c.div(10,2))
+
+
+#different types of importing the modules
+-------------------------------------------
+Calc.py and Demo.py
+--------------------
+if __name__ == '__main__':
+	#general way of importing the module
+	import Calc
+	print(Calc.add(10,20))
+
+	#Aliasing the module name
+	import Calc as c
+	print(c.add(10,20))
+
+	#importing the specific function from the module
+	from Calc import add
+	print(add(10,20))
+
+	#importing the mulitiple function from the module
+	from Calc import add,sub
+	print(add(10,20))
+	print(sub(10,20))
+
+	#importing the all function from the module
+	from Calc import *
+	print(add(12,12))
+	print(mul(12,10))
+	
+
+Turtle Progaram
+----------------
+import turtle
+data=turtle.Turtle()
+data.fd(100)
+data.lt(90)
+data.fd(100)
+data.lt(90)
+data.fd(100)
+data.lt(90)
+data.fd(100)
+
+op
+ref the dia
+
+
+eg;
+----
+import turtle
+data=turtle.Turtle()
+def square(length):
+    for i in range(4):
+        data.fd(length)
+        data.lt(90)
+
+
+square(250)
+
+	
+eg;
+---
+#WAP to create the polygon
+import turtle
+data=turtle.Turtle()
+def polygon(length,n):
+    angle=360/n
+    for i in range(n):
+        data.fd(length)
+        data.lt(angle)
+
+
+polygon(100,5)
+
+
+
+eg;
+---
+import turtle             
+colors = [ "red","purple","blue","green","orange","yellow"]
+my_pen = turtle.Pen()
+turtle.bgcolor("black")
+for x in range(360):
+   my_pen.pencolor(colors[x % 6])
+   my_pen.width(x/100 + 1)
+   my_pen.forward(x)
+   my_pen.left(59)
+
+eg;
+----
+import turtle
+
+turtle.speed(3)
+turtle.bgcolor('black')
+turtle.pensize(3)
+def func():
+    for i in range(200):
+        turtle.right(1)
+        turtle.forward(1)
+turtle.color('red','pink')
+turtle.begin_fill()
+turtle.left(140)
+turtle.forward(111.65)
+func()
+turtle.left(120)
+func()
+turtle.forward(111.65)
+turtle.end_fill()
+turtle.hidetturtle()
+turtle.done
+
+
+
+
+
+
