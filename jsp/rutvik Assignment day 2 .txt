@@ -1,0 +1,397 @@
+1. What is a conditional statement in JavaScript? Why is it important?
+
+A conditional statement allows a program to make decisions and execute different blocks of code based on whether a condition is true or false.
+
+Importance:
+
+Controls program flow
+
+Enables decision-making
+
+Makes programs dynamic and logical
+
+Examples: if, if-else, if-else-if, switch
+
+2. Syntax of the if statement with example
+
+Syntax:
+
+if (condition) {
+  // code executes if condition is true
+}
+
+
+Example:
+
+let age = 18;
+
+if (age >= 18) {
+  console.log("Eligible to vote");
+}
+
+3. Difference between if and if-else statements
+if	if-else
+Executes code only if condition is true	Executes one block if true, another if false
+No alternative block	Has alternative block
+
+Example (if-else):
+
+let marks = 40;
+
+if (marks >= 35) {
+  console.log("Pass");
+} else {
+  console.log("Fail");
+}
+
+4. Use of if-else-if ladder (with scenario)
+
+The if-else-if ladder is used to check multiple conditions sequentially.
+
+Scenario: Grading system
+
+let marks = 85;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else if (marks >= 75) {
+  console.log("Grade B");
+} else if (marks >= 50) {
+  console.log("Grade C");
+} else {
+  console.log("Fail");
+}
+
+5. What is a nested if statement? When should it be used?
+
+A nested if means an if statement inside another if.
+
+Used when:
+
+A condition depends on another condition
+
+Example:
+
+let age = 20;
+let hasID = true;
+
+if (age >= 18) {
+  if (hasID) {
+    console.log("Entry allowed");
+  }
+}
+
+6. Working of switch case statement
+
+The switch statement selects one block of code to execute based on a value.
+
+Example:
+
+let day = 2;
+
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  default:
+    console.log("Invalid day");
+}
+
+7. Role of break statement in switch
+
+The break statement:
+
+Stops execution of the current case
+
+Prevents execution of the next cases
+
+8. Difference between switch case and if-else-if ladder
+Switch Case	If-Else-If
+Compares one expression	Can check multiple conditions
+Cleaner for fixed values	Better for range conditions
+Faster and readable	Flexible
+9. General syntax of nested if statement
+if (condition1) {
+  if (condition2) {
+    // code
+  }
+}
+
+10. What happens if break is not used in switch?
+
+If break is not used:
+
+Execution continues to the next case(s)
+
+This is called fall-through behavior
+
+Example:
+
+let x = 1;
+
+switch (x) {
+  case 1:
+    console.log("One");
+  case 2:
+    console.log("Two");
+}
+
+
+Output:
+
+One
+Two
+
+
+
+
+11.The if statement is used to execute a block of code when a condition is true.
+
+12.The if-else statement is used when we want to execute one block if the condition is true and another if it is false.
+
+13.The if-else-if ladder is used to test multiple conditions.
+
+14.A nested if is an if statement inside another if statement.
+
+15.The switch statement is an alternative to multiple if-else conditions.
+
+16.Each case in switch must end with a break statement to stop execution.
+
+17.The default block in switch executes when no case matches.
+
+18.Conditions inside if statement always return true or false.
+
+19.The keyword used to check multiple conditions sequentially is else if.
+
+20.The keyword default is used to specify an alternative block when no case matches.
+
+
+21.Discount Eligibility
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discount Eligibility</title>
+</head>
+<body>
+<script>
+  let amount = parseFloat(prompt("Enter purchase amount:"));
+
+  if (amount > 100) {
+    document.write("Discount Applied");
+  } else {
+    document.write("No Discount");
+  }
+</script>
+</body>
+</html>
+
+22.Weather Suggestion
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Suggestion</title>
+</head>
+<body>
+<script>
+  let temp = parseInt(prompt("Enter temperature:"));
+
+  if (temp > 30) {
+    document.write("It's hot outside");
+  } else {
+    document.write("It's a pleasant day");
+  }
+</script>
+</body>
+</html>
+
+23. Password Length Validator
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Validator</title>
+</head>
+<body>
+<script>
+  let password = prompt("Enter password:");
+
+  if (password.length >= 8) {
+    document.write("Strong Password");
+  } else {
+    document.write("Password too short");
+  }
+</script>
+</body>
+</html>
+
+24. Time of Day Greeting (if-else-if ladder)
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greeting Program</title>
+</head>
+<body>
+<script>
+  let hour = parseInt(prompt("Enter hour (0-23):"));
+
+  if (hour < 12) {
+    document.write("Good Morning");
+  } else if (hour < 18) {
+    document.write("Good Afternoon");
+  } else {
+    document.write("Good Evening");
+  }
+</script>
+</body>
+</html>
+
+25. Nested Login Check
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login System</title>
+</head>
+<body>
+<script>
+  let username = prompt("Enter username:");
+
+  if (username === "admin") {
+    let password = prompt("Enter password:");
+    if (password === "12345") {
+      document.write("Login Successful");
+    } else {
+      document.write("Wrong Password");
+    }
+  } else {
+    document.write("Unknown User");
+  }
+</script>
+</body>
+</html>
+
+26. Student Grade using if-else-if ladder
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grade System</title>
+</head>
+<body>
+<script>
+  let marks = parseInt(prompt("Enter marks:"));
+
+  if (marks >= 90) {
+    document.write("Grade A");
+  } else if (marks >= 75) {
+    document.write("Grade B");
+  } else if (marks >= 50) {
+    document.write("Grade C");
+  } else {
+    document.write("Fail");
+  }
+</script>
+</body>
+</html>
+
+27. Voting Eligibility Check
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voting Eligibility</title>
+</head>
+<body>
+<script>
+  let age = parseInt(prompt("Enter age:"));
+
+  if (age >= 18) {
+    document.write("Eligible to vote");
+  } else {
+    document.write("Not eligible to vote");
+  }
+</script>
+</body>
+</html>
+
+28. Day of the Week using switch case
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day of the Week</title>
+</head>
+<body>
+<script>
+  let day = parseInt(prompt("Enter day number (1-7):"));
+
+  switch (day) {
+    case 1: document.write("Monday"); break;
+    case 2: document.write("Tuesday"); break;
+    case 3: document.write("Wednesday"); break;
+    case 4: document.write("Thursday"); break;
+    case 5: document.write("Friday"); break;
+    case 6: document.write("Saturday"); break;
+    case 7: document.write("Sunday"); break;
+    default: document.write("Invalid day");
+  }
+</script>
+</body>
+</html>
+
+29. Simple Calculator using switch case
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+</head>
+<body>
+<script>
+  let num1 = parseFloat(prompt("Enter first number:"));
+  let num2 = parseFloat(prompt("Enter second number:"));
+  let operator = prompt("Enter operator (+, -, *, /):");
+
+  switch (operator) {
+    case "+":
+      document.write("Result = " + (num1 + num2));
+      break;
+    case "-":
+      document.write("Result = " + (num1 - num2));
+      break;
+    case "*":
+      document.write("Result = " + (num1 * num2));
+      break;
+    case "/":
+      document.write("Result = " + (num1 / num2));
+      break;
+    default:
+      document.write("Invalid operator");
+  }
+</script>
+</body>
+</html>
+
+30. Leap Year Check using nested if
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leap Year</title>
+</head>
+<body>
+<script>
+  let year = parseInt(prompt("Enter year:"));
+
+  if (year % 4 === 0) {
+    if (year % 100 === 0) {
+      if (year % 400 === 0) {
+        document.write("Leap Year");
+      } else {
+        document.write("Not a Leap Year");
+      }
+    } else {
+      document.write("Leap Year");
+    }
+  } else {
+    document.write("Not a Leap Year");
+  }
+</script>
+</body>
+</html>

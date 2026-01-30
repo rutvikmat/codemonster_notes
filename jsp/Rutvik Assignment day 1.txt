@@ -1,0 +1,407 @@
+1.What is JavaScript? Mention any two features of JavaScript.
+JavaScript is a high-level, interpreted programming language primarily used to make web pages interactive and dynamic. It runs in the browser and allows developers to control webpage behavior such as form validation, dynamic content updates, animations, and event handling.
+
+Two features of JavaScript:
+
+Dynamic Typing – Variables in JavaScript do not require explicit data types; the type is determined at runtime.
+
+Event-Driven Programming – JavaScript can respond to user actions like clicks, key presses, and mouse movements using events.
+
+2.How is JavaScript different from Java?
+
+| Feature                 | JavaScript                           | Java                                              |
+| ----------------------- | ------------------------------------ | ------------------------------------------------- |
+| **Type**                | Interpreted, scripting language      | Compiled, object-oriented language                |
+| **Execution**           | Runs in the browser (or Node.js)     | Runs on JVM (Java Virtual Machine)                |
+| **Typing**              | Dynamically typed                    | Statically typed                                  |
+| **Primary Use**         | Web development (frontend & backend) | Enterprise applications, Android, backend systems |
+| **Object Model**        | Prototype-based                      | Class-based                                       |
+| **Platform Dependency** | Platform-independent via browser     | Platform-independent via JVM                      |
+| **Syntax**              | Lightweight and flexible             | Strict and verbose                                |
+| **Concurrency**         | Single-threaded (event loop)         | Multi-threaded                                    |
+
+
+3. What are variables in JavaScript? Why are they needed?
+
+Variables are used to store data values so they can be reused and manipulated in a program.
+
+Why they are needed:
+
+-To store user input
+
+-To hold calculation results
+
+-To make code readable and reusable
+
+Example:
+
+let age = 20;
+let name = "Alex";
+
+4. Difference between var, let, and const
+| Feature        | `var`           | `let`                 | `const`               |
+| -------------- | --------------- | --------------------- | --------------------- |
+| Scope          | Function scope  | Block scope           | Block scope           |
+| Re-declaration | Allowed         | Not allowed           | Not allowed           |
+| Re-assignment  | Allowed         | Allowed               | Not allowed           |
+| Hoisting       | Yes (undefined) | Yes (not initialized) | Yes (not initialized) |
+
+var x = 10;
+let y = 20;
+const z = 30;
+
+5. Use of the typeof operator
+
+The typeof operator is used to find the data type of a variable.
+
+Example:
+
+typeof 10;        // "number"
+typeof "Hello";   // "string"
+typeof true;      // "boolean"
+
+6. Purpose of the parseInt() function
+
+parseInt() converts a string into an integer.
+
+Example:
+
+parseInt("25");      // 25
+parseInt("25.5");    // 25
+parseInt("101", 2);  // 5
+
+
+7. Difference between alert() and console.log()
+alert()	console.log()
+Shows popup dialog	Prints message in console
+Blocks execution	Non-blocking
+Used for user messages	Used for debugging
+
+Example:
+
+alert("Hello User");
+console.log("Debug message");
+
+
+8. What happens when you use confirm()?
+
+confirm() displays a dialog box with OK and Cancel buttons and returns a boolean value.
+
+OK → true
+
+Cancel → false
+
+Example:
+
+let result = confirm("Are you sure?");
+
+
+9. Arithmetic operators in JavaScript (with examples)
+
+Arithmetic operators perform mathematical operations.
+
+| Operator | Description    | Example |
+| -------- | -------------- | ------- |
+| `+`      | Addition       | `5 + 2` |
+| `-`      | Subtraction    | `5 - 2` |
+| `*`      | Multiplication | `5 * 2` |
+| `/`      | Division       | `5 / 2` |
+| `%`      | Modulus        | `5 % 2` |
+
+
+
+10. Increment (++) and Decrement (--) operators
+
+++ increases value by 1
+
+-- decreases value by 1
+
+Example:
+
+let a = 5;
+a++;   // a becomes 6
+a--;   // a becomes 5
+
+
+Pre vs Post:
+
+let x = 5;
+console.log(++x); // 6 (pre-increment)
+console.log(x++); // 6 (post-increment, then x becomes 7)
+
+
+11.JavaScript is a client-side scripting language.
+
+12.The function used to display a message box is alert().
+
+13.The prompt() function is used to take input from the user.
+
+14.The operator used to find the data type of a variable is typeof.
+
+15.The symbol used for increment operator is ++.
+
+16.The symbol used for decrement operator is --.
+
+17.The function used to convert string to integer is parseInt().
+
+18.console.log() is used to print output in the browser console.
+
+19.The arithmetic operator used for modulus is %.
+
+20.Variables declared using const cannot be reassigned.
+
+21. Display “Welcome to JavaScript” using alert()
+alert("Welcome to JavaScript");
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alert Example</title>
+</head>
+<body>
+
+<script>
+  alert("Welcome to JavaScript");
+</script>
+
+</body>
+</html>
+
+
+
+22. Take two numbers from the user and display their sum
+let num1 = parseInt(prompt("Enter first number:"));
+let num2 = parseInt(prompt("Enter second number:"));
+let sum = num1 + num2;
+
+alert("Sum = " + sum);
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Two Numbers</title>
+</head>
+<body>
+
+<script>
+  let num1 = parseInt(prompt("Enter first number:"));
+  let num2 = parseInt(prompt("Enter second number:"));
+  let sum = num1 + num2;
+
+  alert("Sum = " + sum);
+</script>
+
+</body>
+</html>
+
+
+
+23. Demonstrate the use of console.log()
+console.log("This message is printed in the console");
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Console Log</title>
+</head>
+<body>
+
+<script>
+  console.log("This is printed in the browser console");
+</script>
+
+</body>
+</html>
+
+
+
+
+24. Check the type of a variable using typeof
+let value = 10;
+console.log(typeof value);
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typeof Example</title>
+</head>
+<body>
+
+<script>
+  let value = 100;
+  console.log(typeof value);
+</script>
+
+</body>
+</html>
+
+
+
+25. Demonstrate the use of confirm()
+let result = confirm("Do you want to continue?");
+console.log(result);
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Confirm Example</title>
+</head>
+<body>
+
+<script>
+  let result = confirm("Do you want to continue?");
+  console.log(result);
+</script>
+
+</body>
+</html>
+
+
+
+26. Perform all arithmetic operations on two numbers
+let a = 10;
+let b = 5;
+
+console.log("Addition:", a + b);
+console.log("Subtraction:", a - b);
+console.log("Multiplication:", a * b);
+console.log("Division:", a / b);
+console.log("Modulus:", a % b);
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arithmetic Operations</title>
+</head>
+<body>
+
+<script>
+  let a = 10;
+  let b = 5;
+
+  console.log("Addition:", a + b);
+  console.log("Subtraction:", a - b);
+  console.log("Multiplication:", a * b);
+  console.log("Division:", a / b);
+  console.log("Modulus:", a % b);
+</script>
+
+</body>
+</html>
+
+
+
+
+27. Demonstrate increment and decrement operators
+let x = 5;
+
+console.log("Original:", x);
+x++;
+console.log("After Increment:", x);
+x--;
+console.log("After Decrement:", x);
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Increment & Decrement</title>
+</head>
+<body>
+
+<script>
+  let x = 5;
+
+  console.log("Original:", x);
+  x++;
+  console.log("After Increment:", x);
+  x--;
+  console.log("After Decrement:", x);
+</script>
+
+</body>
+</html>
+
+
+
+28. Convert string '123' into number using parseInt()
+let str = "123";
+let num = parseInt(str);
+
+console.log(num);
+console.log(typeof num);
+<!DOCTYPE html>
+<html>
+<head>
+  <title>parseInt Example</title>
+</head>
+<body>
+
+<script>
+  let str = "123";
+  let num = parseInt(str);
+
+  console.log(num);
+  console.log(typeof num);
+</script>
+
+</body>
+</html>
+
+
+
+29. Declare variables using var, let, and const
+var a = 10;
+let b = 20;
+const c = 30;
+
+console.log(a, b, c);
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Variable Declaration</title>
+</head>
+<body>
+
+<script>
+  var a = 10;
+  let b = 20;
+  const c = 30;
+
+  console.log(a, b, c);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+30. Display output using document.write() and document.writeln()
+document.write("Welcome to JavaScript");
+document.writeln("<br>");
+document.writeln("Learning JavaScript is fun");
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document Write</title>
+</head>
+<body>
+
+<script>
+  document.write("Welcome to JavaScript");
+  document.writeln("<br>");
+  document.writeln("Learning JavaScript is fun");
+</script>
+
+</body>
+</html>
+
+
+
+
+
