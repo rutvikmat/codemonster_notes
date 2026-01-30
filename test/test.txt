@@ -1,0 +1,287 @@
+1. Diamond Pattern
+   *
+  * *
+ * * *
+  * *
+   *
+Answer :
+n=5
+for i in range(n):
+    for j in range(n-i-1):
+        print(" ", end="")
+    print("* "*(i+1))
+for i in range(n-1):
+    for j in range(i+1):
+        print(" ", end="")
+    print("* "*(n-i-1))
+
+Output :
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+----------------------------------
+2. Find second largest number
+
+Input:
+[10, 20, 4, 45, 99]
+Output:
+45
+
+Answer :
+
+lst=[10, 20, 4, 45, 99]
+for i in range(len(lst)):
+    if lst[i]==max(lst):
+        lst.remove(lst[i])
+        break
+print(max(lst))
+
+Output : 
+45
+-------------------------------------
+3. Check if two strings are anagrams
+
+Input:
+"listen", "silent"
+Output:
+Anagram
+
+Answer:
+str1 = "listen"
+str2 = "silent"
+if sorted(str1) == sorted(str2):
+    print("Anagram")
+else:
+    print("Not Anagram")
+
+Output: 
+Anagram
+-----------------------------------
+
+CREATE DATABASE test;
+
+USE test;
+
+
+create table employee (
+emp_id int auto_increment primary key,
+name varchar(20),
+dept varchar(20),
+salary int,
+age int);
+
+desc employee;
+
+insert into employee (name,dept,salary,age) values
+('Ravi','IT',50000,25),
+('Anu','HR',40000,30),
+('John','IT',60000,28),
+('Meena','Finance',45000,35),
+('Raj','IT',55000,32);
+
+select * from employee;
+
+create table department (
+dept_id int auto_increment primary key,
+dept_name varchar(20));
+
+desc department;
+
+insert into department (dept_name) values
+('IT'),('HR'),('Finance');
+
+select * from department;
+
+
+---------------------------------------------
+### 1. Display all records
+
+| emp_id | name  | dept    | salary | age |
+| ------ | ----- | ------- | ------ | --- |
+| 1      | Ravi  | IT      | 50000  | 25  |
+| 2      | Anu   | HR      | 40000  | 30  |
+| 3      | John  | IT      | 60000  | 28  |
+| 4      | Meena | Finance | 45000  | 35  |
+| 5      | Raj   | IT      | 55000  | 32  |
+
+select * from employee;
+0/p--
+
+# emp_id, name, dept, salary, age
+'1', 'Ravi', 'IT', '55000', '25'
+'3', 'John', 'IT', '66000', '28'
+'4', 'Meena', 'Finance', '45000', '35'
+'5', 'Raj', 'IT', '60500', '32'
+
+-----------------------------------------------
+-- 2.display only name and salary
+| name  | salary |
+| ----- | ------ |
+| Ravi  | 50000  |
+| Anu   | 40000  |
+| John  | 60000  |
+| Meena | 45000  |
+| Raj   | 55000  |
+
+select name,salary from employee;
+0/p-
+# name, salary
+'Ravi', '55000'
+'John', '66000'
+'Meena', '45000'
+'Raj', '60500'
+
+-----------------------------------------
+-- 3.Find Employees from IT department
+| name |
+| ---- |
+| Ravi |
+| John |
+| Raj  |
+
+select * from employee where dept='IT';
+0/p-
+# name
+'Ravi'
+'John'
+'Raj'
+-----------------------------------------
+-- 4.Find employees with salary > 50000
+| name |
+| ---- |
+| John |
+| Raj  |
+
+select * from employee where salary >50000;
+# name
+'Ravi'
+'John'
+'Raj'
+--------------------------------------------
+-- 5.Sort employees by salary (descending)
+John, Raj, Ravi, Meena, Anu
+
+select * from employee order by salary desc;
+--------------------------------------------
+-- 6.Find highest salary 
+`60000`
+
+select max(salary) from employee;
+---------------------------------------------
+
+-- 7. Find second highest salary
+`55000`
+select distinct salary from employee
+order by salary desc limit 1 offset 1;
+
+select max(salary) from employee 
+where salary < (select max(salary) from employee);
+---------------------------------------------
+-- 8. count number of employees
+`5`
+select count(*) from employee;
+---------------------------------------------
+-- 9. count employee in each department
+**Output:**
+
+| dept    | count |
+| ------- | ----- |
+| IT      | 3     |
+| HR      | 1     |
+| Finance | 1     |
+select count(*),dept from employee group by dept;
+---------------------------------------------
+-- 10. find average salary
+**Output:**
+`50000`
+select avg(salary) from employee;
+---------------------------------------------
+-- 11. Find employees whose name starts with 'R'
+**Output:**
+Ravi, Raj
+select name from employee where name like 'R%';
+---------------------------------------------
+-- 12. Find employees aged between 25 and 30
+**Output:**
+Ravi, John, Anu
+select name,age from employee where age between 25 and 30 ;
+---------------------------------------------
+-- 13. Find employees NOT in IT department
+**Output:**
+Anu, Meena
+select * from employee where dept != "IT";
+---------------------------------------------
+-- 14. Find department-wise highest salary
+### 14. Find department-wise highest salary
+
+**Output:**
+
+| dept    | max_salary |
+| ------- | ---------- |
+| IT      | 60000      |
+| HR      | 40000      |
+| Finance | 45000      |
+select max(salary),dept from employee group by dept;
+---------------------------------------------
+-- 15. Find employees earning more than average salary
+**Output:**
+John, Raj
+select name,dept,salary, avg(salary)  
+from employee group by name,dept,salary 
+having salary > ( select avg(salary) from employee);
+
+select avg(salary) from employee;
+---------------------------------------------
+-- 16. Delete employees with salary < 45000
+
+**Remaining:**
+Ravi, John, Meena, Raj
+
+delete from employee where salary < 45000 ;
+select * from employee;
+---------------------------------------------
+-- 17. Update salary of IT employees by 10%
+**Updated salaries:**
+Ravi → 55000
+John → 66000
+Raj → 60500
+
+update employee set salary = salary * 1.10 where dept='IT';
+
+select * from employee;
+---------------------------------------------
+-- 18. Get employee name with department name
+**Output:**
+
+| name  | dept    |
+| ----- | ------- |
+| Ravi  | IT      |
+| Anu   | HR      |
+| John  | IT      |
+| Meena | Finance |
+| Raj   | IT      |
+
+select name,dept from employee;
+ ---------------------------------------------
+ -- 19.Find departments with no employees 
+**Output:**
+(None in this case)
+
+select * from employee where dept=NULL;
+ ---------------------------------------------
+-- 20. Find employee with maximum salary in each department
+**Output:**
+IT → John
+HR → Anu
+Finance → Meena
+
+select e.name, e.dept from employee e
+where e.salary= (select max(salary) from employee e2 where e2.dept=e.dept);
+ ---------------------------------------------
+

@@ -65,4 +65,4 @@ for i in range(n):
         print("*",end=" ")
     for j in range(i+1,n):
         print("*",end=" ")
-    print() 
+    print()

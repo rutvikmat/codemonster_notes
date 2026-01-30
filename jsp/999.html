@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print till 999</title>
+</head>
+<body>
+    <h2>Print numbers till user enters 999</h2>
+    <script type="text/javascript">
+        var num;
+        do {
+            num = parseInt(prompt("Enter a number (999 to stop):"));
+            if(num !== 999) {
+                document.write(num + "<br/>");
+            }
+        } while(num !== 999);
+        {
+            document.write("You entered 999, stopping the loop.");
+        }
+
+    </script>
+</body>
+</html> 
