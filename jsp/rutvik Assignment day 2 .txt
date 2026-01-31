@@ -30,9 +30,10 @@ if (age >= 18) {
 }
 
 3. Difference between if and if-else statements
-if	if-else
-Executes code only if condition is true	Executes one block if true, another if false
-No alternative block	Has alternative block
+| `if`                                    | `if-else`                                    |
+| --------------------------------------- | -------------------------------------------- |
+| Executes code only if condition is true | Executes one block if true, another if false |
+| No alternative block                    | Has alternative block                        |
 
 Example (if-else):
 
@@ -109,10 +110,14 @@ Stops execution of the current case
 Prevents execution of the next cases
 
 8. Difference between switch case and if-else-if ladder
-Switch Case	If-Else-If
-Compares one expression	Can check multiple conditions
-Cleaner for fixed values	Better for range conditions
-Faster and readable	Flexible
+| Switch Case              | If-Else-If                    |
+| ------------------------ | ----------------------------- |
+| Compares one expression  | Can check multiple conditions |
+| Cleaner for fixed values | Better for range conditions   |
+| Faster and readable      | Flexible                      |
+
+
+
 9. General syntax of nested if statement
 if (condition1) {
   if (condition2) {

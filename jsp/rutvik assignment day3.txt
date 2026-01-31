@@ -1,0 +1,458 @@
+A1. for Loop – Write 5 Programs
+1. Write a JavaScript program to print characters from A to z using a for loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 65; i <= 122; i++) {
+  document.write(String.fromCharCode(i) + " ");
+}
+</script>
+</body>
+</html>
+
+2. Write a program to print the multiplication table of a given number using for loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let num = parseInt(prompt("Enter number:"));
+for (let i = 1; i <= 10; i++) {
+  document.write(num + " x " + i + " = " + (num * i) + "<br>");
+}
+</script>
+</body>
+</html>
+
+
+3. Write a program to calculate the sum of first 20 natural numbers using for loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let sum = 0;
+for (let i = 1; i <= 20; i++) {
+  sum += i;
+}
+document.write("Sum = " + sum);
+</script>
+</body>
+</html>
+
+
+4. Write a program to print all even numbers between 1 and 50 using for loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 2; i <= 50; i += 2) {
+  document.write(i + " ");
+}
+</script>
+</body>
+</html>
+
+
+5. Write a program to print characters from A to Z using for loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 65; i <= 90; i++) {
+  document.write(String.fromCharCode(i) + " ");
+}
+</script>
+</body>
+</html>
+
+
+A2. while Loop – Write 5 Programs
+1. Write a JavaScript program to print numbers from 10 to 1 using while loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let i = 10;
+while (i >= 1) {
+  document.write(i + " ");
+  i--;
+}
+</script>
+</body>
+</html>
+
+
+2. Write a program to find the sum of digits of a number using while loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let num = parseInt(prompt("Enter number:"));
+let sum = 0;
+
+while (num > 0) {
+  sum += num % 10;
+  num = Math.floor(num / 10);
+}
+
+document.write("Sum of digits = " + sum);
+</script>
+</body>
+</html>
+
+
+
+3. Write a program to count the number of digits in a number using while loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let num = parseInt(prompt("Enter number:"));
+let count = 0;
+
+while (num > 0) {
+  count++;
+  num = Math.floor(num / 10);
+}
+
+document.write("Number of digits = " + count);
+</script>
+</body>
+</html>
+
+
+4. Write a program to reverse a number using while loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let num = parseInt(prompt("Enter number:"));
+let rev = 0;
+
+while (num > 0) {
+  rev = rev * 10 + (num % 10);
+  num = Math.floor(num / 10);
+}
+
+document.write("Reversed number = " + rev);
+</script>
+</body>
+</html>
+
+5. Write a program to print all odd numbers between 1 and 30 using while loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let i = 1;
+while (i <= 30) {
+  if (i % 2 !== 0) {
+    document.write(i + " ");
+  }
+  i++;
+}
+</script>
+</body>
+</html>
+
+A3. do-while Loop – Write 5 Programs
+1. Write a JavaScript program to print numbers from 1 to 5 using do-while loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let i = 1;
+do {
+  document.write(i + " ");
+  i++;
+} while (i <= 5);
+</script>
+</body>
+</html>
+
+
+
+2. Write a program to display numbers until the user enters zero using do-while.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let num;
+do {
+  num = parseInt(prompt("Enter number (0 to stop):"));
+  document.write(num + "<br>");
+} while (num !== 0);
+</script>
+</body>
+</html>
+
+3. Write a program to print the multiplication table of 5 using do-while.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let i = 1;
+do {
+  document.write("5 x " + i + " = " + (5 * i) + "<br>");
+  i++;
+} while (i <= 10);
+</script>
+</body>
+</html>
+
+
+4. Write a program to calculate the sum of numbers from 1 to n using do-while.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let n = parseInt(prompt("Enter n:"));
+let i = 1, sum = 0;
+
+do {
+  sum += i;
+  i++;
+} while (i <= n);
+
+document.write("Sum = " + sum);
+</script>
+</body>
+</html>
+
+
+
+5. Write a program to display a message at least once using do-while loop.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+do {
+  document.write("This message appears at least once");
+} while (false);
+</script>
+</body>
+</html>
+
+
+A4. Nested Loops – Write 5 Programs
+1. Write a program to print a square star pattern using nested loops.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 1; i <= 4; i++) {
+  for (let j = 1; j <= 4; j++) {
+    document.write("* ");
+  }
+  document.write("<br>");
+}
+</script>
+</body>
+</html>
+
+
+
+2. Write a program to print a right-angled triangle star pattern.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 1; i <= 5; i++) {
+  for (let j = 1; j <= i; j++) {
+    document.write("* ");
+  }
+  document.write("<br>");
+}
+</script>
+</body>
+</html>
+
+
+
+3. Write a program to display number pattern using nested loops.(your favourite one)
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 1; i <= 4; i++) {
+  for (let j = 1; j <= i; j++) {
+    document.write(j + " ");
+  }
+  document.write("<br>");
+}
+</script>
+</body>
+</html>
+
+
+4. Write a program to print multiplication tables from 1 to 5 using nested loops.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 1; i <= 5; i++) {
+  document.write("<b>Table of " + i + "</b><br>");
+  for (let j = 1; j <= 10; j++) {
+    document.write(i + " x " + j + " = " + (i * j) + "<br>");
+  }
+  document.write("<br>");
+}
+</script>
+</body>
+</html>
+
+
+5. Write a program to print the following pattern:
+1
+12
+123
+1234
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 1; i <= 4; i++) {
+  for (let j = 1; j <= i; j++) {
+    document.write(j);
+  }
+  document.write("<br>");
+}
+</script>
+</body>
+</html>
+
+
+A5. break & continue – Write 5 Programs
+1. Write a program to stop printing numbers when the number is 5 using break.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 1; i <= 10; i++) {
+  if (i === 5) break;
+  document.write(i + " ");
+}
+</script>
+</body>
+</html>
+
+2. Write a program to skip number 7 while printing 1 to 10 using continue.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 1; i <= 10; i++) {
+  if (i === 7) continue;
+  document.write(i + " ");
+}
+</script>
+</body>
+</html>
+
+
+3. Write a program to exit a loop when a negative number is encountered.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+while (true) {
+  let num = parseInt(prompt("Enter number:"));
+  if (num < 0) break;
+  document.write(num + "<br>");
+}
+</script>
+</body>
+</html>
+
+4. Write a program to skip even numbers using continue.
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) continue;
+  document.write(i + " ");
+}
+</script>
+</body>
+</html>
+
+5. Write a program to terminate a loop when sum exceeds 100 using break.assignment day3
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let sum = 0;
+
+for (let i = 1; i <= 50; i++) {
+  sum += i;
+  if (sum > 100) break;
+}
+
+document.write("Final Sum = " + sum);
+</script>
+</body>
+</html>
+
+
+Section B: Multiple Choice Questions (MCQs)
+1. Which loop is guaranteed to execute at least once?
+a) for
+b) while
+c) do-while
+d) nested
+ans- c) do-while
+
+2. Which keyword is used to exit a loop immediately?
+a) stop
+b) exit
+c) break
+d) continue
+ans- c) break
+
+3. Which keyword skips the current iteration?
+a) break
+b) skip
+c) pass
+d) continue
+ans- d) continue
+
+
+4. Nested loops are mainly used for:
+a) Decision making
+b) Pattern printing
+c) Function calling
+d) Error handling
+ans- b) Pattern printing
+
+
+5. How many times will this loop execute?
+for(let i=1;i<=3;i++)
+a) 1
+b) 2
+c) 3
+d) Infinite
+
+ans- c) 3
+
+Section C: Fill in the Blanks
+
+1.The loop that executes at least once is do-while.
+
+2.The break keyword is used to stop a loop completely.
+
+3.The continue keyword skips the current iteration of a loop.
+
+4.A loop inside another loop is called a nested loop.
+
+5.The for loop is best suited when the number of iterations is known.
+
+6.The while loop checks condition before execution.
+
+7.The do-while loop checks condition after execution.
+
+8.continue statement is used to skip the current iteration.
+
+9.break statement transfers control outside the loop.
+
+10. Nested loops are commonly used to generate pattern patterns.
