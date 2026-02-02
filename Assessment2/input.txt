@@ -1,9 +1,1 @@
-Title: JAVA WORKSHOP
-Points:
-- Introduction to Java
-- Hands-on coding
-- Certificate provided
-- Error handling 
-- JDBC Connectivity 
-Date: 26 jan 2026
-Duration: 45 minutes
+Python is called an interpreted language because it does not get compiled directly into machine code like C or C++
