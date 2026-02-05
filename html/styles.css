@@ -1,0 +1,25 @@
+p { 
+    border: 2px solid black; 
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background-color: aqua;
+    font-size: 16px;
+    color: #f10909;
+    line-height: 1.5;
+}
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    color: #222222;
+    margin-bottom: 20px;
+}
+h2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    color: #222222;
+    margin-bottom: 15px;
+}
+body {
+    background-color: #7e4e4e;
+    margin: 20px;
+}

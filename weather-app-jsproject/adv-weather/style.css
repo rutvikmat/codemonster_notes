@@ -1,0 +1,43 @@
+:root {
+  --bg: #eef2f3;
+  --card: #ffffff;
+  --text: #000;
+}
+
+.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 15px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#forecast {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.card {
+  background: var(--card);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
