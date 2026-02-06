@@ -3,48 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Tables</title>
+<title>HTML Elements Showcase</title>
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Segoe UI', sans-serif;
         margin: 0;
-        padding: 0;
-        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        background: linear-gradient(to right, #eef2f3, #dfe9f3);
+        color: #333;
     }
 
     header {
         text-align: center;
-        padding: 20px;
-        background-color: #343a40;
+        padding: 25px;
+        background: #1f2937;
         color: white;
-        font-size: 28px;
+        font-size: 26px;
+        font-weight: 600;
         letter-spacing: 1px;
     }
 
     .container {
-        width: 90%;
+        width: 92%;
         max-width: 1100px;
-        margin: 30px auto;
-    }
-
-    .image-section {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    .image-section img {
-        width: 300px;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        margin: 40px auto;
     }
 
     .card {
         background: white;
-        padding: 20px;
+        padding: 25px;
         margin-bottom: 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+    }
+
+    h2 {
+        margin-top: 0;
+        border-left: 5px solid #2563eb;
+        padding-left: 10px;
+        color: #2563eb;
+    }
+
+    .image-section {
+        text-align: center;
+    }
+
+    .image-section img {
+        width: 280px;
         border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     table {
@@ -54,57 +70,78 @@
     }
 
     caption {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
         margin-bottom: 10px;
     }
 
     th, td {
-        border: 1px solid #dee2e6;
+        border: 1px solid #d1d5db;
         padding: 10px;
         text-align: center;
     }
 
     th {
-        background-color: #495057;
+        background-color: lightpink;
         color: white;
     }
 
     tr:nth-child(even) {
-        background-color: #f2f2f2;
+        background-color: #f3f4f6;
+    }
+
+    dl {
+        margin-top: 15px;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #111827;
+        margin-top: 10px;
+    }
+
+    dd {
+        margin-left: 20px;
+        margin-bottom: 8px;
+        color: #374151;
     }
 
     footer {
         text-align: center;
-        padding: 15px;
-        background-color: #343a40;
+        padding: 18px;
+        background: #1f2937;
         color: white;
         margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+        .image-section img {
+            width: 100%;
+        }
     }
 </style>
 </head>
 
 <body>
 
-<header>
-    Student Information Dashboard
-</header>
 
 <div class="container">
 
-    <!-- Image Section -->
-    <section class="image-section">
-        <img src="/Users/rutvikmathapati/Downloads/wall.png" alt="Student Illustration">
-        <p>Modern layout without using float. Clean and structured presentation.</p>
+    <!-- Image Example -->
+    <section class="card image-section">
+        <h2>Image Example</h2>
+        <img src="/Users/rutvikmathapati/Downloads/wall.png" alt="Sample Illustration">
+        <p>Example of a styled image with shadow and rounded corners.</p>
     </section>
 
-    <!-- Main Table -->
+    <!-- Basic Table -->
     <section class="card">
+        <h2>Basic Table</h2>
         <table>
             <caption>Student Information</caption>
             <thead>
                 <tr>
-                    <th>Student ID</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Age</th>
                     <th>Mobile</th>
@@ -135,8 +172,9 @@
 
     <!-- Colspan Example -->
     <section class="card">
+        <h2>Colspan Example</h2>
         <table>
-            <caption>Colspan Example</caption>
+            <caption>Telephone Details</caption>
             <tr>
                 <th>Name</th>
                 <th colspan="2">Telephone</th>
@@ -151,14 +189,15 @@
 
     <!-- Rowspan Example -->
     <section class="card">
+        <h2>Rowspan Example</h2>
         <table>
-            <caption>Rowspan Example</caption>
+            <caption>Contact Information</caption>
             <tr>
-                <th>Name:</th>
+                <th>Name</th>
                 <td>Bill Gates</td>
             </tr>
             <tr>
-                <th rowspan="3">Telephone:</th>
+                <th rowspan="3">Telephone</th>
                 <td>55577854</td>
             </tr>
             <tr>
@@ -169,22 +208,29 @@
             </tr>
         </table>
     </section>
-    <section>
+
+    <!-- Description List -->
+    <section class="card">
+        <h2>Description List Example</h2>
         <dl>
-  <dt>Coffee</dt>
-  <dd>- black hot drink</dd>
- <DD> COLD COFFEE</DD>
-  <dt>Milk</dt>
-  <dd>- white cold drink</dd>
-</dl>
+            <dt>Coffee</dt>
+            <dd>Black hot drink</dd>
+            <dd>Cold Coffee</dd>
+
+            <dt>Milk</dt>
+            <dd>White cold drink</dd>
+        </dl>
     </section>
 
+    <!-- Iframe Example -->
+    <section class="card">
+        <h2>Iframe Example</h2>
+        <iframe src="idk.html" width="100%" height="300px"></iframe>
+    </section>
 
 </div>
 
-<footer>
-    © 2026 Student Dashboard | Designed Cleanly
-</footer>
+
 
 </body>
 </html>
