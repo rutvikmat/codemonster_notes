@@ -1,0 +1,12 @@
+create table employee (
+    id int primary key,
+    name varchar(50),
+    age int,
+    department varchar(50)
+);
+insert into employee (id, name, age, department) values (1, 'Alice', 30, 'HR');
+insert into employee (id, name, age, department) values (2, 'Bob', 25, 'IT');
+insert into employee (id, name, age, department) values (3, 'Charlie', 28, 'Finance');
+insert into employee (id, name, age, department) values (4, 'David', 35, 'IT');
+insert into employee (id, name, age, department) values (5, 'Eve', 32, 'HR');
+select * from employee; 
