@@ -1,0 +1,28 @@
+<!Doctype html>
+<head>
+</head>
+<body>
+<p id="output"></p>
+<script>
+  // Get query string from URL
+  const params = new URLSearchParams(window.location.search);
+
+  // Read values
+  const firstName = params.get("namekey");
+  const lastName = params.get("lname");
+  const gender = params.get("gender");
+  const vehicle1 = params.get("vehicle1");
+  const vehicle2 = params.get("vehicle2");
+  const vehicle3 = params.get("vehicle3");
+
+  // Display
+  document.getElementById("output").innerHTML =
+    "First Name: " + firstName + "<br>" +
+    "Last Name: " + lastName + "<br>" +
+    "Gender: " + gender + "<br>" +
+    "Vehicle 1: " + vehicle1 + "<br>" +
+    "Vehicle 2: " + vehicle2 + "<br>" +
+    "Vehicle 3: " + vehicle3;
+</script>
+</body>
+</html>
