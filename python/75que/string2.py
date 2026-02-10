@@ -11,3 +11,4 @@ print(result)
 a="he llo wor ld"
 result="".join([char for char in a if char!=" "])
 print(result)
+
