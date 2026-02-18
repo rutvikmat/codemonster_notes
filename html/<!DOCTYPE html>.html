@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Borders vs Outlines</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 40px;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 { color: #333; }
+        p {
+            outline: 5px solid #ff00ff;
+            outline-style: solid;
+            outline-color: #0000ff;
+            outline-width: thick;
+        }
+        a, a:active, a:focus { outline: none; }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        /* 1. Standard Border Example */
+        .border-only {
+            border: 5px solid #2ecc71; /* Green solid border */
+            border-radius: 15px;
+        }
+
+        /* 2. Outline with Offset (The "Halo" Effect) */
+        .outline-offset {
+            border: 2px solid #333;
+            outline: 4px dashed #e74c3c; /* Red dashed outline */
+            outline-offset: 10px; /* Space between border and outline */
+        }
+
+        /* 3. Double Border Style */
+        .border-double {
+            border: 10px double #3498db; /* Blue double line */
+        }
+
+        /* 4. Groove and Ridge (3D effects) */
+        .border-3d {
+            border: 8px groove #9b59b6; /* Purple 3D look */
+            outline: 3px solid #f1c40f; /* Yellow outline tight to the box */
+        }
+
+        /* Interactive Focus Example */
+        input {
+            padding: 10px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            width: 250px;
+        }
+
+        input:focus {
+            outline: 3px solid #ff00ff; /* Pink outline appears on click/tab */
+            outline-offset: 2px;
+            border-color: transparent;
+        }
+
+        code {
+            display: block;
+            background: #eee;
+            padding: 5px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CSS Box Styling Comparison</h2>
+
+    <div class="container">
+        <div class="box border-only">
+            <strong>Solid Border</strong>
+            <p>Borders follow the <code>border-radius</code>.</p>
+            <code>border: 5px solid #2ecc71;</code>
+        </div>
+
+        <div class="box outline-offset">
+            <strong>Outline + Offset</strong>
+            <p>Outlines do NOT follow <code>border-radius</code> and can be spaced out.</p>
+            <code>outline-offset: 10px;</code>
+        </div>
+
+        <div class="box border-double">
+            <strong>Double Style</strong>
+            <p>Creates two parallel lines within the border width.</p>
+            <code>border-style: double;</code>
+        </div>
+
+        <div class="box border-3d">
+            <strong>Groove + Outline</strong>
+            <p>Combining a 3D border with a tight solid outline.</p>
+            <code>border-style: groove;</code>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px; text-align: center;">
+        <h3>Accessibility Focus Test</h3>
+        <p>Click the box below to see how a custom focus outline behaves:</p>
+        <input type="text" placeholder="Click me or press Tab...">
+    </div>
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 import os
+import csv
 import textwrap
 from gtts import gTTS
 from PIL import Image, ImageDraw, ImageFont
@@ -17,34 +18,43 @@ BG_DIR = "backgrounds"
 MUSIC_FILE = "music/bg_music.mp3"
 OUTPUT_DIR = "output"
 
-FADE_DURATION = 0.5  # smooth transitions
+CSV_FILE = "input.csv"
+
+FADE_DURATION = 0.5
 
 # --------------------------------------
 
 
-def read_input():
-    with open("input.txt", "r", encoding="utf-8") as f:
-        txt = f.read().strip()
-        if not txt:
-            raise ValueError("Input file empty")
-        return txt
+def read_csv():
+    if not os.path.exists(CSV_FILE):
+        raise FileNotFoundError("CSV file not found")
 
+    slides = []
+    date = ""
+    duration = ""
 
-def parse_content(text):
-    lines = text.split("\n")
-    title = lines[0].replace("Title:", "").strip()
-    points, date, duration = [], "", ""
+    with open(CSV_FILE, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
 
-    for l in lines:
-        if l.startswith("-"):
-            points.append(l.replace("-", "").strip())
-        elif l.startswith("Date:"):
-            date = l.replace("Date:", "").strip()
-        elif l.startswith("Duration:"):
-            duration = l.replace("Duration:", "").strip()
+        for row in reader:
+            row_type = row["type"].strip().lower()
+            text = row["text"].strip()
+
+            if row_type == "title":
+                slides.append(text)
+                date = row.get("date", "").strip()
+                duration = row.get("duration", "").strip()
+
+            elif row_type == "point":
+                slides.append(text)
+
+    if not slides:
+        raise ValueError("CSV file contains no slide content")
 
     footer = f"Date {date}. Duration {duration}"
-    return [title] + points + [footer]
+    slides.append(footer)
+
+    return slides
 
 
 def load_backgrounds():
@@ -107,12 +117,11 @@ def karaoke_subtitles(words, start, audio_dur):
 
 
 def main():
-    print("Starting Accurate Timeline Video Automation...")
+    print("Starting CSV Based Video Automation...")
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    raw = read_input()
-    texts = parse_content(raw)
+    texts = read_csv()
     backgrounds = load_backgrounds()
 
     slides, audios = [], []
@@ -131,7 +140,7 @@ def main():
         slides.append(img)
         audios.append(aud)
 
-    # -------- BUILD VIDEO TIMELINE --------
+    # -------- BUILD VIDEO --------
     current_time = 0
 
     for img, aud, text in zip(slides, audios, texts):
@@ -174,7 +183,7 @@ def main():
         if os.path.exists(f):
             os.remove(f)
 
-    print("Accurate timeline video generated:", output_path)
+    print("Video generated successfully:", output_path)
 
 
 if __name__ == "__main__":
