@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+
+<style>
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+/* Animated Gradient Background */
+body{
+
+    background: linear-gradient(-45deg,#1f4037,#99f2c8,#4facfe,#00f2fe,#43e97b);
+    background-size:400% 400%;
+    animation:gradientMove 12s ease infinite;
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+@keyframes gradientMove{
+
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Form Container */
+.container{
+
+    width:100%;
+    max-width:500px;
+}
+
+/* Form Card */
+.form{
+
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.2),
+    0 5px 15px rgba(0,0,0,0.1);
+
+    animation:fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Heading */
+.form h2{
+
+    text-align:center;
+    margin-bottom:5px;
+    color:#1f4037;
+}
+
+.subtitle{
+
+    text-align:center;
+    color:gray;
+    margin-bottom:20px;
+}
+
+/* Form Group */
+.form-group{
+
+    margin-bottom:15px;
+}
+
+/* Labels */
+label{
+
+    font-weight:600;
+    display:block;
+    margin-bottom:6px;
+}
+
+/* Inputs */
+input,select,textarea{
+
+    width:100%;
+    padding:10px;
+
+    border-radius:8px;
+    border:1px solid #ccc;
+
+    font-size:14px;
+
+    transition:0.3s;
+}
+
+/* Focus Effect */
+input:focus,select:focus,textarea:focus{
+
+    border-color:#4facfe;
+    box-shadow:0 0 8px rgba(79,172,254,0.5);
+    outline:none;
+}
+
+/* Gender inline */
+.inline{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* Skills Section */
+.center-label{
+
+    text-align:center;
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+/* Skills Grid */
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+
+    gap:12px;
+}
+
+/* Skill Card */
+.skill-card{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:10px;
+
+    border-radius:25px;
+
+    background:white;
+
+    border:2px solid transparent;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Hide checkbox */
+.skill-card input{
+
+    display:none;
+}
+
+/* Custom circle */
+.checkmark{
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    border:2px solid #4facfe;
+
+    position:relative;
+}
+
+/* Checked effect */
+.skill-card input:checked + .checkmark{
+
+    background:linear-gradient(45deg,#4facfe,#00f2fe);
+    border:none;
+}
+
+/* Tick */
+.skill-card input:checked + .checkmark::after{
+
+    content:"✓";
+    color:white;
+
+    font-size:12px;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+}
+
+/* Hover */
+.skill-card:hover{
+
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* Buttons */
+.button-group{
+
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+button{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+/* Submit */
+.submit{
+
+    background:linear-gradient(45deg,#4facfe,#00f2fe);
+    color:white;
+}
+
+.submit:hover{
+
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Reset */
+.reset{
+
+    background:linear-gradient(45deg,#ff6b6b,#ff0000);
+    color:white;
+}
+
+.reset:hover{
+
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media(max-width:500px){
+
+    .form{
+
+        padding:20px;
+    }
+
+    .button-group{
+
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<form class="form">
+
+<h2>Student Registration</h2>
+<p class="subtitle">Fill your details</p>
+
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" required>
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" required>
+</div>
+
+<div class="form-group">
+<label>Password</label>
+<input type="password" required>
+</div>
+
+<div class="form-group">
+<label>Mobile Number</label>
+<input type="tel" pattern="[0-9]{10}" required>
+</div>
+
+<div class="form-group">
+<label>Gender</label>
+<div class="inline">
+<label><input type="radio" name="gender"> Male</label>
+<label><input type="radio" name="gender"> Female</label>
+<label><input type="radio" name="gender"> Other</label>
+</div>
+</div>
+
+<div class="form-group">
+<label>Date of Birth</label>
+<input type="date" required>
+</div>
+
+<div class="form-group">
+<label>Course</label>
+<select required>
+<option>Select Course</option>
+<option>MCA</option>
+<option>BCA</option>
+<option>B.Tech</option>
+<option>M.Tech</option>
+</select>
+</div>
+
+<!-- Skills -->
+<div class="form-group">
+
+<label class="center-label">Skills</label>
+
+<div class="skills-grid">
+
+<label class="skill-card">
+<input type="checkbox">
+<span class="checkmark"></span>
+HTML
+</label>
+
+<label class="skill-card">
+<input type="checkbox">
+<span class="checkmark"></span>
+CSS
+</label>
+
+<label class="skill-card">
+<input type="checkbox">
+<span class="checkmark"></span>
+JavaScript
+</label>
+
+<label class="skill-card">
+<input type="checkbox">
+<span class="checkmark"></span>
+Python
+</label>
+
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Address</label>
+<textarea rows="3"></textarea>
+</div>
+
+<div class="form-group">
+<label>Upload Photo</label>
+<input type="file">
+</div>
+
+<div class="button-group">
+<button class="submit">Submit</button>
+<button type="reset" class="reset">Reset</button>
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

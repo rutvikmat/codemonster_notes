@@ -1,0 +1,18 @@
+---- OOPS
+
+class : object : method
+
+
+
+function
+ local
+ global
+object 
+ instance variables
+ static variables
+ local variables
+
+
+
+ instance variables (unique to each object):
+what,declare,initilixe ,access,stored,defeult
