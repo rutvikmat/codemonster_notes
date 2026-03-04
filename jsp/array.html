@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Check the Console (F12)</h1>
+    <ul id="myList">
+        <li>Apple</li>
+        <li>Banana</li>
+    </ul>
+
+    <script>
+        // --- String Methods ---
+        const msg = "Hello World";
+        console.log(msg.includes("lo"));     // true
+        console.log(msg.startsWith("H"));    // true
+        console.log(msg.endsWith("d"));      // true
+
+        // --- Array Methods ---
+        const listItems = document.getElementById('myList');
+        const arr = Array.from(listItems);   // Converts NodeList to Array
+        console.log(arr.find(li => li.innerText === "Apple")); 
+        console.log(arr.findIndex(li => li.innerText === "Banana")); 
+
+        // --- Math & Number ---
+        console.log(Math.trunc(4.9));        // 4
+        console.log(Math.sign(-15));         // -1
+        console.log(Number.isInteger(10));   // true
+        console.log(0.1 + 0.2 === 0.3);      // false (the classic float bug)
+        console.log(Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON); // true (the fix!)
+    </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+🔹 Arithmetic Operators (+ − * / % **)
+Q1. What is the output?
+console.log(10 % 3); 
+ans : 1
+
+
+Q2.console.log(2 ** 3 ** 2);
+ans : 512
+
+
+
+Q3.
+let x = 5;
+console.log(x++ + ++x);
+
+ans : 12
+
+
+
+Q4.
+console.log("5" - 2);
+console.log("5" + 2);
+
+ans :
+3
+52
+
+Q5. What is the result?
+console.log(10 / 0);
+ans :
+Infinity
+
+
+
+
+
+🔹 Assignment Operators (=, +=, -=, *=, /=)
+Q6
+let x = 10;
+x += 5 * 2;
+console.log(x);
+
+ans : 
+20
+
+
+Q7
+let a = 5;
+a *= 2 + 3;
+console.log(a);
+
+
+ans :
+25
+
+Q8
+Predict output:
+let x = 4;
+x = x += 3;
+console.log(x);
+
+ans : 7
+
+
+
+
+
+
+🔹 Comparison Operators (==, ===, !=, !==,>, <)
+Q9
+console.log(5 == "5");
+console.log(5 === "5");
+
+ans :
+true
+false
+
+
+Q10
+console.log(null == undefined);
+console.log(null === undefined);
+
+ans: true
+false
+
+
+Q11
+console.log(false == 0);
+console.log(false === 0);
+ans :
+true
+false
+
+
+
+Q12
+console.log("2" > 1);
+console.log("02" == 2);
+ans : true
+true
+
+
+
+🔹 Logical Operators (&&, ||, !)
+Q13
+console.log(true && false || true);
+
+ans: true
+
+Q14
+console.log(0 || "Hello");
+console.log("" && "World");
+ans : Hello
+
+
+
+Q15
+let x = 10;
+console.log(x > 5 && x < 20);
+ans : true
+
+
+
+Q16 (Tricky)
+console.log(!"");
+console.log(!0);
+console.log(!null);
+ans : true
+true
+true
+
+
+
+
+🔹 Bitwise Operators (&, |, ^, ~, <<, >>)
+Q17
+console.log(5 & 1);
+ans : 1
+
+Q18
+console.log(5 | 1);
+ans : 5
+
+
+Q19
+console.log(5 ^ 1);
+ans : 4
+
+
+Q20
+console.log(5 << 1);
+
+ans : 10
+
+
+🔹 Ternary Operator ( ? : )
+Q21
+let age = 18;
+let result = age >= 18 ? "Adult" : "Minor";
+console.log(result);
+ans : Adult
+
+
+
+
+Q22
+let x = 5;
+console.log(x % 2 === 0 ? "Even" : "Odd");
+
+ans : Odd
+
+
+
+🔹 Type Operators (typeof, instanceof)
+Q23
+console.log(typeof null);
+
+ ans : object
+
+
+Q24
+console.log(typeof NaN);
+ans : number
+
+
+
+
+Q25
+console.log([] instanceof Array);
+console.log([] instanceof Object);
+ans : true
+true
+
+
+
+
+
+🔹 Special / Tricky Interview Questions
+Q26
+console.log([] + []);
+
+ans : ""
+
+
+Q27
+console.log([] + {});
+ans :
+
+"[object Object]"
+
+
+Q28
+console.log({} + []);
+
+ans : 0
+
+
+Q29
+console.log(true + true);
+
+ans : 2
+
+
+
+Q30
+console.log("10" - "4" - "3");
+
+ans : 3
+
+🔥 Scenario-Based Questions
+
+Q31
+Write a condition using logical operators:
+ Age between 18 and 60
+ Salary greater than 20,000
+ans :
+let age = 25;
+let salary = 30000;
+
+if(age >= 18 && age <= 60 && salary > 20000)
+{
+    console.log("Eligible");
+}
+else
+{
+    console.log("Not Eligible");
+}
+
+
+
+Q32
+Write a program using ternary operator:
+ Check if number is positive, negative, or zero.
+
+ans : 
+let num = -5;
+
+let result = num > 0 ? "Positive"
+            : num < 0 ? "Negative"
+            : "Zero";
+
+console.log(result);
+
+
+
+
+Q33
+Explain difference between:
+ ==
+ ===
+
+ans :
+console.log(10 == "10");  // true
+console.log(10 === "10"); // false

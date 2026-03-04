@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+    function highlight(element) {
+        element.style.backgroundColor = "yellow";
+        element.innerHTML = "You're hovering!";
+    }
+
+    function normal(element) {
+        element.style.backgroundColor = "lightgray";
+        element.innerHTML = "Mouse over me";
+    }
+</script>
+</head>
+<body>
+
+    <div onmouseover="highlight(this)" 
+         onmouseout="normal(this)" 
+         style="width:200px; height:100px; background:lightgray; padding:20px; text-align:center;">
+        Mouse over me
+    </div>
+
+</body>
+</html>

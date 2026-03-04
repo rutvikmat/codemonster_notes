@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var flag= false;
+    do{
+       alert("1: addition\n 2: substraction ");
+        
+            var option=parseInt(prompt("enter the option"));
+            switch(option)
+            {
+               case 1: var n1 = parseInt(prompt("enter number1"));
+                        var n2 = parseInt(prompt("enter number2"));
+                        var result = n1+n2;
+               alert(result);
+               break;
+               case 2: var n1 = prompt("enter number1");
+                        var n2 = prompt("enter number2");
+                        var result = n1-n2;
+               alert(result);
+               break;
+               default:alert("enter the valid option");
+                break;
+                 
+            }
+            flag = confirm("want to continue \n");
+        }while(flag==true);
+        </script>
+</body>
+</html>

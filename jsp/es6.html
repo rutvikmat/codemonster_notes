@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6+ Features Lab</title>
+   
+</head>
+<body>
+
+<div class="container">
+    <h1>Modern JavaScript Features Lab</h1>
+    <p>Open the browser <b>Console (F12)</b> to see raw outputs, or view the results below.</p>
+
+    <section>
+        <h2>1. String Methods</h2>
+        <div id="string-output"></div>
+    </section>
+
+    <section>
+        <h2>2. Array Methods</h2>
+        <ul id="sample-list" style="display:none;">
+            <li>Item A</li>
+            <li>Item B</li>
+            <li>Item C</li>
+        </ul>
+        <div id="array-output"></div>
+    </section>
+
+    <section>
+        <h2>3. Math & Number Methods</h2>
+        <div id="math-output"></div>
+    </section>
+</div>
+
+<script>
+    const print = (targetId, label, value) => {
+        const el = document.getElementById(targetId);
+        el.innerHTML += `<div class="result"><b>${label}:</b> ${value}</div>`;
+    };
+
+    // --- STRING METHODS ---
+    const str = "Hello Rutvik, welcome to JS!";
+    print("string-output", "Original String", `"${str}"`);
+    print("string-output", "includes('Rutvik')", str.includes("Rutvik"));   // true
+    print("string-output", "startsWith('Hello')", str.startsWith("Hello")); // true
+    print("string-output", "endsWith('!')", str.endsWith("!"));             // true
+
+    // --- ARRAY METHODS ---
+    // Array.from() - Converting NodeList to Array
+    const listItems = document.querySelectorAll("#sample-list li");
+    const arr = Array.from(listItems, item => item.innerText);
+    print("array-output", "Array.from(li items)", JSON.stringify(arr));
+
+    // Array.keys()
+    let keysIter = arr.keys();
+    let keysArray = [...keysIter]; // Converting iterator to array to show it
+    print("array-output", "Array keys()", keysArray);
+
+    // Array.find() & findIndex()
+    const numbers = [5, 12, 8, 130, 44];
+    print("array-output", "Numbers Array", "[5, 12, 8, 130, 44]");
+    print("array-output", "find(val > 10)", numbers.find(n => n > 10));      // 12
+    print("array-output", "findIndex(val > 10)", numbers.findIndex(n => n > 10)); // 1
+
+    // --- MATH METHODS ---
+    print("math-output", "Math.trunc(4.9) [Cuts decimal]", Math.trunc(4.9));    // 4
+    print("math-output", "Math.sign(-50) [Returns -1, 0, or 1]", Math.sign(-50)); // -1
+    print("math-output", "Math.cbrt(27) [Cube Root]", Math.cbrt(27));           // 3
+    print("math-output", "Math.log2(8)", Math.log2(8));                         // 3
+    print("math-output", "Math.log10(100)", Math.log10(100));                   // 2
+
+    // --- NUMBER PROPERTIES & METHODS ---
+    let x = 0.1 + 0.2;
+    print("math-output", "0.1 + 0.2 === 0.3", x === 0.3); // false
+    print("math-output", "Using Number.EPSILON to compare", Math.abs(x - 0.3) < Number.EPSILON); // true
+    
+    print("math-output", "Number.MAX_SAFE_INTEGER", Number.MAX_SAFE_INTEGER);
+    print("math-output", "Number.MIN_SAFE_INTEGER", Number.MIN_SAFE_INTEGER);
+
+    // Number Methods
+    print("math-output", "Number.isInteger(25.5)", Number.isInteger(25.5)); // false
+    print("math-output", "Number.isSafeInteger(Math.pow(2, 53))", Number.isSafeInteger(Math.pow(2, 53))); // false
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+    function myFocus() {
+        alert("clicked on txt box");
+        console.log("The textbox is now active!");
+    }
+</script>
+</head>
+<body>
+
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" onfocus="myFocus()">
+    </form>
+
+</body>
+</html>
