@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Map Objects</h2>
+<p>Objects as keys in a Map:</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+// Create Objects
+const apples = {name: 'Apples'};
+const bananas = {name: 'Bananas'};
+const oranges = {name: 'Oranges'};
+
+// Create a new Map
+const fruits = new Map();
+// Add the Objects to the Map
+fruits.set(apples, 500);
+fruits.set(bananas, 300);
+fruits.set(oranges, 200);
+
+//var[] keys=Object.keys(fruits);
+// Display Object Type
+document.getElementById("demo").innerHTML = fruits.get(bananas);
+document.getElementById("demo1").innerHTML = fruits.get(apples);
+document.getElementById("demo2").innerHTML = fruits.get(oranges);;
+</script>
+
+</body>
+</html>

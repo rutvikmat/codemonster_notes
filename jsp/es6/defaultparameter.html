@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Default Parameter Values</h2>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(x, y=10) {
+console.log(x+"  "+y);
+//x  is 10 if not passed or undefined
+  return x + y;
+}
+document.getElementById("demo").innerHTML = myFunction(10);
+document.write(Math.trunc(4.7)+"<br/>");
+document.write(Math.sign(+100)+"<br/>");
+document.write(Math.cbrt(3)+"<br/>");
+document.write(Number.EPSILON+"<br/>");
+document.write(Number.MIN_SAFE_INTEGER+"<br/>");
+document.write(Number.MAX_SAFE_INTEGER+"<br/>");
+</script>
+
+</body>
+</html>

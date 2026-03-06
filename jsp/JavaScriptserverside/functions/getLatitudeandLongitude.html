@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Temperature</title>
+</head>
+<body>
+
+<h1>My Current Temperature</h1>
+<p id="temp">Fetching temperature...</p>
+
+<script>
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+} else {
+    document.getElementById("temp").innerText = "Geolocation not supported.";
+}
+
+function success(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    const apiURL = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
+
+    fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+            const temperature = data.current_weather.temperature;
+            document.getElementById("temp").innerText =
+                `Latitude: ${lat.toFixed(4)}, Longitude: ${lon.toFixed(4)} — 🌡️ ${temperature}°C`;
+        })
+        .catch(err => {
+            document.getElementById("temp").innerText = "Error fetching weather.";
+            console.error(err);
+        });
+}
+
+function error() {
+    document.getElementById("temp").innerText = "User denied geolocation.";
+}
+</script>
+
+</body>
+</html>
