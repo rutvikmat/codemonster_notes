@@ -13,7 +13,7 @@ class Employee {
 }
 
 // Creating the first employee object
-const empObj1 = new Employee(
+const empObj1 = new Employee( 
   101, 
   "Amit", 
   "Sharma", 

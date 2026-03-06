@@ -15,7 +15,7 @@
     // console.log(another);
 
     //another way of cloning the object 
-    // const another =Object.assign({
+    // const another =Object.assign({ 
     //     color:'Yellow',
     //     type:'semicircle',
     // },circle);

@@ -13,7 +13,7 @@ name = "rutvik";    // Assignment stays in place
 //Variable Hoisting with let and const
 console.log(age); // ReferenceError: Cannot access 'age' before initialization
 let age = 25;
-*/
+*/ 
 
 //Function Hoisting
 sayHello(); // Output: "Hello there!"
