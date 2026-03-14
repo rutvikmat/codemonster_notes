@@ -205,3 +205,123 @@ def longest_word(sentence):
 
 sentence = "Python programming is powerful"
 print(longest_word(sentence)) 
+
+
+
+===========================================================================
+
+2
+n = int(input())
+arr = list(map(int, input().split()))
+
+for i in range(n):
+    if (i == 0 or arr[i] > arr[i-1]) and (i == n-1 or arr[i] > arr[i+1]):
+        print(arr[i])
+        break
+"""
+n=int(input())
+a=list(map(int,input().split()))
+for i in range(n):
+    if (i==0 or a[i]>a[i-1]) and (i==n-1 or a[i]>a[i+1]):
+        print(a[i]);break
+
+
+
+arr = [1, 3, 2, 5, 4, 7, 6]
+
+result = []
+
+for i in range(1, len(arr)-1):
+    if arr[i] > arr[i-1] and arr[i] > arr[i+1]:
+        result.append(arr[i])
+
+print(result)
+"""
+
+3
+r, c = map(int, input().split())
+matrix = [list(map(int, input().split())) for _ in range(r)]
+
+top, bottom = 0, r-1
+left, right = 0, c-1
+
+result = []
+
+while top <= bottom and left <= right:
+
+    for i in range(left, right+1):
+        result.append(matrix[top][i])
+    top += 1
+
+    for i in range(top, bottom+1):
+        result.append(matrix[i][right])
+    right -= 1
+
+    if top <= bottom:
+        for i in range(right, left-1, -1):
+            result.append(matrix[bottom][i])
+        bottom -= 1
+
+    if left <= right:
+        for i in range(bottom, top-1, -1):
+            result.append(matrix[i][left])
+        left += 1
+
+print(*result)
+
+
+
+4
+s = input()
+count = 0
+
+for i in range(len(s)):
+    
+    # odd length
+    l = r = i
+    while l >= 0 and r < len(s) and s[l] == s[r]:
+        count += 1
+        l -= 1
+        r += 1
+
+    # even length
+    l, r = i, i+1
+    while l >= 0 and r < len(s) and s[l] == s[r]:
+        count += 1
+        l -= 1
+        r += 1
+
+print(count)
+
+
+
+"""
+s=input();c=0
+for i in range(len(s)):
+    l=r=i
+    while l>=0 and r<len(s) and s[l]==s[r]: c+=1;l-=1;r+=1
+    l,r=i,i+1
+    while l>=0 and r<len(s) and s[l]==s[r]: c+=1;l-=1;r+=1
+print(c)
+"""
+s=input()
+print("Palindrome" if s==s[::-1] else "Not Palindrome")
+
+5
+
+
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+
+arr.sort(reverse=True)
+print(arr[k-1])
+
+
+
+'''
+n=int(input())
+a=list(map(int,input().split()))
+k=int(input())
+print(sorted(a)[-k])
+"""
