@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Railway Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+                padding: 20px; 
+                background: white; 
+            }
+        .container { 
+                        max-width: 600px; 
+                        background: white; 
+                        padding: 30px; 
+                        border-radius: 10px; 
+                        box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+                    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="mb-4">Railway Reservation</h2>
+    <form id="railForm">
+        <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" id="name" class="form-control" required>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Age</label>
+                <input type="number" id="age" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Gender</label><br>
+                <input type="radio" name="gender" value="Male" checked> Male
+                <input type="radio" name="gender" value="Female"> Female
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">From</label>
+                <select id="from" class="form-select" required>
+                    <option value="Station A">Station A</option>
+                    <option value="Station B">Station B</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">To</label>
+                <select id="to" class="form-select" required>
+                    <option value="Station B">Station B</option>
+                    <option value="Station A">Station A</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input type="date" id="date" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Class</label>
+            <select id="class" class="form-select">
+                <option>Sleeper</option>
+                <option>AC</option>
+                <option>General</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Seat Preference</label>
+            <select id="seat" class="form-select">
+                <option>Lower</option>
+                <option>Middle</option>
+                <option>Upper</option>
+            </select>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" id="food" class="form-check-input">
+            <label class="form-check-label">Food Required</label>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="text" id="phone" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+    </form>
+
+    <div id="result" class="mt-4 p-3 border d-none">
+        <h4>Booking Details:</h4>
+        <p id="displayData"></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('railForm').onsubmit = function(e) {
+        e.preventDefault();
+        
+        
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let from = document.getElementById('from').value;
+        let to = document.getElementById('to').value;
+        let phone = document.getElementById('phone').value;
+        let date = new Date(document.getElementById('date').value);
+        let today = new Date();
+        today.setHours(0,0,0,0);
+
+        
+        if (age <= 0) return alert("Age must be positive");
+        if (from === to) return alert("Source and Destination cannot be same");
+        if (phone.length !== 10 || isNaN(phone)) return alert("Phone must be 10 digits");
+        if (date < today) return alert("Date cannot be in the past");
+
+        
+        alert("Booking Successful!");
+        document.getElementById('result').classList.remove('d-none');
+        document.getElementById('displayData').innerText = 
+            `Name: ${name} | From: ${from} To: ${to} | Date: ${date.toDateString()}`;
+    };
+</script>
+
+</body>
+</html>
