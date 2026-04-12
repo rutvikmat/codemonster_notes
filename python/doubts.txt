@@ -1,1 +1,48 @@
 why we use string litral ?
+def find_missing(nums):
+    n = len(nums)
+    # Formula for sum of 0 to n: (n * (n + 1)) / 2
+    expected_sum = n * (n + 1) // 2
+    actual_sum = sum(nums)
+    
+    return expected_sum - actual_sum
+
+
+
+
+    def decode_string(s):
+    stack = []
+    current_str = ""
+    current_num = 0
+    
+    for char in s:
+        if char.isdigit():
+            # Build the multiplier (handles multi-digit numbers like 10)
+            current_num = current_num * 10 + int(char)
+        elif char == '[':
+            # Push state to stack and reset
+            stack.append((current_str, current_num))
+            current_str, current_num = "", 0
+        elif char == ']':
+            # Pop state and repeat the internal string
+            last_str, num = stack.pop()
+            current_str = last_str + (num * current_str)
+        else:
+            current_str += char
+            
+    return current_str
+
+
+
+    def first_unique_char(s):
+    counts = {}
+    # Count frequency of each character
+    for char in s:
+        counts[char] = counts.get(char, 0) + 1
+    
+    # Return the first character with a count of 1
+    for char in s:
+        if counts[char] == 1:
+            return char
+            
+    return -1  # Return -1 if all characters repeat [cite: 2]
